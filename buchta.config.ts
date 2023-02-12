@@ -6,5 +6,5 @@ export default {
     // @ts-ignore yes there is import.meta.dir
     rootDirectory: import.meta.dir,
 
-    plugins: [svelte({ssr: true}), livereload()]
+    plugins: [svelte({ssr: true})]
 }
