@@ -11,6 +11,8 @@ const buchtaRoute = () => {
     };
   const url = new URL(currentPath);
   const paramDefs = path.match(/:.+?(?=\/)/g);
+  if (!paramDefs)
+    return { query: url.searchParams, params: null };
   const paths = path.split("/");
   const currentPaths = url.pathname.split("/");
   for (const el of paramDefs) {
@@ -22,6 +24,8 @@ const buchtaRoute = () => {
     params
   };
 };
+let bunVersion = "0.5.7";
+let buchtaVersion = "0.5-rc2";
 import { $7b66f1cf} from "./../bundle.js";
 var $$7b66f1cf = $7b66f1cf();
 function create_fragment(ctx) {
@@ -44,13 +48,16 @@ function create_fragment(ctx) {
   let a2;
   let t8;
   let t9;
-  let div2;
-  let t10;
   let a3;
+  let t10;
   let t11;
+  let div2;
   let t12;
   let a4;
   let t13;
+  let t14;
+  let a5;
+  let t15;
   return {
     c() {
       nav = $$7b66f1cf.element("nav");
@@ -66,18 +73,21 @@ function create_fragment(ctx) {
       t4 = $$7b66f1cf.text("Get Started");
       t5 = $$7b66f1cf.space();
       a1 = $$7b66f1cf.element("a");
-      t6 = $$7b66f1cf.text("Docs");
+      t6 = $$7b66f1cf.text("Blog");
       t7 = $$7b66f1cf.space();
       a2 = $$7b66f1cf.element("a");
-      t8 = $$7b66f1cf.text("Plugins");
+      t8 = $$7b66f1cf.text("Docs");
       t9 = $$7b66f1cf.space();
-      div2 = $$7b66f1cf.element("div");
-      t10 = $$7b66f1cf.space();
       a3 = $$7b66f1cf.element("a");
-      t11 = $$7b66f1cf.text("Github");
+      t10 = $$7b66f1cf.text("Showroom");
+      t11 = $$7b66f1cf.space();
+      div2 = $$7b66f1cf.element("div");
       t12 = $$7b66f1cf.space();
       a4 = $$7b66f1cf.element("a");
-      t13 = $$7b66f1cf.text("Discord");
+      t13 = $$7b66f1cf.text("Github");
+      t14 = $$7b66f1cf.space();
+      a5 = $$7b66f1cf.element("a");
+      t15 = $$7b66f1cf.text("Discord");
       this.h();
     },
     l(nodes) {
@@ -95,53 +105,60 @@ function create_fragment(ctx) {
       t3 = $$7b66f1cf.claim_space(nav_nodes);
       div3 = $$7b66f1cf.claim_element(nav_nodes, "DIV", { class: true });
       var div3_nodes = $$7b66f1cf.children(div3);
-      a0 = $$7b66f1cf.claim_element(div3_nodes, "A", { class: true });
+      a0 = $$7b66f1cf.claim_element(div3_nodes, "A", { href: true, class: true });
       var a0_nodes = $$7b66f1cf.children(a0);
       t4 = $$7b66f1cf.claim_text(a0_nodes, "Get Started");
       a0_nodes.forEach($$7b66f1cf.detach);
       t5 = $$7b66f1cf.claim_space(div3_nodes);
       a1 = $$7b66f1cf.claim_element(div3_nodes, "A", { class: true });
       var a1_nodes = $$7b66f1cf.children(a1);
-      t6 = $$7b66f1cf.claim_text(a1_nodes, "Docs");
+      t6 = $$7b66f1cf.claim_text(a1_nodes, "Blog");
       a1_nodes.forEach($$7b66f1cf.detach);
       t7 = $$7b66f1cf.claim_space(div3_nodes);
       a2 = $$7b66f1cf.claim_element(div3_nodes, "A", { class: true });
       var a2_nodes = $$7b66f1cf.children(a2);
-      t8 = $$7b66f1cf.claim_text(a2_nodes, "Plugins");
+      t8 = $$7b66f1cf.claim_text(a2_nodes, "Docs");
       a2_nodes.forEach($$7b66f1cf.detach);
       t9 = $$7b66f1cf.claim_space(div3_nodes);
+      a3 = $$7b66f1cf.claim_element(div3_nodes, "A", { class: true });
+      var a3_nodes = $$7b66f1cf.children(a3);
+      t10 = $$7b66f1cf.claim_text(a3_nodes, "Showroom");
+      a3_nodes.forEach($$7b66f1cf.detach);
+      t11 = $$7b66f1cf.claim_space(div3_nodes);
       div2 = $$7b66f1cf.claim_element(div3_nodes, "DIV", { class: true });
       $$7b66f1cf.children(div2).forEach($$7b66f1cf.detach);
-      t10 = $$7b66f1cf.claim_space(div3_nodes);
-      a3 = $$7b66f1cf.claim_element(div3_nodes, "A", { class: true, href: true });
-      var a3_nodes = $$7b66f1cf.children(a3);
-      t11 = $$7b66f1cf.claim_text(a3_nodes, "Github");
-      a3_nodes.forEach($$7b66f1cf.detach);
       t12 = $$7b66f1cf.claim_space(div3_nodes);
-      a4 = $$7b66f1cf.claim_element(div3_nodes, "A", { class: true });
+      a4 = $$7b66f1cf.claim_element(div3_nodes, "A", { class: true, href: true });
       var a4_nodes = $$7b66f1cf.children(a4);
-      t13 = $$7b66f1cf.claim_text(a4_nodes, "Discord");
+      t13 = $$7b66f1cf.claim_text(a4_nodes, "Github");
       a4_nodes.forEach($$7b66f1cf.detach);
+      t14 = $$7b66f1cf.claim_space(div3_nodes);
+      a5 = $$7b66f1cf.claim_element(div3_nodes, "A", { class: true });
+      var a5_nodes = $$7b66f1cf.children(a5);
+      t15 = $$7b66f1cf.claim_text(a5_nodes, "Discord");
+      a5_nodes.forEach($$7b66f1cf.detach);
       div3_nodes.forEach($$7b66f1cf.detach);
       nav_nodes.forEach($$7b66f1cf.detach);
       this.h();
     },
     h() {
-      if (!$$7b66f1cf.src_url_equal(img.src, img_src_value = "https://raw.githubusercontent.com/Fire-The-Fox/buchta/develop/buchta.png"))
+      if (!$$7b66f1cf.src_url_equal(img.src, img_src_value = "/buchta.png"))
         $$7b66f1cf.attr(img, "src", img_src_value);
       $$7b66f1cf.attr(img, "alt", "Icon");
       $$7b66f1cf.attr(img, "width", "32");
       $$7b66f1cf.attr(div0, "class", "font-bold");
       $$7b66f1cf.attr(div1, "class", "flex-grow");
+      $$7b66f1cf.attr(a0, "href", "#getStarted");
       $$7b66f1cf.attr(a0, "class", "hover:text-[#004E7B] cursor-pointer");
       $$7b66f1cf.attr(a1, "class", "hover:text-[#004E7B]");
       $$7b66f1cf.attr(a2, "class", "hover:text-[#004E7B]");
-      $$7b66f1cf.attr(div2, "class", "border-2 border-black");
       $$7b66f1cf.attr(a3, "class", "hover:text-[#004E7B]");
-      $$7b66f1cf.attr(a3, "href", "https://github.com/Fire-The-Fox/buchta");
+      $$7b66f1cf.attr(div2, "class", "border-2 border-black");
       $$7b66f1cf.attr(a4, "class", "hover:text-[#004E7B]");
+      $$7b66f1cf.attr(a4, "href", "https://github.com/Fire-The-Fox/buchta");
+      $$7b66f1cf.attr(a5, "class", "hover:text-[#004E7B]");
       $$7b66f1cf.attr(div3, "class", "flex flex-row gap-5 font-bold");
-      $$7b66f1cf.attr(nav, "class", "flex flex-row pl-36 pr-36 gap-5 h-12 items-center bg-white backdrop-blur-md bg-opacity-30 drop-shadow-lg fixed w-screen text-md p-2");
+      $$7b66f1cf.attr(nav, "class", "flex flex-row pl-36 pr-36 gap-5 h-12 items-center bg-white backdrop-blur-md bg-opacity-30 drop-shadow-lg fixed w-screen text-md p-2 z-10");
     },
     m(target, anchor) {
       $$7b66f1cf.insert_hydration(target, nav, anchor);
@@ -162,13 +179,16 @@ function create_fragment(ctx) {
       $$7b66f1cf.append_hydration(div3, a2);
       $$7b66f1cf.append_hydration(a2, t8);
       $$7b66f1cf.append_hydration(div3, t9);
-      $$7b66f1cf.append_hydration(div3, div2);
-      $$7b66f1cf.append_hydration(div3, t10);
       $$7b66f1cf.append_hydration(div3, a3);
-      $$7b66f1cf.append_hydration(a3, t11);
+      $$7b66f1cf.append_hydration(a3, t10);
+      $$7b66f1cf.append_hydration(div3, t11);
+      $$7b66f1cf.append_hydration(div3, div2);
       $$7b66f1cf.append_hydration(div3, t12);
       $$7b66f1cf.append_hydration(div3, a4);
       $$7b66f1cf.append_hydration(a4, t13);
+      $$7b66f1cf.append_hydration(div3, t14);
+      $$7b66f1cf.append_hydration(div3, a5);
+      $$7b66f1cf.append_hydration(a5, t15);
     },
     p: $$7b66f1cf.noop,
     i: $$7b66f1cf.noop,

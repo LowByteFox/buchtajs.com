@@ -11,6 +11,8 @@ const buchtaRoute = () => {
     };
   const url = new URL(currentPath);
   const paramDefs = path.match(/:.+?(?=\/)/g);
+  if (!paramDefs)
+    return { query: url.searchParams, params: null };
   const paths = path.split("/");
   const currentPaths = url.pathname.split("/");
   for (const el of paramDefs) {
@@ -22,11 +24,13 @@ const buchtaRoute = () => {
     params
   };
 };
+let bunVersion = "0.5.7";
+let buchtaVersion = "0.5-rc2";
 import { $7b66f1cf} from "./../bundle.js";
 var $$7b66f1cf = $7b66f1cf();
 function get_each_context(ctx, list, i) {
   const child_ctx = ctx.slice();
-  child_ctx[1] = list[i];
+  child_ctx[2] = list[i];
   return child_ctx;
 }
 function create_each_block(ctx) {
@@ -36,9 +40,8 @@ function create_each_block(ctx) {
   let img_src_value;
   let t0;
   let h2;
-  let t1_value = ctx[1][0] + "";
+  let t1_value = ctx[2][0] + "";
   let t1;
-  let t2;
   return {
     c() {
       div1 = $$7b66f1cf.element("div");
@@ -47,7 +50,6 @@ function create_each_block(ctx) {
       t0 = $$7b66f1cf.space();
       h2 = $$7b66f1cf.element("h2");
       t1 = $$7b66f1cf.text(t1_value);
-      t2 = $$7b66f1cf.space();
       this.h();
     },
     l(nodes) {
@@ -62,13 +64,12 @@ function create_each_block(ctx) {
       var h2_nodes = $$7b66f1cf.children(h2);
       t1 = $$7b66f1cf.claim_text(h2_nodes, t1_value);
       h2_nodes.forEach($$7b66f1cf.detach);
-      t2 = $$7b66f1cf.claim_space(div1_nodes);
       div1_nodes.forEach($$7b66f1cf.detach);
       this.h();
     },
     h() {
       $$7b66f1cf.attr(img, "class", "h-12 white-svg");
-      if (!$$7b66f1cf.src_url_equal(img.src, img_src_value = ctx[1][1]))
+      if (!$$7b66f1cf.src_url_equal(img.src, img_src_value = ctx[2][1]))
         $$7b66f1cf.attr(img, "src", img_src_value);
       $$7b66f1cf.attr(img, "alt", "");
       $$7b66f1cf.attr(div0, "class", "w-14 flex justify-center");
@@ -82,7 +83,6 @@ function create_each_block(ctx) {
       $$7b66f1cf.append_hydration(div1, t0);
       $$7b66f1cf.append_hydration(div1, h2);
       $$7b66f1cf.append_hydration(h2, t1);
-      $$7b66f1cf.append_hydration(div1, t2);
     },
     p: $$7b66f1cf.noop,
     d(detaching) {
@@ -103,8 +103,14 @@ function create_fragment(ctx) {
   let div1;
   let div0;
   let t4;
+  let button;
+  let h3;
+  let t5;
+  let t6;
   let img;
   let img_src_value;
+  let mounted;
+  let dispose;
   let each_value = ctx[0];
   let each_blocks = [];
   for (let i = 0;i < each_value.length; i += 1)
@@ -117,13 +123,17 @@ function create_fragment(ctx) {
       t0 = $$7b66f1cf.text("Buchta");
       t1 = $$7b66f1cf.space();
       h11 = $$7b66f1cf.element("h1");
-      t2 = $$7b66f1cf.text("Full Stack Framework Powered By Bun");
+      t2 = $$7b66f1cf.text("Full-Stack Framework Powered By Bun");
       t3 = $$7b66f1cf.space();
       div1 = $$7b66f1cf.element("div");
       div0 = $$7b66f1cf.element("div");
       for (let i = 0;i < each_blocks.length; i += 1)
         each_blocks[i].c();
       t4 = $$7b66f1cf.space();
+      button = $$7b66f1cf.element("button");
+      h3 = $$7b66f1cf.element("h3");
+      t5 = $$7b66f1cf.text("Lets get started!");
+      t6 = $$7b66f1cf.space();
       img = $$7b66f1cf.element("img");
       this.h();
     },
@@ -139,7 +149,7 @@ function create_fragment(ctx) {
       t1 = $$7b66f1cf.claim_space(div2_nodes);
       h11 = $$7b66f1cf.claim_element(div2_nodes, "H1", { class: true });
       var h11_nodes = $$7b66f1cf.children(h11);
-      t2 = $$7b66f1cf.claim_text(h11_nodes, "Full Stack Framework Powered By Bun");
+      t2 = $$7b66f1cf.claim_text(h11_nodes, "Full-Stack Framework Powered By Bun");
       h11_nodes.forEach($$7b66f1cf.detach);
       t3 = $$7b66f1cf.claim_space(div2_nodes);
       div1 = $$7b66f1cf.claim_element(div2_nodes, "DIV", { class: true });
@@ -148,8 +158,16 @@ function create_fragment(ctx) {
       var div0_nodes = $$7b66f1cf.children(div0);
       for (let i = 0;i < each_blocks.length; i += 1)
         each_blocks[i].l(div0_nodes);
+      t4 = $$7b66f1cf.claim_space(div0_nodes);
+      button = $$7b66f1cf.claim_element(div0_nodes, "BUTTON", { class: true });
+      var button_nodes = $$7b66f1cf.children(button);
+      h3 = $$7b66f1cf.claim_element(button_nodes, "H3", { class: true });
+      var h3_nodes = $$7b66f1cf.children(h3);
+      t5 = $$7b66f1cf.claim_text(h3_nodes, "Lets get started!");
+      h3_nodes.forEach($$7b66f1cf.detach);
+      button_nodes.forEach($$7b66f1cf.detach);
       div0_nodes.forEach($$7b66f1cf.detach);
-      t4 = $$7b66f1cf.claim_space(div1_nodes);
+      t6 = $$7b66f1cf.claim_space(div1_nodes);
       img = $$7b66f1cf.claim_element(div1_nodes, "IMG", { class: true, src: true, alt: true });
       div1_nodes.forEach($$7b66f1cf.detach);
       div2_nodes.forEach($$7b66f1cf.detach);
@@ -159,9 +177,11 @@ function create_fragment(ctx) {
     h() {
       $$7b66f1cf.attr(h10, "class", "text-[500%] mt-12 font-bold text-white");
       $$7b66f1cf.attr(h11, "class", "mt-4 ml-1 font-bold");
-      $$7b66f1cf.attr(div0, "class", "flex-grow mt-12");
-      $$7b66f1cf.attr(img, "class", "w-[35%]");
-      if (!$$7b66f1cf.src_url_equal(img.src, img_src_value = "https://raw.githubusercontent.com/Fire-The-Fox/buchta/develop/buchta.png"))
+      $$7b66f1cf.attr(h3, "class", "m-0 p-0");
+      $$7b66f1cf.attr(button, "class", "p-5 bg-black rounded-md text-white font-bold backdrop-blur-md bg-opacity-30 drop-shadow-lg w-auto");
+      $$7b66f1cf.attr(div0, "class", "mt-12");
+      $$7b66f1cf.attr(img, "class", "h-[580px] object-scale-down");
+      if (!$$7b66f1cf.src_url_equal(img.src, img_src_value = "/buchta.png"))
         $$7b66f1cf.attr(img, "src", img_src_value);
       $$7b66f1cf.attr(img, "alt", "Logo");
       $$7b66f1cf.attr(div1, "class", "flex flex-row, justify-between");
@@ -181,8 +201,16 @@ function create_fragment(ctx) {
       $$7b66f1cf.append_hydration(div1, div0);
       for (let i = 0;i < each_blocks.length; i += 1)
         each_blocks[i].m(div0, null);
-      $$7b66f1cf.append_hydration(div1, t4);
+      $$7b66f1cf.append_hydration(div0, t4);
+      $$7b66f1cf.append_hydration(div0, button);
+      $$7b66f1cf.append_hydration(button, h3);
+      $$7b66f1cf.append_hydration(h3, t5);
+      $$7b66f1cf.append_hydration(div1, t6);
       $$7b66f1cf.append_hydration(div1, img);
+      if (!mounted) {
+        dispose = $$7b66f1cf.listen(button, "click", ctx[1]);
+        mounted = true;
+      }
     },
     p(ctx, [dirty]) {
       if (dirty & 1) {
@@ -195,7 +223,7 @@ function create_fragment(ctx) {
           else {
             each_blocks[i] = create_each_block(child_ctx);
             each_blocks[i].c();
-            each_blocks[i].m(div0, null);
+            each_blocks[i].m(div0, t4);
           }
         }
         for (;i < each_blocks.length; i += 1)
@@ -209,6 +237,8 @@ function create_fragment(ctx) {
       if (detaching)
         $$7b66f1cf.detach(div3);
       $$7b66f1cf.destroy_each(each_blocks, detaching);
+      mounted = false;
+      dispose();
     }
   };
 }
@@ -223,7 +253,8 @@ function instance($$self) {
     ["Preact Support", "/icons/react.svg"],
     ["And Much More", "/icons/list.svg"]
   ];
-  return [features];
+  const click_handler = () => window.location = "#getStarted";
+  return [features, click_handler];
 }
 
 class Component extends $$7b66f1cf.SvelteComponent {

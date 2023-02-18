@@ -537,60 +537,116 @@ h4 {
   position: fixed;
 }
 
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.top-0 {
+  top: 0px;
+}
+
+.left-0 {
+  left: 0px;
+}
+
+.z-10 {
+  z-index: 10;
+}
+
 .m-auto {
   margin: auto;
 }
 
-.mt-12 {
-  margin-top: 3rem;
+.m-0 {
+  margin: 0px;
 }
 
-.mt-4 {
-  margin-top: 1rem;
+.mt-64 {
+  margin-top: 16rem;
 }
 
-.ml-1 {
-  margin-left: 0.25rem;
+.mb-12 {
+  margin-bottom: 3rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
 }
 
 .mt-5 {
   margin-top: 1.25rem;
 }
 
-.mt-10 {
-  margin-top: 2.5rem;
+.mt-24 {
+  margin-top: 6rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mt-12 {
+  margin-top: 3rem;
+}
+
+.ml-1 {
+  margin-left: 0.25rem;
+}
+
+.block {
+  display: block;
 }
 
 .flex {
   display: flex;
 }
 
-.h-16 {
-  height: 4rem;
+.h-24 {
+  height: 6rem;
 }
 
 .h-12 {
   height: 3rem;
 }
 
+.h-16 {
+  height: 4rem;
+}
+
+.h-\[580px\] {
+  height: 580px;
+}
+
 .w-\[85\%\] {
   width: 85%;
-}
-
-.w-14 {
-  width: 3.5rem;
-}
-
-.w-\[35\%\] {
-  width: 35%;
 }
 
 .w-screen {
   width: 100vw;
 }
 
+.w-14 {
+  width: 3.5rem;
+}
+
+.w-auto {
+  width: auto;
+}
+
 .flex-grow {
   flex-grow: 1;
+}
+
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .cursor-pointer {
@@ -599,6 +655,10 @@ h4 {
 
 .flex-row {
   flex-direction: row;
+}
+
+.flex-col {
+  flex-direction: column;
 }
 
 .items-center {
@@ -617,6 +677,14 @@ h4 {
   gap: 1.25rem;
 }
 
+.rounded-md {
+  border-radius: 0.375rem;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+
 .border-2 {
   border-width: 2px;
 }
@@ -624,6 +692,11 @@ h4 {
 .border-black {
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
+}
+
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
 .bg-white {
@@ -635,12 +708,29 @@ h4 {
   --tw-bg-opacity: 0.3;
 }
 
+.object-scale-down {
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
+}
+
 .p-2 {
   padding: 0.5rem;
 }
 
-.pt-24 {
-  padding-top: 6rem;
+.p-5 {
+  padding: 1.25rem;
+}
+
+.p-0 {
+  padding: 0px;
+}
+
+.pt-2 {
+  padding-top: 0.5rem;
+}
+
+.pb-12 {
+  padding-bottom: 3rem;
 }
 
 .pl-36 {
@@ -649,6 +739,10 @@ h4 {
 
 .pr-36 {
   padding-right: 9rem;
+}
+
+.pt-24 {
+  padding-top: 6rem;
 }
 
 .text-\[500\%\] {

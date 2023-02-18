@@ -14,9 +14,9 @@
 <div class="pt-24 w-[85%] m-auto justify-between items-center">
     <div class="flex-grow">
         <h1 class="text-[500%] mt-12 font-bold text-white">Buchta</h1>
-        <h1 class="mt-4 ml-1 font-bold">Full Stack Framework Powered By Bun</h1>
+        <h1 class="mt-4 ml-1 font-bold">Full-Stack Framework Powered By Bun</h1>
         <div class="flex flex-row, justify-between">
-            <div class="flex-grow mt-12">
+            <div class="mt-12">
                 {#each features as feature}
                 <div class="flex flex-row items-center h-16 gap-5">
                     <div class="w-14 flex justify-center">
@@ -25,11 +25,12 @@
                     <h2 class="font-bold text-white">{feature[0]}</h2>
                 </div>
                 {/each}
+                <button on:click={() => window.location = "#getStarted"} class="p-5 bg-black rounded-md text-white font-bold backdrop-blur-md bg-opacity-30 drop-shadow-lg w-auto"><h3 class="m-0 p-0">Lets get started!</h3></button>
             </div>
 
             <img
-                class="w-[35%]"
-                src="https://raw.githubusercontent.com/Fire-The-Fox/buchta/develop/buchta.png"
+                class="h-[580px] object-scale-down"
+                src="/buchta.png"
                 alt="Logo"
             />
         </div>
