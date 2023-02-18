@@ -1,0 +1,6 @@
+.white-svg { 
+    filter: invert(100%) sepia(0%) saturate(7499%) hue-rotate(314deg) brightness(101%) contrast(103%);
+}
+html {
+    scroll-behavior: smooth;
+}
