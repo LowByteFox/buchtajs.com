@@ -170,4 +170,4 @@ dist
 
 .buchta/
 node_modules/
-bun.lockb
+bun.lockbdist/
