@@ -25,7 +25,7 @@ const buchtaRoute = () => {
   };
 };
 let bunVersion = "0.5.6";
-let buchtaVersion = "0.5-rc2";
+let buchtaVersion = "0.5-rc3";
 let getDocsTree = [
   "docs/buchta",
   "docs/[page]"
@@ -61,7 +61,13 @@ function create_each_block(ctx) {
       var div1_nodes = $$7b66f1cf.children(div1);
       div0 = $$7b66f1cf.claim_element(div1_nodes, "DIV", { class: true });
       var div0_nodes = $$7b66f1cf.children(div0);
-      img = $$7b66f1cf.claim_element(div0_nodes, "IMG", { class: true, src: true, alt: true });
+      img = $$7b66f1cf.claim_element(div0_nodes, "IMG", {
+        class: true,
+        src: true,
+        alt: true,
+        width: true,
+        height: true
+      });
       div0_nodes.forEach($$7b66f1cf.detach);
       t0 = $$7b66f1cf.claim_space(div1_nodes);
       h2 = $$7b66f1cf.claim_element(div1_nodes, "H2", { class: true });
@@ -76,6 +82,8 @@ function create_each_block(ctx) {
       if (!$$7b66f1cf.src_url_equal(img.src, img_src_value = ctx[2][1]))
         $$7b66f1cf.attr(img, "src", img_src_value);
       $$7b66f1cf.attr(img, "alt", "");
+      $$7b66f1cf.attr(img, "width", "48");
+      $$7b66f1cf.attr(img, "height", "48");
       $$7b66f1cf.attr(div0, "class", "w-14 flex justify-center");
       $$7b66f1cf.attr(h2, "class", "font-bold text-white");
       $$7b66f1cf.attr(div1, "class", "flex flex-row items-center h-16 gap-5");
@@ -172,7 +180,13 @@ function create_fragment(ctx) {
       button_nodes.forEach($$7b66f1cf.detach);
       div0_nodes.forEach($$7b66f1cf.detach);
       t6 = $$7b66f1cf.claim_space(div1_nodes);
-      img = $$7b66f1cf.claim_element(div1_nodes, "IMG", { class: true, src: true, alt: true });
+      img = $$7b66f1cf.claim_element(div1_nodes, "IMG", {
+        class: true,
+        src: true,
+        alt: true,
+        height: true,
+        width: true
+      });
       div1_nodes.forEach($$7b66f1cf.detach);
       div2_nodes.forEach($$7b66f1cf.detach);
       div3_nodes.forEach($$7b66f1cf.detach);
@@ -185,9 +199,11 @@ function create_fragment(ctx) {
       $$7b66f1cf.attr(button, "class", "p-5 bg-black rounded-md text-white font-bold backdrop-blur-md bg-opacity-30 drop-shadow-lg w-auto");
       $$7b66f1cf.attr(div0, "class", "mt-12");
       $$7b66f1cf.attr(img, "class", "h-[580px] object-scale-down hidden lg:block");
-      if (!$$7b66f1cf.src_url_equal(img.src, img_src_value = "/buchta.png"))
+      if (!$$7b66f1cf.src_url_equal(img.src, img_src_value = "/buchta.webp"))
         $$7b66f1cf.attr(img, "src", img_src_value);
       $$7b66f1cf.attr(img, "alt", "Logo");
+      $$7b66f1cf.attr(img, "height", "580");
+      $$7b66f1cf.attr(img, "width", "580");
       $$7b66f1cf.attr(div1, "class", "flex flex-row, justify-between");
       $$7b66f1cf.attr(div2, "class", "flex-grow");
       $$7b66f1cf.attr(div3, "class", "pt-24 w-[85%] m-auto justify-between items-center");
@@ -268,8 +284,3 @@ class Component extends $$7b66f1cf.SvelteComponent {
   }
 }
 export default Component;
-
-new Component({
-    target: document.body,
-    hydrate: true
-});
