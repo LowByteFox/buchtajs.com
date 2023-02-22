@@ -17,20 +17,23 @@
     <link rel="stylesheet" href="/hljs.css">
 </head>
 <body>
-<main class="svelte-180lr59"><div class="svelte-180lr59"><nav class="flex flex-row pl-36 pr-36 gap-5 h-12 items-center bg-white backdrop-blur-md bg-opacity-30 drop-shadow-lg fixed w-screen text-md p-2 z-10"><img src="/buchta.png" alt="Icon" width="32">
+<main class="svelte-180lr59"><div class="svelte-180lr59"><nav class="flex flex-row md:pl-36 md:pr-36 gap-5 h-12 items-center bg-white backdrop-blur-md bg-opacity-30 drop-shadow-lg fixed w-screen text-md p-2 z-10"><img src="/buchta.png" alt="Icon" width="32">
     <div class="font-bold">Buchta</div>
 
     <div class="flex-grow"></div>
 
-    <div class="flex flex-row gap-5 font-bold"><a href="/#getStarted" class="hover:text-[#004E7B] cursor-pointer">Get Started</a>
-        <a class="hover:text-[#004E7B]">Blog</a>
+    <div class="flex-row gap-5 font-bold hidden md:flex"><a href="/#getStarted" class="hover:text-[#004E7B] cursor-pointer">Get Started</a>
+        
         <a class="hover:text-[#004E7B]" href="/docs/">Docs</a>
-        <a class="hover:text-[#004E7B]">Showroom</a>
-        <div class="border-2 border-black"></div>
+        
+        <div class="border border-black"></div>
         <a class="hover:text-[#004E7B]" href="https://github.com/Fire-The-Fox/buchta">Github</a>
-        <a class="hover:text-[#004E7B]">Discord</a></div></nav>
+        </div>
+    
+    <img class="h-8 md:hidden" src="/icons/bars.svg" alt="">
+    </nav>
         <div class="pt-24 w-[85%] m-auto justify-between items-center"><div class="flex-grow"><h1 class="text-[500%] mt-12 font-bold text-white">Buchta</h1>
-        <h1 class="mt-4 ml-1 font-bold">Full-Stack Framework Powered By Bun</h1>
+        <h2 class="mt-4 ml-1 font-bold text-3xl">Full-Stack Framework Powered By Bun</h2>
         <div class="flex flex-row, justify-between"><div class="mt-12"><div class="flex flex-row items-center h-16 gap-5"><div class="w-14 flex justify-center"><img class="h-12 white-svg" src="/icons/speed.svg" alt=""></div>
                     <h2 class="font-bold text-white">Powerful</h2>
                 </div><div class="flex flex-row items-center h-16 gap-5"><div class="w-14 flex justify-center"><img class="h-12 white-svg" src="/icons/feather.svg" alt=""></div>
@@ -50,9 +53,9 @@
                 </div>
                 <button class="p-5 bg-black rounded-md text-white font-bold backdrop-blur-md bg-opacity-30 drop-shadow-lg w-auto"><h3 class="m-0 p-0">Lets get started!</h3></button></div>
 
-            <img class="h-[580px] object-scale-down" src="/buchta.png" alt="Logo"></div></div></div>
-    <main class="w-[85%] m-auto mt-64 mb-12 text-white"><h1 class="font-bold mb-4" id="getStarted"> </h1>
-        <h1 class="font-bold mb-4">Getting Started</h1>
+            <img class="h-[580px] object-scale-down hidden lg:block" src="/buchta.png" alt="Logo"></div></div></div>
+    <main class="w-[95%] md:w-[85%] m-auto mt-64 mb-12 text-white"><h2 class="font-bold mb-4" id="getStarted"> </h2>
+        <h2 class="font-bold mb-4 text-3xl">Getting Started</h2>
         <h2>Create simple project</h2>
         <pre class="language-shell bg-black rounded-md backdrop-blur-md bg-opacity-30 mt-5"><code>$ bun x buchta init &lt;project-name></code></pre>
         <h2 class="pt-2">Change into project directory</h2>
@@ -60,7 +63,7 @@
         <h2 class="pt-2">Install dependencies and start buchta</h2>
         <pre class="language-shell bg-black rounded-md backdrop-blur-md bg-opacity-30 mt-5"><code>$ bun install &amp;&amp; bun run buchta serve</code></pre>
         <h2 class="pt-2 font-bold">That&#39;s it!</h2>
-        <h1 class="mt-24 font-bold">What is Buchta?</h1>
+        <h2 class="mt-24 font-bold text-3xl">What is Buchta?</h2>
         <h2 class="mt-2 pb-12">Buchta is a full-stack web framework that lets you create web applications. Buchta is pretty boring, just plain HTML, CSS, js/ts, but when you add a few of its plugins, you&#39;ll for sure have fun. Buchta currently supports Svelte, Preact, and Markdown. Buchta is complex on the inside but simple on the outside allowing users and developers creating their plugins to have an easy time.</h2>
 
         <div class="flex flex-col items-center"><div class="mt-5"><div class="flex flex-row justify-center items-center gap-5"><img class="white-svg object-scale-down h-12" src="/icons/speed.svg" alt="Icon">
@@ -88,8 +91,8 @@
     <h2>Yes, but if you want to squeeze all the performance, consider using <a class="font-bold" href="https://elysiajs.com/" target="_blank">Elysia</a></h2>
     <h1 class="mt-4">When buchta started?</h1>
     <h2>Buchta started when Bun version 0.1.1 was released.</h2></div></main></div>
-    <footer class="flex flex-row pl-36 pr-36 gap-5 h-24 items-center w-screen text-md p-2 svelte-ucuuyk">
-    <h3 class="svelte-ucuuyk">Built with Buchta v0.5-rc2 and Bun v0.5.7</h3>
+    <footer class="flex flex-row md:pl-36 md:pr-36 gap-5 h-24 items-center w-screen text-md p-2 svelte-ucuuyk">
+    <h3 class="svelte-ucuuyk">Built with Buchta v0.5-rc2 and Bun v0.5.6</h3>
 </footer>
     <div class="top-0 fixed left-0 Z-50 svelte-180lr59" id="confetti"></div>
 </main>
@@ -103,11 +106,6 @@ import CarouselPage from "./components/CarouselPage.js"
 import Faq from "./components/Faq.js"
 import Layout from "./layout.js"
 
-import {
-__require as require
-} from "./bundle.js";
-import { $7b66f1cf, $f6e9706, $d7217306} from "./bundle.js";
-var common_4d20_0 = $d7217306();
 const buchtaRoute = () => {
   let params = new Map;
   const path = "/index.svelte";
@@ -134,12 +132,13 @@ const buchtaRoute = () => {
     params
   };
 };
+let bunVersion = "0.5.6";
+let buchtaVersion = "0.5-rc2";
 let getDocsTree = [
   "docs/buchta",
   "docs/[page]"
 ];
-let bunVersion = "0.5.7";
-let buchtaVersion = "0.5-rc2";
+import { $7b66f1cf, $f6e9706} from "./bundle.js";
 var $$7b66f1cf = $7b66f1cf();
 var $$f6e9706 = $f6e9706();
 function create_default_slot_5(ctx) {
@@ -418,19 +417,19 @@ function create_default_slot_1(ctx) {
     },
     p(ctx, dirty) {
       const carouselpage0_changes = {};
-      if (dirty & 2)
+      if (dirty & 1)
         carouselpage0_changes.$$scope = { dirty, ctx };
       carouselpage0.$set(carouselpage0_changes);
       const carouselpage1_changes = {};
-      if (dirty & 2)
+      if (dirty & 1)
         carouselpage1_changes.$$scope = { dirty, ctx };
       carouselpage1.$set(carouselpage1_changes);
       const carouselpage2_changes = {};
-      if (dirty & 2)
+      if (dirty & 1)
         carouselpage2_changes.$$scope = { dirty, ctx };
       carouselpage2.$set(carouselpage2_changes);
       const carouselpage3_changes = {};
-      if (dirty & 2)
+      if (dirty & 1)
         carouselpage3_changes.$$scope = { dirty, ctx };
       carouselpage3.$set(carouselpage3_changes);
     },
@@ -468,13 +467,13 @@ function create_default_slot(ctx) {
   let banner;
   let t0;
   let main;
-  let h10;
+  let h20;
   let t1;
   let t2;
-  let h11;
+  let h21;
   let t3;
   let t4;
-  let h20;
+  let h22;
   let t5;
   let t6;
   let pre0;
@@ -482,7 +481,7 @@ function create_default_slot(ctx) {
   let t7_value = `\$ bun x buchta init <project-name>`;
   let t7;
   let t8;
-  let h21;
+  let h23;
   let t9;
   let t10;
   let pre1;
@@ -490,7 +489,7 @@ function create_default_slot(ctx) {
   let t11_value = `\$ cd <project-name>`;
   let t11;
   let t12;
-  let h22;
+  let h24;
   let t13;
   let t14;
   let pre2;
@@ -498,13 +497,13 @@ function create_default_slot(ctx) {
   let t15_value = `\$ bun install && bun run buchta serve`;
   let t15;
   let t16;
-  let h23;
+  let h25;
   let t17;
   let t18;
-  let h12;
+  let h26;
   let t19;
   let t20;
-  let h24;
+  let h27;
   let t21;
   let t22;
   let carousel;
@@ -524,40 +523,40 @@ function create_default_slot(ctx) {
       $$7b66f1cf.create_component(banner.$$.fragment);
       t0 = $$7b66f1cf.space();
       main = $$7b66f1cf.element("main");
-      h10 = $$7b66f1cf.element("h1");
+      h20 = $$7b66f1cf.element("h2");
       t1 = $$7b66f1cf.text("\xA0");
       t2 = $$7b66f1cf.space();
-      h11 = $$7b66f1cf.element("h1");
+      h21 = $$7b66f1cf.element("h2");
       t3 = $$7b66f1cf.text("Getting Started");
       t4 = $$7b66f1cf.space();
-      h20 = $$7b66f1cf.element("h2");
+      h22 = $$7b66f1cf.element("h2");
       t5 = $$7b66f1cf.text("Create simple project");
       t6 = $$7b66f1cf.space();
       pre0 = $$7b66f1cf.element("pre");
       code0 = $$7b66f1cf.element("code");
       t7 = $$7b66f1cf.text(t7_value);
       t8 = $$7b66f1cf.space();
-      h21 = $$7b66f1cf.element("h2");
+      h23 = $$7b66f1cf.element("h2");
       t9 = $$7b66f1cf.text("Change into project directory");
       t10 = $$7b66f1cf.space();
       pre1 = $$7b66f1cf.element("pre");
       code1 = $$7b66f1cf.element("code");
       t11 = $$7b66f1cf.text(t11_value);
       t12 = $$7b66f1cf.space();
-      h22 = $$7b66f1cf.element("h2");
+      h24 = $$7b66f1cf.element("h2");
       t13 = $$7b66f1cf.text("Install dependencies and start buchta");
       t14 = $$7b66f1cf.space();
       pre2 = $$7b66f1cf.element("pre");
       code2 = $$7b66f1cf.element("code");
       t15 = $$7b66f1cf.text(t15_value);
       t16 = $$7b66f1cf.space();
-      h23 = $$7b66f1cf.element("h2");
+      h25 = $$7b66f1cf.element("h2");
       t17 = $$7b66f1cf.text("That's it!");
       t18 = $$7b66f1cf.space();
-      h12 = $$7b66f1cf.element("h1");
+      h26 = $$7b66f1cf.element("h2");
       t19 = $$7b66f1cf.text("What is Buchta?");
       t20 = $$7b66f1cf.space();
-      h24 = $$7b66f1cf.element("h2");
+      h27 = $$7b66f1cf.element("h2");
       t21 = $$7b66f1cf.text("Buchta is a full-stack web framework that lets you create web applications. Buchta is pretty boring, just plain HTML, CSS, js/ts, but when you add a few of its plugins, you'll for sure have fun. Buchta currently supports Svelte, Preact, and Markdown. Buchta is complex on the inside but simple on the outside allowing users and developers creating their plugins to have an easy time.");
       t22 = $$7b66f1cf.space();
       $$7b66f1cf.create_component(carousel.$$.fragment);
@@ -570,20 +569,20 @@ function create_default_slot(ctx) {
       t0 = $$7b66f1cf.claim_space(nodes);
       main = $$7b66f1cf.claim_element(nodes, "MAIN", { class: true });
       var main_nodes = $$7b66f1cf.children(main);
-      h10 = $$7b66f1cf.claim_element(main_nodes, "H1", { class: true, id: true });
-      var h10_nodes = $$7b66f1cf.children(h10);
-      t1 = $$7b66f1cf.claim_text(h10_nodes, "\xA0");
-      h10_nodes.forEach($$7b66f1cf.detach);
-      t2 = $$7b66f1cf.claim_space(main_nodes);
-      h11 = $$7b66f1cf.claim_element(main_nodes, "H1", { class: true });
-      var h11_nodes = $$7b66f1cf.children(h11);
-      t3 = $$7b66f1cf.claim_text(h11_nodes, "Getting Started");
-      h11_nodes.forEach($$7b66f1cf.detach);
-      t4 = $$7b66f1cf.claim_space(main_nodes);
-      h20 = $$7b66f1cf.claim_element(main_nodes, "H2", {});
+      h20 = $$7b66f1cf.claim_element(main_nodes, "H2", { class: true, id: true });
       var h20_nodes = $$7b66f1cf.children(h20);
-      t5 = $$7b66f1cf.claim_text(h20_nodes, "Create simple project");
+      t1 = $$7b66f1cf.claim_text(h20_nodes, "\xA0");
       h20_nodes.forEach($$7b66f1cf.detach);
+      t2 = $$7b66f1cf.claim_space(main_nodes);
+      h21 = $$7b66f1cf.claim_element(main_nodes, "H2", { class: true });
+      var h21_nodes = $$7b66f1cf.children(h21);
+      t3 = $$7b66f1cf.claim_text(h21_nodes, "Getting Started");
+      h21_nodes.forEach($$7b66f1cf.detach);
+      t4 = $$7b66f1cf.claim_space(main_nodes);
+      h22 = $$7b66f1cf.claim_element(main_nodes, "H2", {});
+      var h22_nodes = $$7b66f1cf.children(h22);
+      t5 = $$7b66f1cf.claim_text(h22_nodes, "Create simple project");
+      h22_nodes.forEach($$7b66f1cf.detach);
       t6 = $$7b66f1cf.claim_space(main_nodes);
       pre0 = $$7b66f1cf.claim_element(main_nodes, "PRE", { class: true });
       var pre0_nodes = $$7b66f1cf.children(pre0);
@@ -593,10 +592,10 @@ function create_default_slot(ctx) {
       code0_nodes.forEach($$7b66f1cf.detach);
       pre0_nodes.forEach($$7b66f1cf.detach);
       t8 = $$7b66f1cf.claim_space(main_nodes);
-      h21 = $$7b66f1cf.claim_element(main_nodes, "H2", { class: true });
-      var h21_nodes = $$7b66f1cf.children(h21);
-      t9 = $$7b66f1cf.claim_text(h21_nodes, "Change into project directory");
-      h21_nodes.forEach($$7b66f1cf.detach);
+      h23 = $$7b66f1cf.claim_element(main_nodes, "H2", { class: true });
+      var h23_nodes = $$7b66f1cf.children(h23);
+      t9 = $$7b66f1cf.claim_text(h23_nodes, "Change into project directory");
+      h23_nodes.forEach($$7b66f1cf.detach);
       t10 = $$7b66f1cf.claim_space(main_nodes);
       pre1 = $$7b66f1cf.claim_element(main_nodes, "PRE", { class: true });
       var pre1_nodes = $$7b66f1cf.children(pre1);
@@ -606,10 +605,10 @@ function create_default_slot(ctx) {
       code1_nodes.forEach($$7b66f1cf.detach);
       pre1_nodes.forEach($$7b66f1cf.detach);
       t12 = $$7b66f1cf.claim_space(main_nodes);
-      h22 = $$7b66f1cf.claim_element(main_nodes, "H2", { class: true });
-      var h22_nodes = $$7b66f1cf.children(h22);
-      t13 = $$7b66f1cf.claim_text(h22_nodes, "Install dependencies and start buchta");
-      h22_nodes.forEach($$7b66f1cf.detach);
+      h24 = $$7b66f1cf.claim_element(main_nodes, "H2", { class: true });
+      var h24_nodes = $$7b66f1cf.children(h24);
+      t13 = $$7b66f1cf.claim_text(h24_nodes, "Install dependencies and start buchta");
+      h24_nodes.forEach($$7b66f1cf.detach);
       t14 = $$7b66f1cf.claim_space(main_nodes);
       pre2 = $$7b66f1cf.claim_element(main_nodes, "PRE", { class: true });
       var pre2_nodes = $$7b66f1cf.children(pre2);
@@ -619,20 +618,20 @@ function create_default_slot(ctx) {
       code2_nodes.forEach($$7b66f1cf.detach);
       pre2_nodes.forEach($$7b66f1cf.detach);
       t16 = $$7b66f1cf.claim_space(main_nodes);
-      h23 = $$7b66f1cf.claim_element(main_nodes, "H2", { class: true });
-      var h23_nodes = $$7b66f1cf.children(h23);
-      t17 = $$7b66f1cf.claim_text(h23_nodes, "That's it!");
-      h23_nodes.forEach($$7b66f1cf.detach);
+      h25 = $$7b66f1cf.claim_element(main_nodes, "H2", { class: true });
+      var h25_nodes = $$7b66f1cf.children(h25);
+      t17 = $$7b66f1cf.claim_text(h25_nodes, "That's it!");
+      h25_nodes.forEach($$7b66f1cf.detach);
       t18 = $$7b66f1cf.claim_space(main_nodes);
-      h12 = $$7b66f1cf.claim_element(main_nodes, "H1", { class: true });
-      var h12_nodes = $$7b66f1cf.children(h12);
-      t19 = $$7b66f1cf.claim_text(h12_nodes, "What is Buchta?");
-      h12_nodes.forEach($$7b66f1cf.detach);
+      h26 = $$7b66f1cf.claim_element(main_nodes, "H2", { class: true });
+      var h26_nodes = $$7b66f1cf.children(h26);
+      t19 = $$7b66f1cf.claim_text(h26_nodes, "What is Buchta?");
+      h26_nodes.forEach($$7b66f1cf.detach);
       t20 = $$7b66f1cf.claim_space(main_nodes);
-      h24 = $$7b66f1cf.claim_element(main_nodes, "H2", { class: true });
-      var h24_nodes = $$7b66f1cf.children(h24);
-      t21 = $$7b66f1cf.claim_text(h24_nodes, "Buchta is a full-stack web framework that lets you create web applications. Buchta is pretty boring, just plain HTML, CSS, js/ts, but when you add a few of its plugins, you'll for sure have fun. Buchta currently supports Svelte, Preact, and Markdown. Buchta is complex on the inside but simple on the outside allowing users and developers creating their plugins to have an easy time.");
-      h24_nodes.forEach($$7b66f1cf.detach);
+      h27 = $$7b66f1cf.claim_element(main_nodes, "H2", { class: true });
+      var h27_nodes = $$7b66f1cf.children(h27);
+      t21 = $$7b66f1cf.claim_text(h27_nodes, "Buchta is a full-stack web framework that lets you create web applications. Buchta is pretty boring, just plain HTML, CSS, js/ts, but when you add a few of its plugins, you'll for sure have fun. Buchta currently supports Svelte, Preact, and Markdown. Buchta is complex on the inside but simple on the outside allowing users and developers creating their plugins to have an easy time.");
+      h27_nodes.forEach($$7b66f1cf.detach);
       t22 = $$7b66f1cf.claim_space(main_nodes);
       $$7b66f1cf.claim_component(carousel.$$.fragment, main_nodes);
       t23 = $$7b66f1cf.claim_space(main_nodes);
@@ -641,58 +640,58 @@ function create_default_slot(ctx) {
       this.h();
     },
     h() {
-      $$7b66f1cf.attr(h10, "class", "font-bold mb-4");
-      $$7b66f1cf.attr(h10, "id", "getStarted");
-      $$7b66f1cf.attr(h11, "class", "font-bold mb-4");
+      $$7b66f1cf.attr(h20, "class", "font-bold mb-4");
+      $$7b66f1cf.attr(h20, "id", "getStarted");
+      $$7b66f1cf.attr(h21, "class", "font-bold mb-4 text-3xl");
       $$7b66f1cf.attr(pre0, "class", "language-shell bg-black rounded-md backdrop-blur-md bg-opacity-30 mt-5");
-      $$7b66f1cf.attr(h21, "class", "pt-2");
+      $$7b66f1cf.attr(h23, "class", "pt-2");
       $$7b66f1cf.attr(pre1, "class", "language-shell bg-black rounded-md backdrop-blur-md bg-opacity-30 mt-5");
-      $$7b66f1cf.attr(h22, "class", "pt-2");
+      $$7b66f1cf.attr(h24, "class", "pt-2");
       $$7b66f1cf.attr(pre2, "class", "language-shell bg-black rounded-md backdrop-blur-md bg-opacity-30 mt-5");
-      $$7b66f1cf.attr(h23, "class", "pt-2 font-bold");
-      $$7b66f1cf.attr(h12, "class", "mt-24 font-bold");
-      $$7b66f1cf.attr(h24, "class", "mt-2 pb-12");
-      $$7b66f1cf.attr(main, "class", "w-[85%] m-auto mt-64 mb-12 text-white");
+      $$7b66f1cf.attr(h25, "class", "pt-2 font-bold");
+      $$7b66f1cf.attr(h26, "class", "mt-24 font-bold text-3xl");
+      $$7b66f1cf.attr(h27, "class", "mt-2 pb-12");
+      $$7b66f1cf.attr(main, "class", "w-[95%] md:w-[85%] m-auto mt-64 mb-12 text-white");
     },
     m(target, anchor) {
       $$7b66f1cf.mount_component(banner, target, anchor);
       $$7b66f1cf.insert_hydration(target, t0, anchor);
       $$7b66f1cf.insert_hydration(target, main, anchor);
-      $$7b66f1cf.append_hydration(main, h10);
-      $$7b66f1cf.append_hydration(h10, t1);
-      $$7b66f1cf.append_hydration(main, t2);
-      $$7b66f1cf.append_hydration(main, h11);
-      $$7b66f1cf.append_hydration(h11, t3);
-      $$7b66f1cf.append_hydration(main, t4);
       $$7b66f1cf.append_hydration(main, h20);
-      $$7b66f1cf.append_hydration(h20, t5);
+      $$7b66f1cf.append_hydration(h20, t1);
+      $$7b66f1cf.append_hydration(main, t2);
+      $$7b66f1cf.append_hydration(main, h21);
+      $$7b66f1cf.append_hydration(h21, t3);
+      $$7b66f1cf.append_hydration(main, t4);
+      $$7b66f1cf.append_hydration(main, h22);
+      $$7b66f1cf.append_hydration(h22, t5);
       $$7b66f1cf.append_hydration(main, t6);
       $$7b66f1cf.append_hydration(main, pre0);
       $$7b66f1cf.append_hydration(pre0, code0);
       $$7b66f1cf.append_hydration(code0, t7);
       $$7b66f1cf.append_hydration(main, t8);
-      $$7b66f1cf.append_hydration(main, h21);
-      $$7b66f1cf.append_hydration(h21, t9);
+      $$7b66f1cf.append_hydration(main, h23);
+      $$7b66f1cf.append_hydration(h23, t9);
       $$7b66f1cf.append_hydration(main, t10);
       $$7b66f1cf.append_hydration(main, pre1);
       $$7b66f1cf.append_hydration(pre1, code1);
       $$7b66f1cf.append_hydration(code1, t11);
       $$7b66f1cf.append_hydration(main, t12);
-      $$7b66f1cf.append_hydration(main, h22);
-      $$7b66f1cf.append_hydration(h22, t13);
+      $$7b66f1cf.append_hydration(main, h24);
+      $$7b66f1cf.append_hydration(h24, t13);
       $$7b66f1cf.append_hydration(main, t14);
       $$7b66f1cf.append_hydration(main, pre2);
       $$7b66f1cf.append_hydration(pre2, code2);
       $$7b66f1cf.append_hydration(code2, t15);
       $$7b66f1cf.append_hydration(main, t16);
-      $$7b66f1cf.append_hydration(main, h23);
-      $$7b66f1cf.append_hydration(h23, t17);
+      $$7b66f1cf.append_hydration(main, h25);
+      $$7b66f1cf.append_hydration(h25, t17);
       $$7b66f1cf.append_hydration(main, t18);
-      $$7b66f1cf.append_hydration(main, h12);
-      $$7b66f1cf.append_hydration(h12, t19);
+      $$7b66f1cf.append_hydration(main, h26);
+      $$7b66f1cf.append_hydration(h26, t19);
       $$7b66f1cf.append_hydration(main, t20);
-      $$7b66f1cf.append_hydration(main, h24);
-      $$7b66f1cf.append_hydration(h24, t21);
+      $$7b66f1cf.append_hydration(main, h27);
+      $$7b66f1cf.append_hydration(h27, t21);
       $$7b66f1cf.append_hydration(main, t22);
       $$7b66f1cf.mount_component(carousel, main, null);
       $$7b66f1cf.append_hydration(main, t23);
@@ -701,7 +700,7 @@ function create_default_slot(ctx) {
     },
     p(ctx, dirty) {
       const carousel_changes = {};
-      if (dirty & 2)
+      if (dirty & 1)
         carousel_changes.$$scope = { dirty, ctx };
       carousel.$set(carousel_changes);
     },
@@ -752,7 +751,7 @@ function create_fragment(ctx) {
     },
     p(ctx, [dirty]) {
       const layout_changes = {};
-      if (dirty & 2)
+      if (dirty & 1)
         layout_changes.$$scope = { dirty, ctx };
       layout.$set(layout_changes);
     },
@@ -771,21 +770,11 @@ function create_fragment(ctx) {
     }
   };
 }
-function instance($$self) {
-  const hljs = require(common_4d20_0);
-  if (typeof document != "undefined")
-    document.addEventListener("DOMContentLoaded", (event) => {
-      document.querySelectorAll("pre code").forEach((el) => {
-        hljs.highlightElement(el);
-      });
-    });
-  return [];
-}
 
 class Component extends $$7b66f1cf.SvelteComponent {
   constructor(options) {
     super();
-    $$7b66f1cf.init(this, options, instance, create_fragment, $$7b66f1cf.safe_not_equal, {});
+    $$7b66f1cf.init(this, options, null, create_fragment, $$7b66f1cf.safe_not_equal, {});
   }
 }
 export default Component;

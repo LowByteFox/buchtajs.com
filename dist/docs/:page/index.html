@@ -23,7 +23,7 @@
 </body>
 
 <script type="module">
-import Layout from "../layout.js"
+import Layout from "./layout.js"
 
 const buchtaRoute = () => {
   let params = new Map;
@@ -51,12 +51,12 @@ const buchtaRoute = () => {
     params
   };
 };
+let bunVersion = "0.5.6";
+let buchtaVersion = "0.5-rc2";
 let getDocsTree = [
   "docs/buchta",
   "docs/[page]"
 ];
-let bunVersion = "0.5.7";
-let buchtaVersion = "0.5-rc2";
 import { $7b66f1cf, $b13d3c26} from "./../../bundle.js";
 var $$7b66f1cf = $7b66f1cf();
 var $$b13d3c26 = $b13d3c26();

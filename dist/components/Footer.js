@@ -24,12 +24,12 @@ const buchtaRoute = () => {
     params
   };
 };
+let bunVersion = "0.5.6";
+let buchtaVersion = "0.5-rc2";
 let getDocsTree = [
   "docs/buchta",
   "docs/[page]"
 ];
-let bunVersion = "0.5.7";
-let buchtaVersion = "0.5-rc2";
 import { $7b66f1cf} from "./../bundle.js";
 var $$7b66f1cf = $7b66f1cf();
 function add_css(target) {
@@ -67,7 +67,7 @@ function create_fragment(ctx) {
     },
     h() {
       $$7b66f1cf.attr(h3, "class", "svelte-ucuuyk");
-      $$7b66f1cf.attr(footer, "class", "flex flex-row pl-36 pr-36 gap-5 h-24 items-center w-screen text-md p-2 svelte-ucuuyk");
+      $$7b66f1cf.attr(footer, "class", "flex flex-row md:pl-36 md:pr-36 gap-5 h-24 items-center w-screen text-md p-2 svelte-ucuuyk");
     },
     m(target, anchor) {
       $$7b66f1cf.insert_hydration(target, footer, anchor);
