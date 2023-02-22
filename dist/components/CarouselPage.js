@@ -62,7 +62,7 @@ function create_fragment(ctx) {
       var div1_nodes = $$7b66f1cf.children(div1);
       div0 = $$7b66f1cf.claim_element(div1_nodes, "DIV", { class: true });
       var div0_nodes = $$7b66f1cf.children(div0);
-      img = $$7b66f1cf.claim_element(div0_nodes, "IMG", { class: true, src: true, alt: true });
+      img = $$7b66f1cf.claim_element(div0_nodes, "IMG", { class: true, src: true, alt: true, height: true, width: true });
       t0 = $$7b66f1cf.claim_space(div0_nodes);
       h2 = $$7b66f1cf.claim_element(div0_nodes, "H2", { class: true });
       var h2_nodes = $$7b66f1cf.children(h2);
@@ -80,6 +80,8 @@ function create_fragment(ctx) {
       if (!$$7b66f1cf.src_url_equal(img.src, img_src_value = "/icons/" + ctx[0]))
         $$7b66f1cf.attr(img, "src", img_src_value);
       $$7b66f1cf.attr(img, "alt", "Icon");
+      $$7b66f1cf.attr(img, "height", "48");
+      $$7b66f1cf.attr(img, "width", "48");
       $$7b66f1cf.attr(h2, "class", "font-bold");
       $$7b66f1cf.attr(div0, "class", "flex flex-row justify-center items-center gap-5");
       $$7b66f1cf.attr(div1, "class", "mt-5");
