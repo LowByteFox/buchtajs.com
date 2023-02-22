@@ -24,12 +24,12 @@ const buchtaRoute = () => {
     params
   };
 };
+let bunVersion = "0.5.6";
+let buchtaVersion = "0.5-rc2";
 let getDocsTree = [
   "docs/buchta",
   "docs/[page]"
 ];
-let bunVersion = "0.5.7";
-let buchtaVersion = "0.5-rc2";
 import { $7b66f1cf, $f6e9706} from "./../bundle.js";
 var $$7b66f1cf = $7b66f1cf();
 var $$f6e9706 = $f6e9706();
@@ -55,18 +55,24 @@ function create_else_block(ctx) {
       ul = $$7b66f1cf.element("ul");
       for (let i = 0;i < each_blocks.length; i += 1)
         each_blocks[i].c();
+      this.h();
     },
     l(nodes) {
-      div = $$7b66f1cf.claim_element(nodes, "DIV", {});
+      div = $$7b66f1cf.claim_element(nodes, "DIV", { class: true });
       var div_nodes = $$7b66f1cf.children(div);
       t0 = $$7b66f1cf.claim_text(div_nodes, ctx[0]);
       div_nodes.forEach($$7b66f1cf.detach);
       t1 = $$7b66f1cf.claim_space(nodes);
-      ul = $$7b66f1cf.claim_element(nodes, "UL", {});
+      ul = $$7b66f1cf.claim_element(nodes, "UL", { class: true });
       var ul_nodes = $$7b66f1cf.children(ul);
       for (let i = 0;i < each_blocks.length; i += 1)
         each_blocks[i].l(ul_nodes);
       ul_nodes.forEach($$7b66f1cf.detach);
+      this.h();
+    },
+    h() {
+      $$7b66f1cf.attr(div, "class", "text-xl");
+      $$7b66f1cf.attr(ul, "class", "text-xl");
     },
     m(target, anchor) {
       $$7b66f1cf.insert_hydration(target, div, anchor);
@@ -109,30 +115,39 @@ function create_else_block(ctx) {
   };
 }
 function create_if_block(ctx) {
-  let div;
+  let a;
   let t;
+  let a_href_value;
   return {
     c() {
-      div = $$7b66f1cf.element("div");
+      a = $$7b66f1cf.element("a");
       t = $$7b66f1cf.text(ctx[0]);
+      this.h();
     },
     l(nodes) {
-      div = $$7b66f1cf.claim_element(nodes, "DIV", {});
-      var div_nodes = $$7b66f1cf.children(div);
-      t = $$7b66f1cf.claim_text(div_nodes, ctx[0]);
-      div_nodes.forEach($$7b66f1cf.detach);
+      a = $$7b66f1cf.claim_element(nodes, "A", { class: true, href: true });
+      var a_nodes = $$7b66f1cf.children(a);
+      t = $$7b66f1cf.claim_text(a_nodes, ctx[0]);
+      a_nodes.forEach($$7b66f1cf.detach);
+      this.h();
+    },
+    h() {
+      $$7b66f1cf.attr(a, "class", "text-xl");
+      $$7b66f1cf.attr(a, "href", a_href_value = "/docs/" + ctx[0] + "/");
     },
     m(target, anchor) {
-      $$7b66f1cf.insert_hydration(target, div, anchor);
-      $$7b66f1cf.append_hydration(div, t);
+      $$7b66f1cf.insert_hydration(target, a, anchor);
+      $$7b66f1cf.append_hydration(a, t);
     },
     p(ctx, dirty) {
       if (dirty & 1)
         $$7b66f1cf.set_data(t, ctx[0]);
+      if (dirty & 1 && a_href_value !== (a_href_value = "/docs/" + ctx[0] + "/"))
+        $$7b66f1cf.attr(a, "href", a_href_value);
     },
     d(detaching) {
       if (detaching)
-        $$7b66f1cf.detach(div);
+        $$7b66f1cf.detach(a);
     }
   };
 }
@@ -150,7 +165,7 @@ function create_each_block(ctx) {
       this.h();
     },
     l(nodes) {
-      li = $$7b66f1cf.claim_element(nodes, "LI", {});
+      li = $$7b66f1cf.claim_element(nodes, "LI", { class: true });
       var li_nodes = $$7b66f1cf.children(li);
       a = $$7b66f1cf.claim_element(li_nodes, "A", { href: true });
       var a_nodes = $$7b66f1cf.children(a);
@@ -161,6 +176,7 @@ function create_each_block(ctx) {
     },
     h() {
       $$7b66f1cf.attr(a, "href", a_href_value = "#" + ctx[3].innerText.toLowerCase().replaceAll(" ", "-"));
+      $$7b66f1cf.attr(li, "class", "ml-5 list-disc");
     },
     m(target, anchor) {
       $$7b66f1cf.insert_hydration(target, li, anchor);

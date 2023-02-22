@@ -2,6 +2,11 @@ import Confetti from "./components/Confetti.js"
 import Navbar from "./components/Navbar.js"
 import Footer from "./components/Footer.js"
 
+import {
+__require as require
+} from "./bundle.js";
+import { $7b66f1cf, $f6e9706, $d7217306} from "./bundle.js";
+var common_4d20_0 = $d7217306();
 const buchtaRoute = () => {
   let params = new Map;
   const path = "/layout.svelte";
@@ -28,14 +33,14 @@ const buchtaRoute = () => {
     params
   };
 };
+let bunVersion = "0.5.6";
+let buchtaVersion = "0.5-rc2";
 let getDocsTree = [
   "docs/buchta",
   "docs/[page]"
 ];
-let bunVersion = "0.5.7";
-let buchtaVersion = "0.5-rc2";
-import { $7b66f1cf} from "./bundle.js";
 var $$7b66f1cf = $7b66f1cf();
+var $$f6e9706 = $f6e9706();
 function add_css(target) {
   $$7b66f1cf.append_styles(target, "svelte-180lr59", "main.svelte-180lr59:not(#confetti){display:flex;flex-direction:column}div.svelte-180lr59:not(#confetti){min-height:calc(100vh - 96px);width:100vw;background-image:linear-gradient(\n            to right top,\n            #051937,\n            #004d7a,\n            #008793,\n            #00bf72,\n            #a8eb12\n        )}");
 }
@@ -49,9 +54,9 @@ function create_fragment(ctx) {
   let t2;
   let div1;
   let current;
-  navbar = new Navbar({});
-  const default_slot_template = ctx[1].default;
-  const default_slot = $$7b66f1cf.create_slot(default_slot_template, ctx, ctx[0], null);
+  navbar = new Navbar({ props: { route: ctx[0] } });
+  const default_slot_template = ctx[2].default;
+  const default_slot = $$7b66f1cf.create_slot(default_slot_template, ctx, ctx[1], null);
   footer = new Footer({});
   return {
     c() {
@@ -106,9 +111,13 @@ function create_fragment(ctx) {
       current = true;
     },
     p(ctx, [dirty]) {
+      const navbar_changes = {};
+      if (dirty & 1)
+        navbar_changes.route = ctx[0];
+      navbar.$set(navbar_changes);
       if (default_slot) {
-        if (default_slot.p && (!current || dirty & 1))
-          $$7b66f1cf.update_slot_base(default_slot, default_slot_template, ctx, ctx[0], !current ? $$7b66f1cf.get_all_dirty_from_scope(ctx[0]) : $$7b66f1cf.get_slot_changes(default_slot_template, ctx[0], dirty, null), null);
+        if (default_slot.p && (!current || dirty & 2))
+          $$7b66f1cf.update_slot_base(default_slot, default_slot_template, ctx, ctx[1], !current ? $$7b66f1cf.get_all_dirty_from_scope(ctx[1]) : $$7b66f1cf.get_slot_changes(default_slot_template, ctx[1], dirty, null), null);
       }
     },
     i(local) {
@@ -137,17 +146,26 @@ function create_fragment(ctx) {
 }
 function instance($$self, $$props, $$invalidate) {
   let { $$slots: slots = {}, $$scope } = $$props;
+  const hljs = require(common_4d20_0);
+  $$f6e9706.onMount(() => {
+    document.querySelectorAll("pre code").forEach((el) => {
+      hljs.highlightElement(el);
+    });
+  });
+  let { route } = $$props;
   $$self.$$set = ($$props) => {
+    if ("route" in $$props)
+      $$invalidate(0, route = $$props.route);
     if ("$$scope" in $$props)
-      $$invalidate(0, $$scope = $$props.$$scope);
+      $$invalidate(1, $$scope = $$props.$$scope);
   };
-  return [$$scope, slots];
+  return [route, $$scope, slots];
 }
 
 class Component extends $$7b66f1cf.SvelteComponent {
   constructor(options) {
     super();
-    $$7b66f1cf.init(this, options, instance, create_fragment, $$7b66f1cf.safe_not_equal, {}, add_css);
+    $$7b66f1cf.init(this, options, instance, create_fragment, $$7b66f1cf.safe_not_equal, { route: 0 }, add_css);
   }
 }
 export default Component;

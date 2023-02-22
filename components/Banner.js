@@ -24,12 +24,12 @@ const buchtaRoute = () => {
     params
   };
 };
+let bunVersion = "0.5.6";
+let buchtaVersion = "0.5-rc2";
 let getDocsTree = [
   "docs/buchta",
   "docs/[page]"
 ];
-let bunVersion = "0.5.7";
-let buchtaVersion = "0.5-rc2";
 import { $7b66f1cf} from "./../bundle.js";
 var $$7b66f1cf = $7b66f1cf();
 function get_each_context(ctx, list, i) {
@@ -98,10 +98,10 @@ function create_each_block(ctx) {
 function create_fragment(ctx) {
   let div3;
   let div2;
-  let h10;
+  let h1;
   let t0;
   let t1;
-  let h11;
+  let h2;
   let t2;
   let t3;
   let div1;
@@ -123,10 +123,10 @@ function create_fragment(ctx) {
     c() {
       div3 = $$7b66f1cf.element("div");
       div2 = $$7b66f1cf.element("div");
-      h10 = $$7b66f1cf.element("h1");
+      h1 = $$7b66f1cf.element("h1");
       t0 = $$7b66f1cf.text("Buchta");
       t1 = $$7b66f1cf.space();
-      h11 = $$7b66f1cf.element("h1");
+      h2 = $$7b66f1cf.element("h2");
       t2 = $$7b66f1cf.text("Full-Stack Framework Powered By Bun");
       t3 = $$7b66f1cf.space();
       div1 = $$7b66f1cf.element("div");
@@ -146,15 +146,15 @@ function create_fragment(ctx) {
       var div3_nodes = $$7b66f1cf.children(div3);
       div2 = $$7b66f1cf.claim_element(div3_nodes, "DIV", { class: true });
       var div2_nodes = $$7b66f1cf.children(div2);
-      h10 = $$7b66f1cf.claim_element(div2_nodes, "H1", { class: true });
-      var h10_nodes = $$7b66f1cf.children(h10);
-      t0 = $$7b66f1cf.claim_text(h10_nodes, "Buchta");
-      h10_nodes.forEach($$7b66f1cf.detach);
+      h1 = $$7b66f1cf.claim_element(div2_nodes, "H1", { class: true });
+      var h1_nodes = $$7b66f1cf.children(h1);
+      t0 = $$7b66f1cf.claim_text(h1_nodes, "Buchta");
+      h1_nodes.forEach($$7b66f1cf.detach);
       t1 = $$7b66f1cf.claim_space(div2_nodes);
-      h11 = $$7b66f1cf.claim_element(div2_nodes, "H1", { class: true });
-      var h11_nodes = $$7b66f1cf.children(h11);
-      t2 = $$7b66f1cf.claim_text(h11_nodes, "Full-Stack Framework Powered By Bun");
-      h11_nodes.forEach($$7b66f1cf.detach);
+      h2 = $$7b66f1cf.claim_element(div2_nodes, "H2", { class: true });
+      var h2_nodes = $$7b66f1cf.children(h2);
+      t2 = $$7b66f1cf.claim_text(h2_nodes, "Full-Stack Framework Powered By Bun");
+      h2_nodes.forEach($$7b66f1cf.detach);
       t3 = $$7b66f1cf.claim_space(div2_nodes);
       div1 = $$7b66f1cf.claim_element(div2_nodes, "DIV", { class: true });
       var div1_nodes = $$7b66f1cf.children(div1);
@@ -179,12 +179,12 @@ function create_fragment(ctx) {
       this.h();
     },
     h() {
-      $$7b66f1cf.attr(h10, "class", "text-[500%] mt-12 font-bold text-white");
-      $$7b66f1cf.attr(h11, "class", "mt-4 ml-1 font-bold");
+      $$7b66f1cf.attr(h1, "class", "text-[500%] mt-12 font-bold text-white");
+      $$7b66f1cf.attr(h2, "class", "mt-4 ml-1 font-bold text-3xl");
       $$7b66f1cf.attr(h3, "class", "m-0 p-0");
       $$7b66f1cf.attr(button, "class", "p-5 bg-black rounded-md text-white font-bold backdrop-blur-md bg-opacity-30 drop-shadow-lg w-auto");
       $$7b66f1cf.attr(div0, "class", "mt-12");
-      $$7b66f1cf.attr(img, "class", "h-[580px] object-scale-down");
+      $$7b66f1cf.attr(img, "class", "h-[580px] object-scale-down hidden lg:block");
       if (!$$7b66f1cf.src_url_equal(img.src, img_src_value = "/buchta.png"))
         $$7b66f1cf.attr(img, "src", img_src_value);
       $$7b66f1cf.attr(img, "alt", "Logo");
@@ -195,11 +195,11 @@ function create_fragment(ctx) {
     m(target, anchor) {
       $$7b66f1cf.insert_hydration(target, div3, anchor);
       $$7b66f1cf.append_hydration(div3, div2);
-      $$7b66f1cf.append_hydration(div2, h10);
-      $$7b66f1cf.append_hydration(h10, t0);
+      $$7b66f1cf.append_hydration(div2, h1);
+      $$7b66f1cf.append_hydration(h1, t0);
       $$7b66f1cf.append_hydration(div2, t1);
-      $$7b66f1cf.append_hydration(div2, h11);
-      $$7b66f1cf.append_hydration(h11, t2);
+      $$7b66f1cf.append_hydration(div2, h2);
+      $$7b66f1cf.append_hydration(h2, t2);
       $$7b66f1cf.append_hydration(div2, t3);
       $$7b66f1cf.append_hydration(div2, div1);
       $$7b66f1cf.append_hydration(div1, div0);
