@@ -34,7 +34,7 @@ const buchtaRoute = () => {
   };
 };
 let bunVersion = "0.5.6";
-let buchtaVersion = "0.5-rc2";
+let buchtaVersion = "0.5-rc3";
 let getDocsTree = [
   "docs/buchta",
   "docs/[page]"
@@ -169,8 +169,3 @@ class Component extends $$7b66f1cf.SvelteComponent {
   }
 }
 export default Component;
-
-new Component({
-    target: document.body,
-    hydrate: true
-});

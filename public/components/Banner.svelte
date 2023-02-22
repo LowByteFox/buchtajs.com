@@ -20,7 +20,7 @@
                 {#each features as feature}
                 <div class="flex flex-row items-center h-16 gap-5">
                     <div class="w-14 flex justify-center">
-                        <img class="h-12 white-svg" src={feature[1]} alt="" />
+                        <img class="h-12 white-svg" src={feature[1]} alt="" width="48" height="48" />
                     </div>
                     <h2 class="font-bold text-white">{feature[0]}</h2>
                 </div>
@@ -30,8 +30,10 @@
 
             <img
                 class="h-[580px] object-scale-down hidden lg:block"
-                src="/buchta.png"
+                src="/buchta.webp"
                 alt="Logo"
+                height="580"
+                width="580"
             />
         </div>
     </div>

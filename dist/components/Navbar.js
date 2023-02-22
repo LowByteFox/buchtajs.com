@@ -27,7 +27,7 @@ const buchtaRoute = () => {
   };
 };
 let bunVersion = "0.5.6";
-let buchtaVersion = "0.5-rc2";
+let buchtaVersion = "0.5-rc3";
 let getDocsTree = [
   "docs/buchta",
   "docs/[page]"
@@ -285,7 +285,12 @@ function create_fragment(ctx) {
     l(nodes) {
       nav = $$7b66f1cf.claim_element(nodes, "NAV", { class: true });
       var nav_nodes = $$7b66f1cf.children(nav);
-      img0 = $$7b66f1cf.claim_element(nav_nodes, "IMG", { src: true, alt: true, width: true });
+      img0 = $$7b66f1cf.claim_element(nav_nodes, "IMG", {
+        src: true,
+        alt: true,
+        width: true,
+        height: true
+      });
       t0 = $$7b66f1cf.claim_space(nav_nodes);
       div0 = $$7b66f1cf.claim_element(nav_nodes, "DIV", { class: true });
       var div0_nodes = $$7b66f1cf.children(div0);
@@ -316,7 +321,13 @@ function create_fragment(ctx) {
       a2_nodes.forEach($$7b66f1cf.detach);
       div3_nodes.forEach($$7b66f1cf.detach);
       t10 = $$7b66f1cf.claim_space(nav_nodes);
-      img1 = $$7b66f1cf.claim_element(nav_nodes, "IMG", { class: true, src: true, alt: true });
+      img1 = $$7b66f1cf.claim_element(nav_nodes, "IMG", {
+        class: true,
+        src: true,
+        alt: true,
+        width: true,
+        height: true
+      });
       t11 = $$7b66f1cf.claim_space(nav_nodes);
       if (if_block)
         if_block.l(nav_nodes);
@@ -324,10 +335,11 @@ function create_fragment(ctx) {
       this.h();
     },
     h() {
-      if (!$$7b66f1cf.src_url_equal(img0.src, img0_src_value = "/buchta.png"))
+      if (!$$7b66f1cf.src_url_equal(img0.src, img0_src_value = "/buchta.webp"))
         $$7b66f1cf.attr(img0, "src", img0_src_value);
       $$7b66f1cf.attr(img0, "alt", "Icon");
       $$7b66f1cf.attr(img0, "width", "32");
+      $$7b66f1cf.attr(img0, "height", "32");
       $$7b66f1cf.attr(div0, "class", "font-bold");
       $$7b66f1cf.attr(div1, "class", "flex-grow");
       $$7b66f1cf.attr(a0, "href", "/#getStarted");
@@ -342,6 +354,8 @@ function create_fragment(ctx) {
       if (!$$7b66f1cf.src_url_equal(img1.src, img1_src_value = "/icons/bars.svg"))
         $$7b66f1cf.attr(img1, "src", img1_src_value);
       $$7b66f1cf.attr(img1, "alt", "");
+      $$7b66f1cf.attr(img1, "width", "32");
+      $$7b66f1cf.attr(img1, "height", "32");
       $$7b66f1cf.attr(nav, "class", "flex flex-row md:pl-36 md:pr-36 gap-5 h-12 items-center bg-white backdrop-blur-md bg-opacity-30 drop-shadow-lg fixed w-screen text-md p-2 z-10");
     },
     m(target, anchor) {
@@ -439,8 +453,3 @@ class Component extends $$7b66f1cf.SvelteComponent {
   }
 }
 export default Component;
-
-new Component({
-    target: document.body,
-    hydrate: true
-});
