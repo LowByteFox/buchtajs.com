@@ -2,12 +2,22 @@
     import Confetti from "./components/Confetti.svelte";
     import Navbar from "./components/Navbar.svelte";
     import Footer from "./components/Footer.svelte";
+    import { onMount } from "svelte";
 
+    const hljs = require("highlight.js/lib/common");
+
+    onMount(() => {
+        document.querySelectorAll("pre code").forEach((el) => {
+            hljs.highlightElement(el);
+        });
+    })
+
+    export let route;
 </script>
 
 <main>
     <div>
-        <Navbar />
+        <Navbar route={route} />
         <slot />
     </div>
     <Footer />

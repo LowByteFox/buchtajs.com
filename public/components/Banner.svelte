@@ -14,7 +14,7 @@
 <div class="pt-24 w-[85%] m-auto justify-between items-center">
     <div class="flex-grow">
         <h1 class="text-[500%] mt-12 font-bold text-white">Buchta</h1>
-        <h1 class="mt-4 ml-1 font-bold">Full-Stack Framework Powered By Bun</h1>
+        <h2 class="mt-4 ml-1 font-bold text-3xl">Full-Stack Framework Powered By Bun</h2>
         <div class="flex flex-row, justify-between">
             <div class="mt-12">
                 {#each features as feature}
@@ -29,7 +29,7 @@
             </div>
 
             <img
-                class="h-[580px] object-scale-down"
+                class="h-[580px] object-scale-down hidden lg:block"
                 src="/buchta.png"
                 alt="Logo"
             />

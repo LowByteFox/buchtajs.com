@@ -24,6 +24,10 @@ const buchtaRoute = () => {
     params
   };
 };
+let getDocsTree = [
+  "docs/buchta",
+  "docs/[page]"
+];
 let bunVersion = "0.5.7";
 let buchtaVersion = "0.5-rc2";
 import { $7b66f1cf} from "./../bundle.js";
@@ -115,7 +119,7 @@ function create_fragment(ctx) {
       t6 = $$7b66f1cf.claim_text(a1_nodes, "Blog");
       a1_nodes.forEach($$7b66f1cf.detach);
       t7 = $$7b66f1cf.claim_space(div3_nodes);
-      a2 = $$7b66f1cf.claim_element(div3_nodes, "A", { class: true });
+      a2 = $$7b66f1cf.claim_element(div3_nodes, "A", { class: true, href: true });
       var a2_nodes = $$7b66f1cf.children(a2);
       t8 = $$7b66f1cf.claim_text(a2_nodes, "Docs");
       a2_nodes.forEach($$7b66f1cf.detach);
@@ -148,10 +152,11 @@ function create_fragment(ctx) {
       $$7b66f1cf.attr(img, "width", "32");
       $$7b66f1cf.attr(div0, "class", "font-bold");
       $$7b66f1cf.attr(div1, "class", "flex-grow");
-      $$7b66f1cf.attr(a0, "href", "#getStarted");
+      $$7b66f1cf.attr(a0, "href", "/#getStarted");
       $$7b66f1cf.attr(a0, "class", "hover:text-[#004E7B] cursor-pointer");
       $$7b66f1cf.attr(a1, "class", "hover:text-[#004E7B]");
       $$7b66f1cf.attr(a2, "class", "hover:text-[#004E7B]");
+      $$7b66f1cf.attr(a2, "href", "/docs/");
       $$7b66f1cf.attr(a3, "class", "hover:text-[#004E7B]");
       $$7b66f1cf.attr(div2, "class", "border-2 border-black");
       $$7b66f1cf.attr(a4, "class", "hover:text-[#004E7B]");

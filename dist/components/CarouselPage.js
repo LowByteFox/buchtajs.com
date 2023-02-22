@@ -24,6 +24,10 @@ const buchtaRoute = () => {
     params
   };
 };
+let getDocsTree = [
+  "docs/buchta",
+  "docs/[page]"
+];
 let bunVersion = "0.5.7";
 let buchtaVersion = "0.5-rc2";
 import { $7b66f1cf} from "./../bundle.js";
