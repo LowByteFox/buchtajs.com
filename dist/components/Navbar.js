@@ -111,8 +111,8 @@ function create_if_block(ctx) {
       $$7b66f1cf.attr(div0, "class", "border border-black w-[50%] m-auto");
       $$7b66f1cf.attr(a2, "class", "hover:text-[#004E7B] text-xl");
       $$7b66f1cf.attr(a2, "href", "https://github.com/Fire-The-Fox/buchta");
-      $$7b66f1cf.attr(div1, "class", "flex flex-col text-center mb-5");
-      $$7b66f1cf.attr(div2, "class", "fixed top-0 left-0 w-screen h-screen bg-white backdrop-blur-md bg-opacity-30 p-5");
+      $$7b66f1cf.attr(div1, "class", "flex flex-col text-center mb-5 font-bold");
+      $$7b66f1cf.attr(div2, "class", "fixed top-0 left-0 w-screen h-screen bg-white backdrop-blur-md bg-opacity-70 p-5 overscroll-auto overflow-auto");
     },
     m(target, anchor) {
       $$7b66f1cf.insert_hydration(target, div2, anchor);

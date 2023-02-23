@@ -1,5 +1,5 @@
 # Getting Started
-<div class="pt-5"></div>
+<br>
 
 ## To simply create buchta app, you need to make sure you have bun installed 
 ### Then, create project using buchta's CLI
@@ -14,11 +14,52 @@
 
 <pre class="language-shell bg-black rounded-md mt-5 bg-opacity-40">
 <code>$ bun install && bun run buchta serve</code></pre>
-<div class="pt-5"></div>
+<br>
 
 ### Depending on the template, `buchta.config.ts` will be configured
 
-<div class="succsess-badge mt-3">
+<div class="succsess-badge mt-3 mb-3">
 And you're done! Now you can work on your application
 </div>
 
+# Advanced
+
+<br>
+
+## Writing your own server
+
+<br>
+
+<div class="docs-notebook">
+    <div class="notebook-top">
+        <div class="notebook-top-active">index.ts</div>
+    </div>
+    <div class="notebook-parts">
+        <div>
+            <pre class="javascript bg-black rounded-md mt-5 bg-opacity-40"><code>import { Buchta, BuchtaRequest, BuchtaResponse } from "buchta";
+<br>
+const app = new Buchta();
+<br>
+app.get("/api/hello/", (req: BuchtaRequest, res: BuchtaResponse) => {
+    res.send("Hello, World!");
+})
+<br>
+app.run();</code></pre>
+        </div>
+    </div>
+</div>
+<br>
+
+### And now run it
+
+<pre class="language-shell bg-black rounded-md mt-5 bg-opacity-40">
+<code>$ bun index.ts</code></pre>
+<br>
+
+<div class="info-badge mt-3 mb-3">
+Nice 👏 you have created own buchta server with custom route at /api/hello/
+</div>
+
+<div class="info-badge mt-3 mb-3">
+For more examples and API reference, please look at <a class="underline" href="/docs/buchta/">Buchta</a>
+</div>

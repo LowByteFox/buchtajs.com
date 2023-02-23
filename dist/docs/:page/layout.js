@@ -33,8 +33,9 @@ let getDocsTree = [
   "docs/buchta",
   "docs/[page]"
 ];
-import { $7b66f1cf} from "./../../bundle.js";
+import { $7b66f1cf, $f6e9706} from "./../../bundle.js";
 var $$7b66f1cf = $7b66f1cf();
+var $$f6e9706 = $f6e9706();
 function add_css(target) {
   $$7b66f1cf.append_styles(target, "svelte-pob63f", ".docs-page.svelte-pob63f{min-height:calc(100vh - 96px * 2)}h1{font-weight:bold}");
 }
@@ -66,7 +67,7 @@ function create_default_slot(ctx) {
     },
     h() {
       $$7b66f1cf.attr(div0, "class", "overflow-x-auto code-part w-full");
-      $$7b66f1cf.attr(div1, "class", "flex flex-row w-[95%] md:w-[85%] m-auto mt-16 text-white bg-white backdrop-blur-md bg-opacity-30 drop-shadow-lg rounded-md p-5 docs-page svelte-pob63f");
+      $$7b66f1cf.attr(div1, "class", "flex flex-row w-[95%] md:w-[85%] m-auto mt-16 text-white bg-white backdrop-blur-md bg-opacity-30 drop-shadow-lg rounded-md p-5 docs-page mb-5 svelte-pob63f");
     },
     m(target, anchor) {
       $$7b66f1cf.insert_hydration(target, div1, anchor);
@@ -140,6 +141,23 @@ function create_fragment(ctx) {
 }
 function instance($$self, $$props, $$invalidate) {
   let { htmlCode } = $$props;
+  $$f6e9706.onMount(() => {
+    document.querySelectorAll(".docs-notebook").forEach((notebook) => {
+      const tabs = notebook.querySelectorAll(".notebook-top > *");
+      const parts = notebook.querySelectorAll(".notebook-parts > *");
+      const partsEl = notebook.querySelector(".notebook-parts");
+      partsEl.innerHTML = "";
+      partsEl.appendChild(parts[0]);
+      const size = Math.min(tabs.length, parts.length);
+      for (let i = 0;i < size; i++)
+        tabs[i].addEventListener("click", () => {
+          tabs.forEach((tab) => tab.classList.remove("notebook-top-active"));
+          tabs[i].classList.add("notebook-top-active");
+          partsEl.innerHTML = "";
+          partsEl.appendChild(parts[i]);
+        });
+    });
+  });
   $$self.$$set = ($$props) => {
     if ("htmlCode" in $$props)
       $$invalidate(0, htmlCode = $$props.htmlCode);
