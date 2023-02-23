@@ -1,7 +1,7 @@
 import Sidebar from "../../components/Sidebar.js"
 import Layout from "../../layout.js"
 
-const buchtaRoute = () => {
+globalThis.buchtaRoute = () => {
   let params = new Map;
   const path = "/docs/:page/layout.svelte";
   let currentPath = "";
@@ -44,7 +44,7 @@ function create_default_slot(ctx) {
   let t;
   let div0;
   let current;
-  sidebar = new Sidebar({ props: { route: ctx[0] } });
+  sidebar = new Sidebar({});
   return {
     c() {
       div1 = $$7b66f1cf.element("div");
@@ -73,16 +73,12 @@ function create_default_slot(ctx) {
       $$7b66f1cf.mount_component(sidebar, div1, null);
       $$7b66f1cf.append_hydration(div1, t);
       $$7b66f1cf.append_hydration(div1, div0);
-      div0.innerHTML = ctx[1];
+      div0.innerHTML = ctx[0];
       current = true;
     },
     p(ctx, dirty) {
-      const sidebar_changes = {};
-      if (dirty & 1)
-        sidebar_changes.route = ctx[0];
-      sidebar.$set(sidebar_changes);
-      if (!current || dirty & 2)
-        div0.innerHTML = ctx[1];
+      if (!current || dirty & 1)
+        div0.innerHTML = ctx[0];
     },
     i(local) {
       if (current)
@@ -106,7 +102,6 @@ function create_fragment(ctx) {
   let current;
   layout = new Layout({
     props: {
-      route: ctx[0],
       $$slots: { default: [create_default_slot] },
       $$scope: { ctx }
     }
@@ -124,9 +119,7 @@ function create_fragment(ctx) {
     },
     p(ctx, [dirty]) {
       const layout_changes = {};
-      if (dirty & 1)
-        layout_changes.route = ctx[0];
-      if (dirty & 7)
+      if (dirty & 3)
         layout_changes.$$scope = { dirty, ctx };
       layout.$set(layout_changes);
     },
@@ -146,21 +139,18 @@ function create_fragment(ctx) {
   };
 }
 function instance($$self, $$props, $$invalidate) {
-  let { route } = $$props;
   let { htmlCode } = $$props;
   $$self.$$set = ($$props) => {
-    if ("route" in $$props)
-      $$invalidate(0, route = $$props.route);
     if ("htmlCode" in $$props)
-      $$invalidate(1, htmlCode = $$props.htmlCode);
+      $$invalidate(0, htmlCode = $$props.htmlCode);
   };
-  return [route, htmlCode];
+  return [htmlCode];
 }
 
 class Component extends $$7b66f1cf.SvelteComponent {
   constructor(options) {
     super();
-    $$7b66f1cf.init(this, options, instance, create_fragment, $$7b66f1cf.safe_not_equal, { route: 0, htmlCode: 1 }, add_css);
+    $$7b66f1cf.init(this, options, instance, create_fragment, $$7b66f1cf.safe_not_equal, { htmlCode: 0 }, add_css);
   }
 }
 export default Component;
