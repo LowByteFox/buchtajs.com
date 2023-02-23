@@ -120,12 +120,13 @@ function create_each_block(ctx) {
   };
 }
 function create_fragment(ctx) {
-  let div;
+  let div1;
   let h2;
   let a;
   let t0;
   let t1;
-  let div_class_value;
+  let div0;
+  let div1_class_value;
   let current;
   let each_value = getDocsTree;
   let each_blocks = [];
@@ -136,44 +137,50 @@ function create_fragment(ctx) {
   });
   return {
     c() {
-      div = $$7b66f1cf.element("div");
+      div1 = $$7b66f1cf.element("div");
       h2 = $$7b66f1cf.element("h2");
       a = $$7b66f1cf.element("a");
       t0 = $$7b66f1cf.text("Get started");
       t1 = $$7b66f1cf.space();
+      div0 = $$7b66f1cf.element("div");
       for (let i = 0;i < each_blocks.length; i += 1)
         each_blocks[i].c();
       this.h();
     },
     l(nodes) {
-      div = $$7b66f1cf.claim_element(nodes, "DIV", { class: true });
-      var div_nodes = $$7b66f1cf.children(div);
-      h2 = $$7b66f1cf.claim_element(div_nodes, "H2", { class: true });
+      div1 = $$7b66f1cf.claim_element(nodes, "DIV", { class: true });
+      var div1_nodes = $$7b66f1cf.children(div1);
+      h2 = $$7b66f1cf.claim_element(div1_nodes, "H2", { class: true });
       var h2_nodes = $$7b66f1cf.children(h2);
       a = $$7b66f1cf.claim_element(h2_nodes, "A", { href: true });
       var a_nodes = $$7b66f1cf.children(a);
       t0 = $$7b66f1cf.claim_text(a_nodes, "Get started");
       a_nodes.forEach($$7b66f1cf.detach);
       h2_nodes.forEach($$7b66f1cf.detach);
-      t1 = $$7b66f1cf.claim_space(div_nodes);
+      t1 = $$7b66f1cf.claim_space(div1_nodes);
+      div0 = $$7b66f1cf.claim_element(div1_nodes, "DIV", { class: true });
+      var div0_nodes = $$7b66f1cf.children(div0);
       for (let i = 0;i < each_blocks.length; i += 1)
-        each_blocks[i].l(div_nodes);
-      div_nodes.forEach($$7b66f1cf.detach);
+        each_blocks[i].l(div0_nodes);
+      div0_nodes.forEach($$7b66f1cf.detach);
+      div1_nodes.forEach($$7b66f1cf.detach);
       this.h();
     },
     h() {
       $$7b66f1cf.attr(a, "href", "/docs/");
       $$7b66f1cf.attr(h2, "class", "mb-5 mr-5");
-      $$7b66f1cf.attr(div, "class", div_class_value = "mr-8 w-full md:w-[15%] md:border-r-2 md:block " + (ctx[0] ? "hidden" : ""));
+      $$7b66f1cf.attr(div0, "class", "overscroll-auto overflow-auto");
+      $$7b66f1cf.attr(div1, "class", div1_class_value = "mr-8 w-full lg:w-[15%] md:border-r-2 lg:block font-bold " + (ctx[0] ? "hidden" : ""));
     },
     m(target, anchor) {
-      $$7b66f1cf.insert_hydration(target, div, anchor);
-      $$7b66f1cf.append_hydration(div, h2);
+      $$7b66f1cf.insert_hydration(target, div1, anchor);
+      $$7b66f1cf.append_hydration(div1, h2);
       $$7b66f1cf.append_hydration(h2, a);
       $$7b66f1cf.append_hydration(a, t0);
-      $$7b66f1cf.append_hydration(div, t1);
+      $$7b66f1cf.append_hydration(div1, t1);
+      $$7b66f1cf.append_hydration(div1, div0);
       for (let i = 0;i < each_blocks.length; i += 1)
-        each_blocks[i].m(div, null);
+        each_blocks[i].m(div0, null);
       current = true;
     },
     p(ctx, [dirty]) {
@@ -189,7 +196,7 @@ function create_fragment(ctx) {
             each_blocks[i] = create_each_block(child_ctx);
             each_blocks[i].c();
             $$7b66f1cf.transition_in(each_blocks[i], 1);
-            each_blocks[i].m(div, null);
+            each_blocks[i].m(div0, null);
           }
         }
         $$7b66f1cf.group_outros();
@@ -197,8 +204,8 @@ function create_fragment(ctx) {
           out(i);
         $$7b66f1cf.check_outros();
       }
-      if (!current || dirty & 1 && div_class_value !== (div_class_value = "mr-8 w-full md:w-[15%] md:border-r-2 md:block " + (ctx[0] ? "hidden" : "")))
-        $$7b66f1cf.attr(div, "class", div_class_value);
+      if (!current || dirty & 1 && div1_class_value !== (div1_class_value = "mr-8 w-full lg:w-[15%] md:border-r-2 lg:block font-bold " + (ctx[0] ? "hidden" : "")))
+        $$7b66f1cf.attr(div1, "class", div1_class_value);
     },
     i(local) {
       if (current)
@@ -215,7 +222,7 @@ function create_fragment(ctx) {
     },
     d(detaching) {
       if (detaching)
-        $$7b66f1cf.detach(div);
+        $$7b66f1cf.detach(div1);
       $$7b66f1cf.destroy_each(each_blocks, detaching);
     }
   };

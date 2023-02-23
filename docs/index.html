@@ -100,12 +100,7 @@ function create_catch_block(ctx) {
 function create_then_block(ctx) {
   let layout;
   let current;
-  layout = new Layout({
-    props: {
-      route: buchtaRoute(),
-      htmlCode: ctx[2]
-    }
-  });
+  layout = new Layout({ props: { htmlCode: ctx[1] } });
   return {
     c() {
       $$7b66f1cf.create_component(layout.$$.fragment);
@@ -176,7 +171,7 @@ function create_fragment(ctx) {
     pending: create_pending_block,
     then: create_then_block,
     catch: create_catch_block,
-    value: 2,
+    value: 1,
     blocks: [, , ,]
   };
   $$7b66f1cf.handle_promise(promise = ctx[0](), info);
@@ -223,7 +218,6 @@ function create_fragment(ctx) {
   };
 }
 function instance($$self) {
-  let html;
   const getMk = async () => {
     const req = await fetch("./page.md");
     return Promise.resolve($$b13d3c26.parse(await req.text()));
@@ -247,9 +241,3 @@ export default Component;
 </script>
                 
 </html>
-                <script>
-                let socket = new WebSocket("ws://localhost:3000");
-
-                socket.onmessage = (e) => { if (e.data == "YEEET!") window.location.reload(); }
-                </script>
-                

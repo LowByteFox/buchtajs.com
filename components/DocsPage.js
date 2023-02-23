@@ -72,7 +72,7 @@ function create_else_block(ctx) {
     },
     h() {
       $$7b66f1cf.attr(div, "class", "text-xl");
-      $$7b66f1cf.attr(ul, "class", "text-xl");
+      $$7b66f1cf.attr(ul, "class", "text-xl overflow-visible overscroll-auto");
     },
     m(target, anchor) {
       $$7b66f1cf.insert_hydration(target, div, anchor);
@@ -176,7 +176,7 @@ function create_each_block(ctx) {
     },
     h() {
       $$7b66f1cf.attr(a, "href", a_href_value = "#" + ctx[3].innerText.toLowerCase().replaceAll(" ", "-"));
-      $$7b66f1cf.attr(li, "class", "ml-5 list-disc");
+      $$7b66f1cf.attr(li, "class", "ml-5 list-disc font-bold");
     },
     m(target, anchor) {
       $$7b66f1cf.insert_hydration(target, li, anchor);
