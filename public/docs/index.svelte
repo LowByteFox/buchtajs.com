@@ -3,8 +3,6 @@
     import Layout from "./:page/layout.svelte";
     import { default as MainLayout } from "../layout.svelte";
 
-    let html;
-
     const getMk = async () => {
         const req = await fetch("./page.md");
         return Promise.resolve(parse(await req.text()));
@@ -15,5 +13,5 @@
 {#await getMk()}
 <MainLayout />
 {:then code}
-<Layout route={buchtaRoute()} htmlCode={code} />
+<Layout htmlCode={code} />
 {/await}

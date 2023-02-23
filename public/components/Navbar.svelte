@@ -33,8 +33,8 @@
     <img on:click={() => showDrawer = true} class="md:hidden" src="/icons/bars.svg" alt="" width="32" height="32">
     {#if showDrawer}
     <!-- svelte-ignore a11y-click-events-have-key-events -->
-    <div in:fade={{ duration: 250}} out:fade={{ duration: 250}} on:click={() => showDrawer = false} class="fixed top-0 left-0 w-screen h-screen bg-white backdrop-blur-md bg-opacity-30 p-5">
-        <div class="flex flex-col text-center mb-5">
+    <div in:fade={{ duration: 250}} out:fade={{ duration: 250}} on:click={() => showDrawer = false} class="fixed top-0 left-0 w-screen h-screen bg-white backdrop-blur-md bg-opacity-70 p-5 overscroll-auto overflow-auto">
+        <div class="flex flex-col text-center mb-5 font-bold">
             <a href="/#getStarted" class="hover:text-[#004E7B] cursor-pointer text-xl">Get Started</a>
             <!-- <a class="hover:text-[#004E7B] text-lg">Blog</a> -->
             <a class="hover:text-[#004E7B] text-xl" href="/docs/">Docs</a>

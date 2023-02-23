@@ -1,7 +1,7 @@
 <script>
     import { parse } from "marked";
     import Layout from "./layout.svelte";
-    import { default as MainLayout } from "../../layout.svelte";
+    import MainLayout from "../../layout.svelte";
 
     const getMk = async () => {
         const req = await fetch("./page.md");
