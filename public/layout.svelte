@@ -11,13 +11,11 @@
             hljs.highlightElement(el);
         });
     })
-
-    export let route;
 </script>
 
 <main>
     <div>
-        <Navbar route={route} />
+        <Navbar />
         <slot />
     </div>
     <Footer />
@@ -35,15 +33,6 @@
     div:not(#confetti) {
         min-height: calc(100vh - 96px);
         width: 100vw;
-        
-        background-image: linear-gradient(
-            to right top,
-            #051937,
-            #004d7a,
-            #008793,
-            #00bf72,
-            #a8eb12
-        );
-        
-        }
+    }
+    
 </style>

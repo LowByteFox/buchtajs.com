@@ -1,6 +1,7 @@
 <script>
     import { parse } from "marked";
     import Layout from "./:page/layout.svelte";
+    import { default as MainLayout } from "../layout.svelte";
 
     let html;
 
@@ -12,7 +13,7 @@
 
 <!-- svelte-ignore missing-declaration -->
 {#await getMk()}
-<h1>Please wait</h1>
+<MainLayout />
 {:then code}
 <Layout route={buchtaRoute()} htmlCode={code} />
 {/await}

@@ -1,4 +1,4 @@
-const buchtaRoute = () => {
+globalThis.buchtaRoute = () => {
   let params = new Map;
   const path = "/components/Banner.svelte";
   let currentPath = "";
@@ -198,7 +198,7 @@ function create_fragment(ctx) {
       $$7b66f1cf.attr(h3, "class", "m-0 p-0");
       $$7b66f1cf.attr(button, "class", "p-5 bg-black rounded-md text-white font-bold backdrop-blur-md bg-opacity-30 drop-shadow-lg w-auto");
       $$7b66f1cf.attr(div0, "class", "mt-12");
-      $$7b66f1cf.attr(img, "class", "h-[580px] object-scale-down hidden lg:block");
+      $$7b66f1cf.attr(img, "class", "object-scale-down hidden lg:block");
       if (!$$7b66f1cf.src_url_equal(img.src, img_src_value = "/buchta.webp"))
         $$7b66f1cf.attr(img, "src", img_src_value);
       $$7b66f1cf.attr(img, "alt", "Logo");

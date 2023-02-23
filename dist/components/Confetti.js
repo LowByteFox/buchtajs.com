@@ -1,4 +1,4 @@
-const buchtaRoute = () => {
+globalThis.buchtaRoute = () => {
   let params = new Map;
   const path = "/components/Confetti.svelte";
   let currentPath = "";

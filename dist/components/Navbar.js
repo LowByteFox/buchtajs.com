@@ -1,6 +1,6 @@
 import Sidebar from "./Sidebar.js"
 
-const buchtaRoute = () => {
+globalThis.buchtaRoute = () => {
   let params = new Map;
   const path = "/components/Navbar.svelte";
   let currentPath = "";
@@ -54,7 +54,7 @@ function create_if_block(ctx) {
   let current;
   let mounted;
   let dispose;
-  let if_block = ctx[1] && create_if_block_1(ctx);
+  let if_block = ctx[0] && create_if_block_1(ctx);
   return {
     c() {
       div2 = $$7b66f1cf.element("div");
@@ -132,15 +132,14 @@ function create_if_block(ctx) {
         if_block.m(div2, null);
       current = true;
       if (!mounted) {
-        dispose = $$7b66f1cf.listen(div2, "click", ctx[4]);
+        dispose = $$7b66f1cf.listen(div2, "click", ctx[5]);
         mounted = true;
       }
     },
     p(ctx, dirty) {
-      if (ctx[1])
+      if (ctx[0])
         if (if_block) {
-          if_block.p(ctx, dirty);
-          if (dirty & 2)
+          if (dirty & 1)
             $$7b66f1cf.transition_in(if_block, 1);
         } else {
           if_block = create_if_block_1(ctx);
@@ -190,9 +189,7 @@ function create_if_block(ctx) {
 function create_if_block_1(ctx) {
   let sidebar;
   let current;
-  sidebar = new Sidebar({
-    props: { route: ctx[0], hide: false }
-  });
+  sidebar = new Sidebar({ props: { hide: false } });
   return {
     c() {
       $$7b66f1cf.create_component(sidebar.$$.fragment);
@@ -203,12 +200,6 @@ function create_if_block_1(ctx) {
     m(target, anchor) {
       $$7b66f1cf.mount_component(sidebar, target, anchor);
       current = true;
-    },
-    p(ctx, dirty) {
-      const sidebar_changes = {};
-      if (dirty & 1)
-        sidebar_changes.route = ctx[0];
-      sidebar.$set(sidebar_changes);
     },
     i(local) {
       if (current)
@@ -253,7 +244,7 @@ function create_fragment(ctx) {
   let current;
   let mounted;
   let dispose;
-  let if_block = ctx[2] && create_if_block(ctx);
+  let if_block = ctx[1] && create_if_block(ctx);
   return {
     c() {
       nav = $$7b66f1cf.element("nav");
@@ -286,6 +277,7 @@ function create_fragment(ctx) {
       nav = $$7b66f1cf.claim_element(nodes, "NAV", { class: true });
       var nav_nodes = $$7b66f1cf.children(nav);
       img0 = $$7b66f1cf.claim_element(nav_nodes, "IMG", {
+        class: true,
         src: true,
         alt: true,
         width: true,
@@ -335,12 +327,13 @@ function create_fragment(ctx) {
       this.h();
     },
     h() {
+      $$7b66f1cf.attr(img0, "class", "cursor-pointer");
       if (!$$7b66f1cf.src_url_equal(img0.src, img0_src_value = "/buchta.webp"))
         $$7b66f1cf.attr(img0, "src", img0_src_value);
       $$7b66f1cf.attr(img0, "alt", "Icon");
       $$7b66f1cf.attr(img0, "width", "32");
       $$7b66f1cf.attr(img0, "height", "32");
-      $$7b66f1cf.attr(div0, "class", "font-bold");
+      $$7b66f1cf.attr(div0, "class", "font-bold cursor-pointer");
       $$7b66f1cf.attr(div1, "class", "flex-grow");
       $$7b66f1cf.attr(a0, "href", "/#getStarted");
       $$7b66f1cf.attr(a0, "class", "hover:text-[#004E7B] cursor-pointer");
@@ -350,7 +343,7 @@ function create_fragment(ctx) {
       $$7b66f1cf.attr(a2, "class", "hover:text-[#004E7B]");
       $$7b66f1cf.attr(a2, "href", "https://github.com/Fire-The-Fox/buchta");
       $$7b66f1cf.attr(div3, "class", "flex-row gap-5 font-bold hidden md:flex");
-      $$7b66f1cf.attr(img1, "class", "h-8 md:hidden");
+      $$7b66f1cf.attr(img1, "class", "md:hidden");
       if (!$$7b66f1cf.src_url_equal(img1.src, img1_src_value = "/icons/bars.svg"))
         $$7b66f1cf.attr(img1, "src", img1_src_value);
       $$7b66f1cf.attr(img1, "alt", "");
@@ -385,15 +378,19 @@ function create_fragment(ctx) {
         if_block.m(nav, null);
       current = true;
       if (!mounted) {
-        dispose = $$7b66f1cf.listen(img1, "click", ctx[3]);
+        dispose = [
+          $$7b66f1cf.listen(img0, "click", ctx[2]),
+          $$7b66f1cf.listen(div0, "click", ctx[3]),
+          $$7b66f1cf.listen(img1, "click", ctx[4])
+        ];
         mounted = true;
       }
     },
     p(ctx, [dirty]) {
-      if (ctx[2])
+      if (ctx[1])
         if (if_block) {
           if_block.p(ctx, dirty);
-          if (dirty & 4)
+          if (dirty & 2)
             $$7b66f1cf.transition_in(if_block, 1);
         } else {
           if_block = create_if_block(ctx);
@@ -425,31 +422,35 @@ function create_fragment(ctx) {
       if (if_block)
         if_block.d();
       mounted = false;
-      dispose();
+      $$7b66f1cf.run_all(dispose);
     }
   };
 }
 function instance($$self, $$props, $$invalidate) {
-  let { route } = $$props;
   let showSidebar = false;
   let showDrawer = false;
   if (typeof window != "undefined") {
     if (window.location.href.includes("/docs/"))
       showSidebar = true;
   }
-  const click_handler = () => $$invalidate(2, showDrawer = true);
-  const click_handler_1 = () => $$invalidate(2, showDrawer = false);
-  $$self.$$set = ($$props) => {
-    if ("route" in $$props)
-      $$invalidate(0, route = $$props.route);
-  };
-  return [route, showSidebar, showDrawer, click_handler, click_handler_1];
+  const click_handler = () => window.location.href = "/";
+  const click_handler_1 = () => window.location.href = "/";
+  const click_handler_2 = () => $$invalidate(1, showDrawer = true);
+  const click_handler_3 = () => $$invalidate(1, showDrawer = false);
+  return [
+    showSidebar,
+    showDrawer,
+    click_handler,
+    click_handler_1,
+    click_handler_2,
+    click_handler_3
+  ];
 }
 
 class Component extends $$7b66f1cf.SvelteComponent {
   constructor(options) {
     super();
-    $$7b66f1cf.init(this, options, instance, create_fragment, $$7b66f1cf.safe_not_equal, { route: 0 });
+    $$7b66f1cf.init(this, options, instance, create_fragment, $$7b66f1cf.safe_not_equal, {});
   }
 }
 export default Component;

@@ -1,6 +1,6 @@
 import DocsPage from "./DocsPage.js"
 
-const buchtaRoute = () => {
+globalThis.buchtaRoute = () => {
   let params = new Map;
   const path = "/components/Sidebar.svelte";
   let currentPath = "";
@@ -45,7 +45,7 @@ function create_if_block(ctx) {
   docspage = new DocsPage({
     props: {
       name: ctx[2].slice(5),
-      route: ctx[0]
+      route: ctx[1]
     }
   });
   return {
@@ -59,12 +59,7 @@ function create_if_block(ctx) {
       $$7b66f1cf.mount_component(docspage, target, anchor);
       current = true;
     },
-    p(ctx, dirty) {
-      const docspage_changes = {};
-      if (dirty & 1)
-        docspage_changes.route = ctx[0];
-      docspage.$set(docspage_changes);
-    },
+    p: $$7b66f1cf.noop,
     i(local) {
       if (current)
         return;
@@ -169,7 +164,7 @@ function create_fragment(ctx) {
     h() {
       $$7b66f1cf.attr(a, "href", "/docs/");
       $$7b66f1cf.attr(h2, "class", "mb-5 mr-5");
-      $$7b66f1cf.attr(div, "class", div_class_value = "mr-8 w-full md:w-[15%] md:border-r-2 md:block " + (ctx[1] ? "hidden" : ""));
+      $$7b66f1cf.attr(div, "class", div_class_value = "mr-8 w-full md:w-[15%] md:border-r-2 md:block " + (ctx[0] ? "hidden" : ""));
     },
     m(target, anchor) {
       $$7b66f1cf.insert_hydration(target, div, anchor);
@@ -182,7 +177,7 @@ function create_fragment(ctx) {
       current = true;
     },
     p(ctx, [dirty]) {
-      if (dirty & 1) {
+      if (dirty & 2) {
         each_value = getDocsTree;
         let i;
         for (i = 0;i < each_value.length; i += 1) {
@@ -202,7 +197,7 @@ function create_fragment(ctx) {
           out(i);
         $$7b66f1cf.check_outros();
       }
-      if (!current || dirty & 2 && div_class_value !== (div_class_value = "mr-8 w-full md:w-[15%] md:border-r-2 md:block " + (ctx[1] ? "hidden" : "")))
+      if (!current || dirty & 1 && div_class_value !== (div_class_value = "mr-8 w-full md:w-[15%] md:border-r-2 md:block " + (ctx[0] ? "hidden" : "")))
         $$7b66f1cf.attr(div, "class", div_class_value);
     },
     i(local) {
@@ -226,21 +221,19 @@ function create_fragment(ctx) {
   };
 }
 function instance($$self, $$props, $$invalidate) {
-  let { route } = $$props;
+  const route = buchtaRoute();
   let { hide = true } = $$props;
   $$self.$$set = ($$props) => {
-    if ("route" in $$props)
-      $$invalidate(0, route = $$props.route);
     if ("hide" in $$props)
-      $$invalidate(1, hide = $$props.hide);
+      $$invalidate(0, hide = $$props.hide);
   };
-  return [route, hide];
+  return [hide, route];
 }
 
 class Component extends $$7b66f1cf.SvelteComponent {
   constructor(options) {
     super();
-    $$7b66f1cf.init(this, options, instance, create_fragment, $$7b66f1cf.safe_not_equal, { route: 0, hide: 1 });
+    $$7b66f1cf.init(this, options, instance, create_fragment, $$7b66f1cf.safe_not_equal, { hide: 0 });
   }
 }
 export default Component;

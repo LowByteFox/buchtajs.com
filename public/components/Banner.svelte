@@ -29,7 +29,7 @@
             </div>
 
             <img
-                class="h-[580px] object-scale-down hidden lg:block"
+                class="object-scale-down hidden lg:block"
                 src="/buchta.webp"
                 alt="Logo"
                 height="580"

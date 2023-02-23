@@ -1,7 +1,7 @@
 <script>
     import DocsPage from "./DocsPage.svelte";
 
-    export let route;
+    const route = buchtaRoute();
     export let hide = true;
 </script>
 

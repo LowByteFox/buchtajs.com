@@ -1,4 +1,4 @@
-const buchtaRoute = () => {
+globalThis.buchtaRoute = () => {
   let params = new Map;
   const path = "/components/CarouselPage.svelte";
   let currentPath = "";
@@ -62,7 +62,13 @@ function create_fragment(ctx) {
       var div1_nodes = $$7b66f1cf.children(div1);
       div0 = $$7b66f1cf.claim_element(div1_nodes, "DIV", { class: true });
       var div0_nodes = $$7b66f1cf.children(div0);
-      img = $$7b66f1cf.claim_element(div0_nodes, "IMG", { class: true, src: true, alt: true, height: true, width: true });
+      img = $$7b66f1cf.claim_element(div0_nodes, "IMG", {
+        class: true,
+        src: true,
+        alt: true,
+        height: true,
+        width: true
+      });
       t0 = $$7b66f1cf.claim_space(div0_nodes);
       h2 = $$7b66f1cf.claim_element(div0_nodes, "H2", { class: true });
       var h2_nodes = $$7b66f1cf.children(h2);
