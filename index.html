@@ -6,9 +6,9 @@
     <meta name="keywords" content="Bun, Buchta, JS, JavaScript, TS, TypeScript">
     <meta name="author" content="Ján Gajdoš">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Buchta.js is a powerful Full-Stack Framework for Bun">
-    <meta content="Buchta.js" property="og:title" />
-    <meta content="Buchta.js is a powerful Full-Stack Framework for Bun" property="og:description" />
+    <meta name="description" content="Buchta is a powerful Full-Stack Framework for Bun">
+    <meta content="Buchta" property="og:title" />
+    <meta content="Buchta is a powerful Full-Stack Framework for Bun" property="og:description" />
     <meta property="og:image" content="/cover.png">
     <meta property="og:image:width" content="1920">
     <meta property="og:image:height" content="1080">
@@ -20,25 +20,25 @@
     <link rel="stylesheet" href="/hljs.css">
 </head>
 <body>
-<main class="svelte-j6ak6c"><div class="svelte-j6ak6c"><nav class="flex flex-row md:pl-36 md:pr-36 gap-5 h-12 items-center bg-white backdrop-blur-md bg-opacity-30 drop-shadow-lg fixed w-screen text-md p-2 z-10">
+<main class="svelte-j6ak6c"><div class="svelte-j6ak6c"><nav class="flex flex-row md:pl-36 md:pr-36 gap-5 h-12 items-center bg-black backdrop-blur-md bg-opacity-30 drop-shadow-lg fixed w-screen text-md p-2 z-10 text-white">
     <img class="cursor-pointer" src="/buchta.webp" alt="Icon" width="32" height="32">
     
     <div class="font-bold cursor-pointer">Buchta</div>
 
     <div class="flex-grow"></div>
 
-    <div class="flex-row gap-5 font-bold hidden md:flex"><a href="/#getStarted" class="hover:text-[#004E7B] cursor-pointer">Get Started</a>
+    <div class="flex-row gap-5 font-bold hidden lg:flex"><a href="/#getStarted" class="hover:text-cblue cursor-pointer">Get Started</a>
         
-        <a class="hover:text-[#004E7B]" href="/docs/">Docs</a>
+        <a class="hover:text-cblue" href="/docs/">Docs</a>
         
-        <div class="border border-black"></div>
-        <a class="hover:text-[#004E7B]" href="https://github.com/Fire-The-Fox/buchta">Github</a>
+        <div class="border border-white"></div>
+        <a class="hover:text-cblue" href="https://github.com/Fire-The-Fox/buchta">Github</a>
         </div>
     
-    <img class="md:hidden" src="/icons/bars.svg" alt="" width="32" height="32">
+    <img class="lg:hidden white-svg" src="/icons/bars.svg" alt="" width="32" height="32">
     </nav>
         <div class="pt-24 w-[85%] m-auto justify-between items-center"><div class="flex-grow"><h1 class="text-[500%] mt-12 font-bold text-white">Buchta</h1>
-        <h2 class="mt-4 ml-1 font-bold text-3xl">Full-Stack Framework Powered By Bun</h2>
+        <h2 class="mt-4 ml-1 font-bold text-3xl text-cblue">Full-Stack Framework Powered By Bun</h2>
         <div class="flex flex-row, justify-between"><div class="mt-12"><div class="flex flex-row items-center h-16 gap-5"><div class="w-14 flex justify-center"><img class="h-12 white-svg" src="/icons/speed.svg" alt="" width="48" height="48"></div>
                     <h2 class="font-bold text-white">Powerful</h2>
                 </div><div class="flex flex-row items-center h-16 gap-5"><div class="w-14 flex justify-center"><img class="h-12 white-svg" src="/icons/feather.svg" alt="" width="48" height="48"></div>
@@ -93,11 +93,11 @@
     <h1 class="mt-4">What goal is Buchta trying to achieve?</h1>
     <h2>Buchta is trying to be small, fast, and powerful at the same time.</h2>
     <h1 class="mt-4">Is Buchta good for an API?</h1>
-    <h2>Yes, but if you want to squeeze all the performance, consider using <a class="font-bold" href="https://elysiajs.com/" target="_blank">Elysia</a></h2>
+    <h2>Yes, but if you want to squeeze all the performance, consider using <a class="font-bold" href="https://elysiajs.com/" target="_blank" rel="noreferrer">Elysia</a></h2>
     <h1 class="mt-4">When buchta started?</h1>
     <h2>Buchta started when Bun version 0.1.1 was released.</h2></div></main></div>
     <footer class="flex flex-row md:pl-36 md:pr-36 gap-5 h-24 items-center w-screen text-md p-2 svelte-ucuuyk">
-    <h3 class="svelte-ucuuyk">Built with Buchta v0.5-rc3 and Bun v0.5.6</h3>
+    <h3 class="svelte-ucuuyk">Built with Buchta v0.5-rc3 and Bun v0.5.7</h3>
 </footer>
     <div class="top-0 fixed left-0 Z-50 svelte-j6ak6c" id="confetti"></div>
 </main>
@@ -137,11 +137,13 @@ globalThis.buchtaRoute = () => {
     params
   };
 };
-let bunVersion = "0.5.6";
+let bunVersion = "0.5.7";
 let buchtaVersion = "0.5-rc3";
 let getDocsTree = [
+  "docs/[page]",
   "docs/buchta",
-  "docs/[page]"
+  "docs/request",
+  "docs/response"
 ];
 import { $7b66f1cf, $f6e9706} from "./bundle.js";
 var $$7b66f1cf = $7b66f1cf();

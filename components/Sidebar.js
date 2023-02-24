@@ -26,11 +26,13 @@ globalThis.buchtaRoute = () => {
     params
   };
 };
-let bunVersion = "0.5.6";
+let bunVersion = "0.5.7";
 let buchtaVersion = "0.5-rc3";
 let getDocsTree = [
+  "docs/[page]",
   "docs/buchta",
-  "docs/[page]"
+  "docs/request",
+  "docs/response"
 ];
 import { $7b66f1cf} from "./../bundle.js";
 var $$7b66f1cf = $7b66f1cf();
@@ -169,8 +171,8 @@ function create_fragment(ctx) {
     h() {
       $$7b66f1cf.attr(a, "href", "/docs/");
       $$7b66f1cf.attr(h2, "class", "mb-5 mr-5");
-      $$7b66f1cf.attr(div0, "class", "overscroll-auto overflow-auto");
-      $$7b66f1cf.attr(div1, "class", div1_class_value = "mr-8 w-full lg:w-[15%] md:border-r-2 lg:block font-bold " + (ctx[0] ? "hidden" : ""));
+      $$7b66f1cf.attr(div0, "class", "flex flex-col overscroll-auto overflow-auto mr-5");
+      $$7b66f1cf.attr(div1, "class", div1_class_value = "mr-8 w-full lg:w-[20%] lg:border-r-2 lg:block font-bold " + (ctx[0] ? "hidden" : ""));
     },
     m(target, anchor) {
       $$7b66f1cf.insert_hydration(target, div1, anchor);
@@ -204,7 +206,7 @@ function create_fragment(ctx) {
           out(i);
         $$7b66f1cf.check_outros();
       }
-      if (!current || dirty & 1 && div1_class_value !== (div1_class_value = "mr-8 w-full lg:w-[15%] md:border-r-2 lg:block font-bold " + (ctx[0] ? "hidden" : "")))
+      if (!current || dirty & 1 && div1_class_value !== (div1_class_value = "mr-8 w-full lg:w-[20%] lg:border-r-2 lg:block font-bold " + (ctx[0] ? "hidden" : "")))
         $$7b66f1cf.attr(div1, "class", div1_class_value);
     },
     i(local) {

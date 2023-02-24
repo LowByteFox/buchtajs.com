@@ -2,10 +2,12 @@ import { Buchticka, BuchtickaResponse, BuchtickaRequest } from "./buchticka";
 const server = new Buchticka();
 
 server.get("/", (r: any, s: any) => { s.sendFile(import.meta.dir + "/" + "./index.html"); s.setHeader("Content-Type", "text/html"); })
+server.get("/docs/request/page.md", (r: any, s: any) => { s.sendFile(import.meta.dir + "/" + "./docs/request/page.md"); s.setHeader("Content-Type", "text/markdown"); })
 server.get("/docs", (r: any, s: any) => { s.sendFile(import.meta.dir + "/" + "./docs/index.html"); s.setHeader("Content-Type", "text/html"); })
 server.get("/docs/buchta/page.md", (r: any, s: any) => { s.sendFile(import.meta.dir + "/" + "./docs/buchta/page.md"); s.setHeader("Content-Type", "text/markdown"); })
 server.get("/docs/:page", (r: any, s: any) => { s.sendFile(import.meta.dir + "/" + "./docs/:page/index.html"); s.setHeader("Content-Type", "text/html"); })
 server.get("/docs/:page/layout.js", (r: any, s: any) => { s.sendFile(import.meta.dir + "/" + "./docs/:page/layout.js"); s.setHeader("Content-Type", "application/javascript"); })
+server.get("/docs/response/page.md", (r: any, s: any) => { s.sendFile(import.meta.dir + "/" + "./docs/response/page.md"); s.setHeader("Content-Type", "text/markdown"); })
 server.get("/docs/page.md", (r: any, s: any) => { s.sendFile(import.meta.dir + "/" + "./docs/page.md"); s.setHeader("Content-Type", "text/markdown"); })
 server.get("/components/Banner.js", (r: any, s: any) => { s.sendFile(import.meta.dir + "/" + "./components/Banner.js"); s.setHeader("Content-Type", "application/javascript"); })
 server.get("/components/Footer.js", (r: any, s: any) => { s.sendFile(import.meta.dir + "/" + "./components/Footer.js"); s.setHeader("Content-Type", "application/javascript"); })

@@ -24,11 +24,13 @@ globalThis.buchtaRoute = () => {
     params
   };
 };
-let bunVersion = "0.5.6";
+let bunVersion = "0.5.7";
 let buchtaVersion = "0.5-rc3";
 let getDocsTree = [
+  "docs/[page]",
   "docs/buchta",
-  "docs/[page]"
+  "docs/request",
+  "docs/response"
 ];
 import { $7b66f1cf} from "./../bundle.js";
 var $$7b66f1cf = $7b66f1cf();
@@ -131,7 +133,12 @@ function create_fragment(ctx) {
       h22 = $$7b66f1cf.claim_element(div_nodes, "H2", {});
       var h22_nodes = $$7b66f1cf.children(h22);
       t12 = $$7b66f1cf.claim_text(h22_nodes, "Yes, but if you want to squeeze all the performance, consider using ");
-      a = $$7b66f1cf.claim_element(h22_nodes, "A", { class: true, href: true, target: true });
+      a = $$7b66f1cf.claim_element(h22_nodes, "A", {
+        class: true,
+        href: true,
+        target: true,
+        rel: true
+      });
       var a_nodes = $$7b66f1cf.children(a);
       t13 = $$7b66f1cf.claim_text(a_nodes, "Elysia");
       a_nodes.forEach($$7b66f1cf.detach);
@@ -157,6 +164,7 @@ function create_fragment(ctx) {
       $$7b66f1cf.attr(a, "class", "font-bold");
       $$7b66f1cf.attr(a, "href", "https://elysiajs.com/");
       $$7b66f1cf.attr(a, "target", "_blank");
+      $$7b66f1cf.attr(a, "rel", "noreferrer");
       $$7b66f1cf.attr(h14, "class", "mt-4");
       $$7b66f1cf.attr(div, "class", "mt-12");
     },
