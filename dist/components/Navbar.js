@@ -26,11 +26,13 @@ globalThis.buchtaRoute = () => {
     params
   };
 };
-let bunVersion = "0.5.6";
+let bunVersion = "0.5.7";
 let buchtaVersion = "0.5-rc3";
 let getDocsTree = [
+  "docs/[page]",
   "docs/buchta",
-  "docs/[page]"
+  "docs/request",
+  "docs/response"
 ];
 import { $7b66f1cf, $ca8cb9be} from "./../bundle.js";
 var $$7b66f1cf = $7b66f1cf();
@@ -105,14 +107,14 @@ function create_if_block(ctx) {
     },
     h() {
       $$7b66f1cf.attr(a0, "href", "/#getStarted");
-      $$7b66f1cf.attr(a0, "class", "hover:text-[#004E7B] cursor-pointer text-xl");
-      $$7b66f1cf.attr(a1, "class", "hover:text-[#004E7B] text-xl");
+      $$7b66f1cf.attr(a0, "class", "hover:text-cblue cursor-pointer");
+      $$7b66f1cf.attr(a1, "class", "hover:text-cblue");
       $$7b66f1cf.attr(a1, "href", "/docs/");
-      $$7b66f1cf.attr(div0, "class", "border border-black w-[50%] m-auto");
-      $$7b66f1cf.attr(a2, "class", "hover:text-[#004E7B] text-xl");
+      $$7b66f1cf.attr(div0, "class", "border border-white w-[50%] m-auto");
+      $$7b66f1cf.attr(a2, "class", "hover:text-cblue");
       $$7b66f1cf.attr(a2, "href", "https://github.com/Fire-The-Fox/buchta");
       $$7b66f1cf.attr(div1, "class", "flex flex-col text-center mb-5 font-bold");
-      $$7b66f1cf.attr(div2, "class", "fixed top-0 left-0 w-screen h-screen bg-white backdrop-blur-md bg-opacity-70 p-5 overscroll-auto overflow-auto");
+      $$7b66f1cf.attr(div2, "class", "fixed top-0 left-0 w-screen h-screen bg-black backdrop-blur-md bg-opacity-70 p-5 overscroll-auto overflow-auto");
     },
     m(target, anchor) {
       $$7b66f1cf.insert_hydration(target, div2, anchor);
@@ -336,20 +338,20 @@ function create_fragment(ctx) {
       $$7b66f1cf.attr(div0, "class", "font-bold cursor-pointer");
       $$7b66f1cf.attr(div1, "class", "flex-grow");
       $$7b66f1cf.attr(a0, "href", "/#getStarted");
-      $$7b66f1cf.attr(a0, "class", "hover:text-[#004E7B] cursor-pointer");
-      $$7b66f1cf.attr(a1, "class", "hover:text-[#004E7B]");
+      $$7b66f1cf.attr(a0, "class", "hover:text-cblue cursor-pointer");
+      $$7b66f1cf.attr(a1, "class", "hover:text-cblue");
       $$7b66f1cf.attr(a1, "href", "/docs/");
-      $$7b66f1cf.attr(div2, "class", "border border-black");
-      $$7b66f1cf.attr(a2, "class", "hover:text-[#004E7B]");
+      $$7b66f1cf.attr(div2, "class", "border border-white");
+      $$7b66f1cf.attr(a2, "class", "hover:text-cblue");
       $$7b66f1cf.attr(a2, "href", "https://github.com/Fire-The-Fox/buchta");
-      $$7b66f1cf.attr(div3, "class", "flex-row gap-5 font-bold hidden md:flex");
-      $$7b66f1cf.attr(img1, "class", "md:hidden");
+      $$7b66f1cf.attr(div3, "class", "flex-row gap-5 font-bold hidden lg:flex");
+      $$7b66f1cf.attr(img1, "class", "lg:hidden white-svg");
       if (!$$7b66f1cf.src_url_equal(img1.src, img1_src_value = "/icons/bars.svg"))
         $$7b66f1cf.attr(img1, "src", img1_src_value);
       $$7b66f1cf.attr(img1, "alt", "");
       $$7b66f1cf.attr(img1, "width", "32");
       $$7b66f1cf.attr(img1, "height", "32");
-      $$7b66f1cf.attr(nav, "class", "flex flex-row md:pl-36 md:pr-36 gap-5 h-12 items-center bg-white backdrop-blur-md bg-opacity-30 drop-shadow-lg fixed w-screen text-md p-2 z-10");
+      $$7b66f1cf.attr(nav, "class", "flex flex-row md:pl-36 md:pr-36 gap-5 h-12 items-center bg-black backdrop-blur-md bg-opacity-30 drop-shadow-lg fixed w-screen text-md p-2 z-10 text-white");
     },
     m(target, anchor) {
       $$7b66f1cf.insert_hydration(target, nav, anchor);

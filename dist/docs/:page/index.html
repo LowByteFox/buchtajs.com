@@ -6,9 +6,9 @@
     <meta name="keywords" content="Bun, Buchta, JS, JavaScript, TS, TypeScript">
     <meta name="author" content="Ján Gajdoš">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Buchta.js is a powerful Full-Stack Framework for Bun">
-    <meta content="Buchta.js" property="og:title" />
-    <meta content="Buchta.js is a powerful Full-Stack Framework for Bun" property="og:description" />
+    <meta name="description" content="Buchta is a powerful Full-Stack Framework for Bun">
+    <meta content="Buchta" property="og:title" />
+    <meta content="Buchta is a powerful Full-Stack Framework for Bun" property="og:description" />
     <meta property="og:image" content="/cover.png">
     <meta property="og:image:width" content="1920">
     <meta property="og:image:height" content="1080">
@@ -20,26 +20,26 @@
     <link rel="stylesheet" href="/hljs.css">
 </head>
 <body>
-<main class="svelte-j6ak6c"><div class="svelte-j6ak6c"><nav class="flex flex-row md:pl-36 md:pr-36 gap-5 h-12 items-center bg-white backdrop-blur-md bg-opacity-30 drop-shadow-lg fixed w-screen text-md p-2 z-10">
+<main class="svelte-j6ak6c"><div class="svelte-j6ak6c"><nav class="flex flex-row md:pl-36 md:pr-36 gap-5 h-12 items-center bg-black backdrop-blur-md bg-opacity-30 drop-shadow-lg fixed w-screen text-md p-2 z-10 text-white">
     <img class="cursor-pointer" src="/buchta.webp" alt="Icon" width="32" height="32">
     
     <div class="font-bold cursor-pointer">Buchta</div>
 
     <div class="flex-grow"></div>
 
-    <div class="flex-row gap-5 font-bold hidden md:flex"><a href="/#getStarted" class="hover:text-[#004E7B] cursor-pointer">Get Started</a>
+    <div class="flex-row gap-5 font-bold hidden lg:flex"><a href="/#getStarted" class="hover:text-cblue cursor-pointer">Get Started</a>
         
-        <a class="hover:text-[#004E7B]" href="/docs/">Docs</a>
+        <a class="hover:text-cblue" href="/docs/">Docs</a>
         
-        <div class="border border-black"></div>
-        <a class="hover:text-[#004E7B]" href="https://github.com/Fire-The-Fox/buchta">Github</a>
+        <div class="border border-white"></div>
+        <a class="hover:text-cblue" href="https://github.com/Fire-The-Fox/buchta">Github</a>
         </div>
     
-    <img class="md:hidden" src="/icons/bars.svg" alt="" width="32" height="32">
+    <img class="lg:hidden white-svg" src="/icons/bars.svg" alt="" width="32" height="32">
     </nav>
-        </div>
+        <div></div></div>
     <footer class="flex flex-row md:pl-36 md:pr-36 gap-5 h-24 items-center w-screen text-md p-2 svelte-ucuuyk">
-    <h3 class="svelte-ucuuyk">Built with Buchta v0.5-rc3 and Bun v0.5.6</h3>
+    <h3 class="svelte-ucuuyk">Built with Buchta v0.5-rc3 and Bun v0.5.7</h3>
 </footer>
     <div class="top-0 fixed left-0 Z-50 svelte-j6ak6c" id="confetti"></div>
 </main>
@@ -77,11 +77,13 @@ globalThis.buchtaRoute = () => {
     params
   };
 };
-let bunVersion = "0.5.6";
+let bunVersion = "0.5.7";
 let buchtaVersion = "0.5-rc3";
 let getDocsTree = [
+  "docs/[page]",
   "docs/buchta",
-  "docs/[page]"
+  "docs/request",
+  "docs/response"
 ];
 import { $7b66f1cf, $b13d3c26} from "./../../bundle.js";
 var $$7b66f1cf = $7b66f1cf();
@@ -131,7 +133,12 @@ function create_then_block(ctx) {
 function create_pending_block(ctx) {
   let mainlayout;
   let current;
-  mainlayout = new MainLayout({});
+  mainlayout = new MainLayout({
+    props: {
+      $$slots: { default: [create_default_slot] },
+      $$scope: { ctx }
+    }
+  });
   return {
     c() {
       $$7b66f1cf.create_component(mainlayout.$$.fragment);
@@ -143,7 +150,12 @@ function create_pending_block(ctx) {
       $$7b66f1cf.mount_component(mainlayout, target, anchor);
       current = true;
     },
-    p: $$7b66f1cf.noop,
+    p(ctx, dirty) {
+      const mainlayout_changes = {};
+      if (dirty & 4)
+        mainlayout_changes.$$scope = { dirty, ctx };
+      mainlayout.$set(mainlayout_changes);
+    },
     i(local) {
       if (current)
         return;
@@ -156,6 +168,26 @@ function create_pending_block(ctx) {
     },
     d(detaching) {
       $$7b66f1cf.destroy_component(mainlayout, detaching);
+    }
+  };
+}
+function create_default_slot(ctx) {
+  let div;
+  return {
+    c() {
+      div = $$7b66f1cf.element("div");
+    },
+    l(nodes) {
+      div = $$7b66f1cf.claim_element(nodes, "DIV", {});
+      $$7b66f1cf.children(div).forEach($$7b66f1cf.detach);
+    },
+    m(target, anchor) {
+      $$7b66f1cf.insert_hydration(target, div, anchor);
+    },
+    p: $$7b66f1cf.noop,
+    d(detaching) {
+      if (detaching)
+        $$7b66f1cf.detach(div);
     }
   };
 }

@@ -28,7 +28,7 @@
 </script>
 
 <Layout>
-    <div class="flex flex-row w-[95%] md:w-[85%] m-auto mt-16 text-white bg-white backdrop-blur-md bg-opacity-30 drop-shadow-lg rounded-md p-5 docs-page mb-5">
+    <div class="flex flex-row w-[95%] md:w-[85%] m-auto mt-16 text-white bg-black backdrop-blur-md bg-opacity-30 drop-shadow-lg rounded-md p-5 docs-page mb-5">
         <Sidebar/>
         <div class="overflow-x-auto code-part w-full">
             {@html htmlCode}

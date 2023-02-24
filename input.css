@@ -43,11 +43,11 @@
     }
 
     .docs-notebook > .notebook-top > div:is(.notebook-top-active) {
-        @apply font-bold border rounded-md p-2.5 bg-white text-black;
+        @apply font-bold border border-cblack-hover rounded-md p-2.5 bg-cblue text-white;
     }
 
     .docs-list-base {
-        @apply bg-blue-900 bg-opacity-70 text-cyan-400 border-blue-400 border-r font-bold p-2.5 w-[50%];
+        @apply bg-cblue bg-opacity-70 text-white font-bold p-2.5 w-[50%] border-r border-black;
     }
 }
 

@@ -11,7 +11,7 @@
 
 <!-- svelte-ignore missing-declaration -->
 {#await getMk()}
-<MainLayout />
+<MainLayout><div></div></MainLayout>
 {:then code}
 <Layout htmlCode={code} />
 {/await}

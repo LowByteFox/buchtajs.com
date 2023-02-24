@@ -22,5 +22,5 @@ const getDirectories = (directoryPath: string, depth = 1): string[] => {
 export default function () {
     const current = process.cwd();
     const directories = getDirectories(current + "/public/docs").map(s => s.slice((current + "/public/").length));
-    return directories;
+    return directories.sort();
 }

@@ -1,6 +1,92 @@
 # Buchta
 
-### Class that represents the entire application and its API
+<br>
+
+## Class that represents the entire application and its API
+
+<br>
+
+# Routing
+
+<pre class="javascript bg-black rounded-md mt-5 bg-opacity-40">
+<code>// Add callback function for route
+Buchta.get(...);
+// or
+Buchta.post(...);
+// or
+Buchta.put(...);
+// or
+Buchta.delete(...);</code></pre>
+
+<div class="mt-2.5 mb-2.5">
+    <div class="flex flex-row border-black items-center border">
+        <div class="docs-list-base">Params</div>
+        <div class="docs-list-base p-2.5">Type</div>
+    </div>
+    <div class="flex flex-row border-black items-center border">
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">path</div>
+        <div class="p-2.5 bg-cblack-hover w-[50%]">String</div>
+    </div>
+    <div class="flex flex-row border items-center border-black">
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">handler</div>
+        <div class="p-2.5 bg-cblack-hover w-[50%]">Function - (req: BuchtaRequest, res: BuchtaResponse) => void</div>
+    </div>
+    <div class="flex flex-row border items-center border-black">
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">data</div>
+        <div class="p-2.5 bg-cblack-hover w-[50%]">Any</div>
+    </div>
+</div>
+
+### Returns
+
+<div class="mt-2.5">
+    <div class="flex flex-row border items-center border-black">
+        <div class="docs-list-base">Type</div>
+        <div class="docs-list-base p-2.5 w-[50%]">void</div>
+    </div>
+</div>
+
+<br>
+
+# Middleware
+
+<pre class="javascript bg-black rounded-md mt-5 bg-opacity-40">
+<code>// Add callback function for route that will be executed before/after route handling
+Buchta.addBefore(...);
+// or
+Buchta.addAfter(...);</code></pre>
+
+<div class="mt-2.5 mb-2.5">
+    <div class="flex flex-row border items-center border-black">
+        <div class="docs-list-base">Params</div>
+        <div class="p-2.5 docs-list-base">Type</div>
+    </div>
+    <div class="flex flex-row border items-center border-black">
+        <div class="font-bold p-2.5 w-[50%] border-r border-black  bg-cblack-hover">route</div>
+        <div class="p-2.5 bg-cblack-hover w-[50%]">String</div>
+    </div>
+    <div class="flex flex-row border items-center border-black">
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">method</div>
+        <div class="p-2.5 bg-cblack-hover w-[50%]">String</div>
+    </div>
+    <div class="flex flex-row border items-center border-black">
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">callback</div>
+        <div class="p-2.5 bg-cblack-hover w-[50%]">Function - (req: BuchtaRequest, res: BuchtaResponse) => void</div>
+    </div>
+    <div class="flex flex-row border items-center border-black">
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">force</div>
+        <div class="p-2.5 bg-cblack-hover w-[50%]">Boolean</div>
+    </div>
+</div>
+
+### Returns
+
+<div class="mt-2.5">
+    <div class="flex flex-row border items-center border-black">
+        <div class="docs-list-base">Type</div>
+        <div class="p-2.5 docs-list-base w-[50%]">void</div>
+    </div>
+</div>
 
 <br>
 
@@ -11,22 +97,22 @@
 Buchta.assignAfterRouting(...);</code></pre>
 
 <div class="mt-2.5 mb-2.5">
-    <div class="flex flex-row border items-center border-blue-400">
+    <div class="flex flex-row border items-center border-black">
         <div class="docs-list-base">Params</div>
-        <div class="p-2.5">Type</div>
+        <div class="p-2.5 docs-list-base w-[50%]">Type</div>
     </div>
-    <div class="flex flex-row border items-center border-blue-400">
-        <div class="font-bold p-2.5 w-[50%] border-r border-blue-400">callback</div>
-        <div class="p-2.5">Function</div>
+    <div class="flex flex-row border items-center border-black">
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">callback</div>
+        <div class="p-2.5 bg-cblack-hover w-[50%]">Function</div>
     </div>
 </div>
 
 ### Returns
 
 <div class="mt-2.5">
-    <div class="flex flex-row border items-center border-blue-400">
+    <div class="flex flex-row border items-center border-black">
         <div class="docs-list-base">Type</div>
-        <div class="p-2.5">void</div>
+        <div class="p-2.5 docs-list-base w-[50%]">void</div>
     </div>
 </div>
 
@@ -39,26 +125,26 @@ Buchta.assignAfterRouting(...);</code></pre>
 Buchta.assignExtHandler(...);</code></pre>
 
 <div class="mt-2.5 mb-2.5">
-    <div class="flex flex-row border items-center border-blue-400">
+    <div class="flex flex-row border items-center border-black">
         <div class="docs-list-base">Params</div>
-        <div class="p-2.5">Type</div>
+        <div class="p-2.5 docs-list-base w-[50%]">Type</div>
     </div>
-    <div class="flex flex-row border items-center border-blue-400">
-        <div class="font-bold p-2.5 w-[50%] border-r border-blue-400">ext</div>
-        <div class="p-2.5 border-blue-400">String</div>
+    <div class="flex flex-row border items-center border-black">
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">ext</div>
+        <div class="p-2.5 border-black  bg-cblack-hover w-[50%]">String</div>
     </div>
-    <div class="flex flex-row border items-center border-blue-400">
-        <div class="font-bold p-2.5 w-[50%] border-r border-blue-400">callback</div>
-        <div class="p-2.5">Function</div>
+    <div class="flex flex-row border items-center border-black">
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">callback</div>
+        <div class="p-2.5 bg-cblack-hover w-[50%]">Function</div>
     </div>
 </div>
 
 ### Returns
 
 <div class="mt-2.5">
-    <div class="flex flex-row border items-center border-blue-400">
+    <div class="flex flex-row border items-center border-black">
         <div class="docs-list-base">Type</div>
-        <div class="p-2.5">void</div>
+        <div class="p-2.5 docs-list-base w-[50%]">void</div>
     </div>
 </div>
 
@@ -71,22 +157,22 @@ Buchta.assignExtHandler(...);</code></pre>
 Buchta.getTemplate(...);</code></pre>
 
 <div class="mt-2.5 mb-2.5">
-    <div class="flex flex-row border items-center border-blue-400">
+    <div class="flex flex-row border items-center border-black">
         <div class="docs-list-base">Params</div>
-        <div class="p-2.5">Type</div>
+        <div class="p-2.5 docs-list-base w-[50%]">Type</div>
     </div>
-    <div class="flex flex-row border items-center border-blue-400">
-        <div class="font-bold p-2.5 w-[50%] border-r border-blue-400">name</div>
-        <div class="p-2.5">String</div>
+    <div class="flex flex-row border items-center border-black">
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">name</div>
+        <div class="p-2.5 bg-cblack-hover w-[50%]">String</div>
     </div>
 </div>
 
 ### Returns
 
 <div class="mt-2.5">
-    <div class="flex flex-row border items-center border-blue-400">
+    <div class="flex flex-row border items-center border-black">
         <div class="docs-list-base">Type</div>
-        <div class="p-2.5">string</div>
+        <div class="p-2.5 docs-list-base w-[50%]">string</div>
     </div>
 </div>
 
@@ -102,18 +188,18 @@ In version 0.4.X this was possible to change, now only index
 Buchta.getDefaultFileName();</code></pre>
 
 <div class="mt-2.5 mb-2.5">
-    <div class="flex flex-row border items-center border-blue-400">
+    <div class="flex flex-row border items-center border-black">
         <div class="docs-list-base">Params</div>
-        <div class="p-2.5">Type</div>
+        <div class="p-2.5 docs-list-base w-[50%]">Type</div>
     </div>
 </div>
 
 ### Returns
 
 <div class="mt-2.5">
-    <div class="flex flex-row border items-center border-blue-400">
+    <div class="flex flex-row border items-center border-black">
         <div class="docs-list-base">Type</div>
-        <div class="p-2.5">string</div>
+        <div class="p-2.5 docs-list-base w-[50%]">string</div>
     </div>
 </div>
 
@@ -126,22 +212,22 @@ Buchta.getDefaultFileName();</code></pre>
 Buchta.mixInto(...);</code></pre>
 
 <div class="mt-2.5 mb-2.5">
-    <div class="flex flex-row border items-center border-blue-400">
+    <div class="flex flex-row border items-center border-black">
         <div class="docs-list-base">Params</div>
-        <div class="p-2.5">Type</div>
+        <div class="p-2.5 docs-list-base w-[50%]">Type</div>
     </div>
-    <div class="flex flex-row border items-center border-blue-400">
-        <div class="font-bold p-2.5 w-[50%] border-r border-blue-400">plugin</div>
-        <div class="p-2.5">Function</div>
+    <div class="flex flex-row border items-center border-black">
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">plugin</div>
+        <div class="p-2.5 bg-cblack-hover w-[50%]">Function</div>
     </div>
 </div>
 
 ### Returns
 
 <div class="mt-2.5">
-    <div class="flex flex-row border items-center border-blue-400">
+    <div class="flex flex-row border items-center border-black">
         <div class="docs-list-base">Type</div>
-        <div class="p-2.5">void</div>
+        <div class="p-2.5 docs-list-base w-[50%]">void</div>
     </div>
 </div>
 
@@ -154,22 +240,22 @@ Buchta.mixInto(...);</code></pre>
 Buchta.wsOnOpen(...);</code></pre>
 
 <div class="mt-2.5 mb-2.5">
-    <div class="flex flex-row border items-center border-blue-400">
+    <div class="flex flex-row border items-center border-black">
         <div class="docs-list-base">Params</div>
-        <div class="p-2.5">Type</div>
+        <div class="p-2.5 docs-list-base w-[50%]">Type</div>
     </div>
-    <div class="flex flex-row border items-center border-blue-400">
-        <div class="font-bold p-2.5 w-[50%] border-r border-blue-400">func</div>
-        <div class="p-2.5">Function - (ws: WebSocket) => void</div>
+    <div class="flex flex-row border items-center border-black">
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">func</div>
+        <div class="p-2.5 bg-cblack-hover w-[50%]">Function - (ws: WebSocket) => void</div>
     </div>
 </div>
 
 ### Returns
 
 <div class="mt-2.5">
-    <div class="flex flex-row border items-center border-blue-400">
+    <div class="flex flex-row border items-center border-black">
         <div class="docs-list-base">Type</div>
-        <div class="p-2.5">void</div>
+        <div class="p-2.5 docs-list-base w-[50%]">void</div>
     </div>
 </div>
 
@@ -180,22 +266,22 @@ Buchta.wsOnOpen(...);</code></pre>
 Buchta.wsOnMessage(...);</code></pre>
 
 <div class="mt-2.5 mb-2.5">
-    <div class="flex flex-row border items-center border-blue-400">
+    <div class="flex flex-row border items-center border-black">
         <div class="docs-list-base">Params</div>
-        <div class="p-2.5">Type</div>
+        <div class="p-2.5 docs-list-base w-[50%]">Type</div>
     </div>
-    <div class="flex flex-row border items-center border-blue-400">
-        <div class="font-bold p-2.5 w-[50%] border-r border-blue-400">func</div>
-        <div class="p-2.5">Function - (ws: WebSocket, msg: string) => void</div>
+    <div class="flex flex-row border items-center border-black">
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">func</div>
+        <div class="p-2.5 bg-cblack-hover w-[50%]">Function - (ws: WebSocket, msg: string) => void</div>
     </div>
 </div>
 
 ### Returns
 
 <div class="mt-2.5">
-    <div class="flex flex-row border items-center border-blue-400">
+    <div class="flex flex-row border items-center border-black">
         <div class="docs-list-base">Type</div>
-        <div class="p-2.5">void</div>
+        <div class="p-2.5 docs-list-base w-[50%]">void</div>
     </div>
 </div>
 
@@ -206,22 +292,22 @@ Buchta.wsOnMessage(...);</code></pre>
 Buchta.wsOnClose(...);</code></pre>
 
 <div class="mt-2.5 mb-2.5">
-    <div class="flex flex-row border items-center border-blue-400">
+    <div class="flex flex-row border items-center border-black">
         <div class="docs-list-base">Params</div>
-        <div class="p-2.5">Type</div>
+        <div class="p-2.5 docs-list-base w-[50%]">Type</div>
     </div>
-    <div class="flex flex-row border items-center border-blue-400">
-        <div class="font-bold p-2.5 w-[50%] border-r border-blue-400">func</div>
-        <div class="p-2.5">Function - (ws: WebSocket) => void</div>
+    <div class="flex flex-row border items-center border-black">
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">func</div>
+        <div class="p-2.5 bg-cblack-hover w-[50%]">Function - (ws: WebSocket) => void</div>
     </div>
 </div>
 
 ### Returns
 
 <div class="mt-2.5">
-    <div class="flex flex-row border items-center border-blue-400">
+    <div class="flex flex-row border items-center border-black">
         <div class="docs-list-base">Type</div>
-        <div class="p-2.5">void</div>
+        <div class="p-2.5 docs-list-base w-[50%]">void</div>
     </div>
 </div>
 
@@ -234,26 +320,26 @@ Buchta.wsOnClose(...);</code></pre>
 Buchta.run(...);</code></pre>
 
 <div class="mt-2.5 mb-2.5">
-    <div class="flex flex-row border items-center border-blue-400">
+    <div class="flex flex-row border items-center border-black">
         <div class="docs-list-base">Params</div>
-        <div class="p-2.5">Type</div>
+        <div class="p-2.5 docs-list-base w-[50%]">Type</div>
     </div>
-    <div class="flex flex-row border items-center border-blue-400">
-        <div class="font-bold p-2.5 w-[50%] border-r border-blue-400">serverPort</div>
-        <div class="p-2.5">Number - 3000 is default</div>
+    <div class="flex flex-row border items-center border-black">
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">serverPort</div>
+        <div class="p-2.5 bg-cblack-hover w-[50%]">Number - 3000 is default</div>
     </div>
-    <div class="flex flex-row border items-center border-blue-400">
-        <div class="font-bold p-2.5 w-[50%] border-r border-blue-400">func</div>
-        <div class="p-2.5">Function - optional</div>
+    <div class="flex flex-row border items-center border-black">
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">func</div>
+        <div class="p-2.5 bg-cblack-hover w-[50%]">Function - optional</div>
     </div>
 </div>
 
 ### Returns
 
 <div class="mt-2.5">
-    <div class="flex flex-row border items-center border-blue-400">
+    <div class="flex flex-row border items-center border-black">
         <div class="docs-list-base">Type</div>
-        <div class="p-2.5">void</div>
+        <div class="p-2.5 docs-list-base w-[50%]">void</div>
     </div>
 </div>
 
@@ -264,18 +350,18 @@ Buchta.run(...);</code></pre>
 Buchta.build(...);</code></pre>
 
 <div class="mt-2.5 mb-2.5">
-    <div class="flex flex-row border items-center border-blue-400">
+    <div class="flex flex-row border items-center border-black">
         <div class="docs-list-base">Params</div>
-        <div class="p-2.5">Type</div>
+        <div class="p-2.5 docs-list-base w-[50%]">Type</div>
     </div>
 </div>
 
 ### Returns
 
 <div class="mt-2.5">
-    <div class="flex flex-row border items-center border-blue-400">
+    <div class="flex flex-row border items-center border-black">
         <div class="docs-list-base">Type</div>
-        <div class="p-2.5">void</div>
+        <div class="p-2.5 docs-list-base w-[50%]">void</div>
     </div>
 </div>
 
@@ -288,18 +374,18 @@ Buchta.build(...);</code></pre>
 Buchta.getRoot();</code></pre>
 
 <div class="mt-2.5 mb-2.5">
-    <div class="flex flex-row border items-center border-blue-400">
+    <div class="flex flex-row border items-center border-black">
         <div class="docs-list-base">Params</div>
-        <div class="p-2.5">Type</div>
+        <div class="p-2.5 docs-list-base w-[50%]">Type</div>
     </div>
 </div>
 
 ### Returns
 
 <div class="mt-2.5">
-    <div class="flex flex-row border items-center border-blue-400">
+    <div class="flex flex-row border items-center border-black">
         <div class="docs-list-base">Type</div>
-        <div class="p-2.5">String</div>
+        <div class="p-2.5 docs-list-base w-[50%]">String</div>
     </div>
 </div>
 
@@ -310,18 +396,18 @@ Buchta.getRoot();</code></pre>
 Buchta.getPort();</code></pre>
 
 <div class="mt-2.5 mb-2.5">
-    <div class="flex flex-row border items-center border-blue-400">
+    <div class="flex flex-row border items-center border-black">
         <div class="docs-list-base">Params</div>
-        <div class="p-2.5">Type</div>
+        <div class="p-2.5 docs-list-base w-[50%]">Type</div>
     </div>
 </div>
 
 ### Returns
 
 <div class="mt-2.5">
-    <div class="flex flex-row border items-center border-blue-400">
+    <div class="flex flex-row border items-center border-black">
         <div class="docs-list-base">Type</div>
-        <div class="p-2.5">Number</div>
+        <div class="p-2.5 docs-list-base w-[50%]">Number</div>
     </div>
 </div>
 

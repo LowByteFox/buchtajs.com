@@ -27,11 +27,13 @@ globalThis.buchtaRoute = () => {
     params
   };
 };
-let bunVersion = "0.5.6";
+let bunVersion = "0.5.7";
 let buchtaVersion = "0.5-rc3";
 let getDocsTree = [
+  "docs/[page]",
   "docs/buchta",
-  "docs/[page]"
+  "docs/request",
+  "docs/response"
 ];
 import { $7b66f1cf, $f6e9706} from "./../../bundle.js";
 var $$7b66f1cf = $7b66f1cf();
@@ -67,7 +69,7 @@ function create_default_slot(ctx) {
     },
     h() {
       $$7b66f1cf.attr(div0, "class", "overflow-x-auto code-part w-full");
-      $$7b66f1cf.attr(div1, "class", "flex flex-row w-[95%] md:w-[85%] m-auto mt-16 text-white bg-white backdrop-blur-md bg-opacity-30 drop-shadow-lg rounded-md p-5 docs-page mb-5 svelte-pob63f");
+      $$7b66f1cf.attr(div1, "class", "flex flex-row w-[95%] md:w-[85%] m-auto mt-16 text-white bg-black backdrop-blur-md bg-opacity-30 drop-shadow-lg rounded-md p-5 docs-page mb-5 svelte-pob63f");
     },
     m(target, anchor) {
       $$7b66f1cf.insert_hydration(target, div1, anchor);

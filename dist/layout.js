@@ -33,11 +33,13 @@ globalThis.buchtaRoute = () => {
     params
   };
 };
-let bunVersion = "0.5.6";
+let bunVersion = "0.5.7";
 let buchtaVersion = "0.5-rc3";
 let getDocsTree = [
+  "docs/[page]",
   "docs/buchta",
-  "docs/[page]"
+  "docs/request",
+  "docs/response"
 ];
 var $$7b66f1cf = $7b66f1cf();
 var $$f6e9706 = $f6e9706();
