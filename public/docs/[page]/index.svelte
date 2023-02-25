@@ -1,7 +1,6 @@
 <script>
     import { parse } from "marked";
     import Layout from "./layout.svelte";
-    import MainLayout from "../../layout.svelte";
 
     const getMk = async () => {
         const req = await fetch("./page.md");
@@ -10,8 +9,10 @@
 </script>
 
 <!-- svelte-ignore missing-declaration -->
+<Layout>
 {#await getMk()}
-<MainLayout><div></div></MainLayout>
+<div></div>
 {:then code}
-<Layout htmlCode={code} />
+{@html code}
 {/await}
+</Layout>

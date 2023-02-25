@@ -53,11 +53,11 @@
 </body>
 
 <script type="module">
-import Layout from "./:page/layout.js"
+import Layout from "../:page/layout.js"
 
 globalThis.buchtaRoute = () => {
   let params = new Map;
-  const path = "/docs/index.svelte";
+  const path = "/docs/:page/index.svelte";
   let currentPath = "";
   if (typeof window != "undefined")
     currentPath = window.location.href;
@@ -98,7 +98,7 @@ let getDocsTree = [
   "docs/Response",
   "docs/[page]"
 ];
-import { $7b66f1cf, $b13d3c26} from "./../bundle.js";
+import { $7b66f1cf, $b13d3c26} from "./../../bundle.js";
 var $$7b66f1cf = $7b66f1cf();
 var $$b13d3c26 = $b13d3c26();
 function create_catch_block(ctx) {

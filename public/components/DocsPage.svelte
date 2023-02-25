@@ -1,17 +1,45 @@
 <script>
     import { onMount } from "svelte";
 
+    const hljs = require("highlight.js/lib/common");
+
 	export let name;
     export let route;
 
     let parseHeaders = false;
 
-    onMount(() => {
-        if (route && route.params) {
-            if (route.params.get("page") == name) {
-                parseHeaders = true;
+    function waitForElm(selector) {
+        return new Promise(resolve => {
+            if (document.querySelector(selector)) {
+                return resolve(document.querySelector(selector));
             }
-        }
+
+            const observer = new MutationObserver(mutations => {
+                if (document.querySelector(selector)) {
+                    resolve(document.querySelector(selector));
+                    observer.disconnect();
+                }
+            });
+
+            observer.observe(document.body, {
+                childList: true,
+                subtree: true
+            });
+        });
+    }
+
+    onMount(() => {
+        waitForElm(".code-part > *:not(div)").then(() => {
+            document.querySelectorAll("pre code").forEach((el) => {
+                hljs.highlightElement(el);
+            });
+
+            if (route && route.params) {
+                if (route.params.get("page") == name) {
+                    parseHeaders = true;
+                }
+            }
+        });
     })
 </script>
 

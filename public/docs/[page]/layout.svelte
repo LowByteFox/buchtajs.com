@@ -3,8 +3,6 @@
     import Sidebar from "../../components/Sidebar.svelte";
     import Layout from "../../layout.svelte";
 
-    export let htmlCode;
-
     onMount(() => {
         document.querySelectorAll(".docs-notebook").forEach(notebook => {
             const tabs = notebook.querySelectorAll(".notebook-top > *");
@@ -31,7 +29,7 @@
     <div class="flex flex-row w-[95%] md:w-[85%] m-auto mt-16 text-white bg-black backdrop-blur-md bg-opacity-30 drop-shadow-lg rounded-md p-5 docs-page mb-5">
         <Sidebar/>
         <div class="overflow-x-auto code-part w-full">
-            {@html htmlCode}
+            <slot />
         </div>
     </div>
 </Layout>

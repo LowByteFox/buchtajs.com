@@ -20,8 +20,6 @@ app.get("/api/dog", (req: BuchtaRequest, res: BuchtaResponse) => {
 
 # Headers
 
-<br>
-
 <pre class="javascript bg-black rounded-md mt-5 bg-opacity-40">
 <code>// Set header for response
 BuchtaResponse.setHeader(...);</code></pre>

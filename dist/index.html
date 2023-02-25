@@ -27,10 +27,11 @@
 
     <div class="flex-grow"></div>
 
-    <div class="flex-row gap-5 font-bold hidden lg:flex"><a href="/#getStarted" class="hover:text-cblue cursor-pointer">Get Started</a>
+    <div class="flex-row gap-5 font-bold hidden lg:flex"><a href="/" class="hover:text-cblue cursor-pointer">Home</a>
+        <a href="/#getStarted" class="hover:text-cblue cursor-pointer">Get Started</a>
         
         <a class="hover:text-cblue" href="/docs/">Docs</a>
-        
+        <a class="hover:text-cblue" href="/showroom/">Showroom</a>
         <div class="border border-white"></div>
         <a class="hover:text-cblue" href="https://github.com/Fire-The-Fox/buchta">Github</a>
         </div>
@@ -87,13 +88,15 @@
         <h2 class="font-bold">Extendable</h2></div>
     <div class="flex flex-col items-center"><h2 class="mt-4 font-bold">You can write your own plugins</h2>
                     <h2>Buchta supports custom plugins to extend its functionality</h2></div></div></div>
-        <div class="mt-12"><h1 class="font-bold">FAQ</h1>
+        
+
+<div class="mt-12"><h1 class="font-bold">FAQ</h1>
     <h1 class="mt-4">Is Buchta production ready?</h1>
-    <h2>Yes, as of Buchta 0.5, it is production ready. While bun.js still isn&#39;t, Buchta focuses to be production ready.</h2>
+    <h2>Yes, as of Buchta 0.5, it is production ready. While bun.js still isn&#39;t,
+        Buchta focuses to be production ready.
+    </h2>
     <h1 class="mt-4">What goal is Buchta trying to achieve?</h1>
     <h2>Buchta is trying to be small, fast, and powerful at the same time.</h2>
-    <h1 class="mt-4">Is Buchta good for an API?</h1>
-    <h2>Yes, but if you want to squeeze all the performance, consider using <a class="font-bold" href="https://elysiajs.com/" target="_blank" rel="noreferrer">Elysia</a></h2>
     <h1 class="mt-4">When buchta started?</h1>
     <h2>Buchta started when Bun version 0.1.1 was released.</h2></div></main></div>
     <footer class="flex flex-row md:pl-36 md:pr-36 gap-5 h-24 items-center w-screen text-md p-2 svelte-ucuuyk">
@@ -137,13 +140,22 @@ globalThis.buchtaRoute = () => {
     params
   };
 };
+let projects = [
+  {
+    name: "Buchta",
+    description: "Powerful Full-Stack Framework Powered By Bun",
+    cover: "/covers/buchta.webp",
+    url: "https://buchtajs.com"
+  }
+];
 let bunVersion = "0.5.7";
 let buchtaVersion = "0.5-rc3";
 let getDocsTree = [
-  "docs/[page]",
-  "docs/buchta",
-  "docs/request",
-  "docs/response"
+  "docs/Buchta",
+  "docs/Bundler",
+  "docs/Request",
+  "docs/Response",
+  "docs/[page]"
 ];
 import { $7b66f1cf, $f6e9706} from "./bundle.js";
 var $$7b66f1cf = $7b66f1cf();

@@ -21,10 +21,11 @@
     <div class="flex-grow"></div>
 
     <div class="flex-row gap-5 font-bold hidden lg:flex">
+        <a href="/" class="hover:text-cblue cursor-pointer">Home</a>
         <a href="/#getStarted" class="hover:text-cblue cursor-pointer">Get Started</a>
         <!-- <a class="hover:text-cblue">Blog</a> -->
         <a class="hover:text-cblue" href="/docs/">Docs</a>
-        <!-- <a class="hover:text-cblue">Showroom</a> -->
+        <a class="hover:text-cblue" href="/showroom/">Showroom</a>
         <div class="border border-white"></div>
         <a class="hover:text-cblue" href="https://github.com/Fire-The-Fox/buchta">Github</a>
         <!-- <a class="hover:text-cblue">Discord</a> -->
@@ -35,13 +36,14 @@
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <div in:fade={{ duration: 250}} out:fade={{ duration: 250}} on:click={() => showDrawer = false} class="fixed top-0 left-0 w-screen h-screen bg-black backdrop-blur-md bg-opacity-70 p-5 overscroll-auto overflow-auto">
         <div class="flex flex-col text-center mb-5 font-bold">
+            <a href="/" class="hover:text-cblue cursor-pointer">Home</a>
             <a href="/#getStarted" class="hover:text-cblue cursor-pointer">Get Started</a>
-        <!-- <a class="hover:text-cblue">Blog</a> -->
-        <a class="hover:text-cblue" href="/docs/">Docs</a>
-        <!-- <a class="hover:text-cblue">Showroom</a> -->
-        <div class="border border-white w-[50%] m-auto"></div>
-        <a class="hover:text-cblue" href="https://github.com/Fire-The-Fox/buchta">Github</a>
-        <!-- <a class="hover:text-cblue">Discord</a> -->
+            <!-- <a class="hover:text-cblue">Blog</a> -->
+            <a class="hover:text-cblue" href="/docs/">Docs</a>
+            <a class="hover:text-cblue" href="/showroom/">Showroom</a>
+            <div class="border border-white w-[50%] m-auto"></div>
+            <a class="hover:text-cblue" href="https://github.com/Fire-The-Fox/buchta">Github</a>
+            <!-- <a class="hover:text-cblue">Discord</a> -->
         </div>
         {#if showSidebar}
             <!-- svelte-ignore missing-declaration -->
