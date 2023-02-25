@@ -152,7 +152,7 @@ function create_fragment(ctx) {
 }
 function instance($$self, $$props, $$invalidate) {
   let { html } = $$props;
-  $$f6e9706.onMount(() => {
+  $$f6e9706.onMount( async () => {
     document.querySelectorAll(".docs-notebook").forEach((notebook) => {
       const tabs = notebook.querySelectorAll(".notebook-top > *");
       const parts = notebook.querySelectorAll(".notebook-parts > *");
