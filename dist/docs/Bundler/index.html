@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="/hljs.css">
 </head>
 <body>
-<h1>Please wait...</h1>
+<h1 class="text-cblack">Please wait...</h1>
 
 
 </body>
@@ -62,13 +62,14 @@ let projects = [
     url: "https://buchtajs.com"
   }
 ];
-let bunVersion = "0.5.7";
+let bunVersion = "0.5.8";
 let buchtaVersion = "0.5-rc3";
 let getDocsTree = [
   "docs/Buchta",
   "docs/Bundler",
   "docs/Request",
   "docs/Response",
+  "docs/Subrouter",
   "docs/[page]"
 ];
 import { $7b66f1cf, $b13d3c26} from "./../../bundle.js";
@@ -123,12 +124,17 @@ function create_pending_block(ctx) {
     c() {
       h1 = $$7b66f1cf.element("h1");
       t = $$7b66f1cf.text("Please wait...");
+      this.h();
     },
     l(nodes) {
-      h1 = $$7b66f1cf.claim_element(nodes, "H1", {});
+      h1 = $$7b66f1cf.claim_element(nodes, "H1", { class: true });
       var h1_nodes = $$7b66f1cf.children(h1);
       t = $$7b66f1cf.claim_text(h1_nodes, "Please wait...");
       h1_nodes.forEach($$7b66f1cf.detach);
+      this.h();
+    },
+    h() {
+      $$7b66f1cf.attr(h1, "class", "text-cblack");
     },
     m(target, anchor) {
       $$7b66f1cf.insert_hydration(target, h1, anchor);

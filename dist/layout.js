@@ -41,13 +41,14 @@ let projects = [
     url: "https://buchtajs.com"
   }
 ];
-let bunVersion = "0.5.7";
+let bunVersion = "0.5.8";
 let buchtaVersion = "0.5-rc3";
 let getDocsTree = [
   "docs/Buchta",
   "docs/Bundler",
   "docs/Request",
   "docs/Response",
+  "docs/Subrouter",
   "docs/[page]"
 ];
 var $$7b66f1cf = $7b66f1cf();

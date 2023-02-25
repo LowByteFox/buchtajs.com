@@ -35,13 +35,14 @@ let projects = [
     url: "https://buchtajs.com"
   }
 ];
-let bunVersion = "0.5.7";
+let bunVersion = "0.5.8";
 let buchtaVersion = "0.5-rc3";
 let getDocsTree = [
   "docs/Buchta",
   "docs/Bundler",
   "docs/Request",
   "docs/Response",
+  "docs/Subrouter",
   "docs/[page]"
 ];
 import { $7b66f1cf, $f6e9706} from "./../../bundle.js";
@@ -152,7 +153,7 @@ function create_fragment(ctx) {
 }
 function instance($$self, $$props, $$invalidate) {
   let { html } = $$props;
-  $$f6e9706.onMount( async () => {
+  $$f6e9706.onMount(async () => {
     document.querySelectorAll(".docs-notebook").forEach((notebook) => {
       const tabs = notebook.querySelectorAll(".notebook-top > *");
       const parts = notebook.querySelectorAll(".notebook-parts > *");

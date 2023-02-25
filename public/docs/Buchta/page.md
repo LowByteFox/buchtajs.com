@@ -48,6 +48,37 @@ Buchta.delete(...);</code></pre>
 
 <br>
 
+<pre class="javascript bg-black rounded-md mt-5 bg-opacity-40">
+<code>// Append Subrouter paths to the router itself
+Buchta.use(...);
+</code></pre>
+
+<div class="mt-2.5 mb-2.5">
+    <div class="flex flex-row border-black items-center border">
+        <div class="docs-list-base">Params</div>
+        <div class="docs-list-base p-2.5">Type</div>
+    </div>
+    <div class="flex flex-row border-black items-center border">
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">path</div>
+        <div class="p-2.5 bg-cblack-hover w-[50%]">String</div>
+    </div>
+    <div class="flex flex-row border items-center border-black">
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">router</div>
+        <div class="p-2.5 bg-cblack-hover w-[50%]">BuchtaSubrouter</div>
+    </div>
+</div>
+
+### Returns
+
+<div class="mt-2.5">
+    <div class="flex flex-row border items-center border-black">
+        <div class="docs-list-base">Type</div>
+        <div class="docs-list-base p-2.5 w-[50%]">void</div>
+    </div>
+</div>
+
+<br>
+
 # Middleware
 
 <pre class="javascript bg-black rounded-md mt-5 bg-opacity-40">

@@ -5,7 +5,7 @@
 
     export let html;
 
-    onMount(() => {
+    onMount(async () => {
         document.querySelectorAll(".docs-notebook").forEach(notebook => {
             const tabs = notebook.querySelectorAll(".notebook-top > *");
             const parts = notebook.querySelectorAll(".notebook-parts > *");
@@ -36,7 +36,7 @@
     </div>
 </Layout>
 
-<style :global>
+<style>
     .docs-page {
         min-height: calc(100vh - 96px * 2);
     }

@@ -6,6 +6,7 @@ server.get("/docs", (r: any, s: any) => { s.sendFile(import.meta.dir + "/" + "./
 server.get("/docs/Buchta/page.md", (r: any, s: any) => { s.sendFile(import.meta.dir + "/" + "./docs/Buchta/page.md"); s.setHeader("Content-Type", "text/markdown"); })
 server.get("/docs/Bundler/page.md", (r: any, s: any) => { s.sendFile(import.meta.dir + "/" + "./docs/Bundler/page.md"); s.setHeader("Content-Type", "text/markdown"); })
 server.get("/docs/Request/page.md", (r: any, s: any) => { s.sendFile(import.meta.dir + "/" + "./docs/Request/page.md"); s.setHeader("Content-Type", "text/markdown"); })
+server.get("/docs/Subrouter/page.md", (r: any, s: any) => { s.sendFile(import.meta.dir + "/" + "./docs/Subrouter/page.md"); s.setHeader("Content-Type", "text/markdown"); })
 server.get("/docs/:page", (r: any, s: any) => { s.sendFile(import.meta.dir + "/" + "./docs/:page/index.html"); s.setHeader("Content-Type", "text/html"); })
 server.get("/docs/:page/layout.js", (r: any, s: any) => { s.sendFile(import.meta.dir + "/" + "./docs/:page/layout.js"); s.setHeader("Content-Type", "application/javascript"); })
 server.get("/docs/Response/page.md", (r: any, s: any) => { s.sendFile(import.meta.dir + "/" + "./docs/Response/page.md"); s.setHeader("Content-Type", "text/markdown"); })
