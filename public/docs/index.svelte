@@ -1,17 +1,17 @@
 <script>
     import { parse } from "marked";
     import Layout from "./:page/layout.svelte";
-    
+
     const getMk = async () => {
         const req = await fetch("./page.md");
         return Promise.resolve(parse(await req.text()));
     }
 </script>
 
-<Layout>
+<!-- svelte-ignore missing-declaration -->
 {#await getMk()}
-<div></div>
+<h1>Please wait...</h1>
 {:then code}
-{@html code}
-{/await}
+<Layout html={code}>
 </Layout>
+{/await}

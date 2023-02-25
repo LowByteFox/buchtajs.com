@@ -9,10 +9,9 @@
 </script>
 
 <!-- svelte-ignore missing-declaration -->
-<Layout>
 {#await getMk()}
-<div></div>
+<h1>Please wait...</h1>
 {:then code}
-{@html code}
-{/await}
+<Layout html={code}>
 </Layout>
+{/await}
