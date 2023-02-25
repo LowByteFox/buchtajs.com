@@ -27,29 +27,33 @@
 
     <div class="flex-grow"></div>
 
-    <div class="flex-row gap-5 font-bold hidden lg:flex"><a href="/#getStarted" class="hover:text-cblue cursor-pointer">Get Started</a>
+    <div class="flex-row gap-5 font-bold hidden lg:flex"><a href="/" class="hover:text-cblue cursor-pointer">Home</a>
+        <a href="/#getStarted" class="hover:text-cblue cursor-pointer">Get Started</a>
         
         <a class="hover:text-cblue" href="/docs/">Docs</a>
-        
+        <a class="hover:text-cblue" href="/showroom/">Showroom</a>
         <div class="border border-white"></div>
         <a class="hover:text-cblue" href="https://github.com/Fire-The-Fox/buchta">Github</a>
         </div>
     
     <img class="lg:hidden white-svg" src="/icons/bars.svg" alt="" width="32" height="32">
     </nav>
-        <div></div></div>
+        <div class="flex flex-row w-[95%] md:w-[85%] m-auto mt-16 text-white bg-black backdrop-blur-md bg-opacity-30 drop-shadow-lg rounded-md p-5 docs-page mb-5 svelte-pob63f"><div class="mr-8 w-full lg:w-[20%] lg:border-r-2 lg:block font-bold hidden"><h2 class="mb-5 mr-5"><a href="/docs/">Get started</a></h2>
+    
+    <div class="flex flex-col overscroll-auto overflow-auto mr-5"><a class="text-xl" href="/docs/Buchta/">Buchta</a><a class="text-xl" href="/docs/Bundler/">Bundler</a><a class="text-xl" href="/docs/Request/">Request</a><a class="text-xl" href="/docs/Response/">Response</a></div></div>
+        <div class="overflow-x-auto code-part w-full">
+<div></div>
+</div></div></div>
     <footer class="flex flex-row md:pl-36 md:pr-36 gap-5 h-24 items-center w-screen text-md p-2 svelte-ucuuyk">
     <h3 class="svelte-ucuuyk">Built with Buchta v0.5-rc3 and Bun v0.5.7</h3>
 </footer>
     <div class="top-0 fixed left-0 Z-50 svelte-j6ak6c" id="confetti"></div>
 </main>
 
-
 </body>
 
 <script type="module">
 import Layout from "./layout.js"
-import MainLayout from "../../layout.js"
 
 globalThis.buchtaRoute = () => {
   let params = new Map;
@@ -77,13 +81,22 @@ globalThis.buchtaRoute = () => {
     params
   };
 };
+let projects = [
+  {
+    name: "Buchta",
+    description: "Powerful Full-Stack Framework Powered By Bun",
+    cover: "/covers/buchta.webp",
+    url: "https://buchtajs.com"
+  }
+];
 let bunVersion = "0.5.7";
 let buchtaVersion = "0.5-rc3";
 let getDocsTree = [
-  "docs/[page]",
-  "docs/buchta",
-  "docs/request",
-  "docs/response"
+  "docs/Buchta",
+  "docs/Bundler",
+  "docs/Request",
+  "docs/Response",
+  "docs/[page]"
 ];
 import { $7b66f1cf, $b13d3c26} from "./../../bundle.js";
 var $$7b66f1cf = $7b66f1cf();
@@ -94,84 +107,41 @@ function create_catch_block(ctx) {
     l: $$7b66f1cf.noop,
     m: $$7b66f1cf.noop,
     p: $$7b66f1cf.noop,
-    i: $$7b66f1cf.noop,
-    o: $$7b66f1cf.noop,
     d: $$7b66f1cf.noop
   };
 }
 function create_then_block(ctx) {
-  let layout;
-  let current;
-  layout = new Layout({ props: { htmlCode: ctx[1] } });
+  let html_tag;
+  let raw_value = ctx[1] + "";
+  let html_anchor;
   return {
     c() {
-      $$7b66f1cf.create_component(layout.$$.fragment);
+      html_tag = new $$7b66f1cf.HtmlTagHydration(false);
+      html_anchor = $$7b66f1cf.empty();
+      this.h();
     },
     l(nodes) {
-      $$7b66f1cf.claim_component(layout.$$.fragment, nodes);
+      html_tag = $$7b66f1cf.claim_html_tag(nodes, false);
+      html_anchor = $$7b66f1cf.empty();
+      this.h();
+    },
+    h() {
+      html_tag.a = html_anchor;
     },
     m(target, anchor) {
-      $$7b66f1cf.mount_component(layout, target, anchor);
-      current = true;
+      html_tag.m(raw_value, target, anchor);
+      $$7b66f1cf.insert_hydration(target, html_anchor, anchor);
     },
     p: $$7b66f1cf.noop,
-    i(local) {
-      if (current)
-        return;
-      $$7b66f1cf.transition_in(layout.$$.fragment, local);
-      current = true;
-    },
-    o(local) {
-      $$7b66f1cf.transition_out(layout.$$.fragment, local);
-      current = false;
-    },
     d(detaching) {
-      $$7b66f1cf.destroy_component(layout, detaching);
+      if (detaching)
+        $$7b66f1cf.detach(html_anchor);
+      if (detaching)
+        html_tag.d();
     }
   };
 }
 function create_pending_block(ctx) {
-  let mainlayout;
-  let current;
-  mainlayout = new MainLayout({
-    props: {
-      $$slots: { default: [create_default_slot] },
-      $$scope: { ctx }
-    }
-  });
-  return {
-    c() {
-      $$7b66f1cf.create_component(mainlayout.$$.fragment);
-    },
-    l(nodes) {
-      $$7b66f1cf.claim_component(mainlayout.$$.fragment, nodes);
-    },
-    m(target, anchor) {
-      $$7b66f1cf.mount_component(mainlayout, target, anchor);
-      current = true;
-    },
-    p(ctx, dirty) {
-      const mainlayout_changes = {};
-      if (dirty & 4)
-        mainlayout_changes.$$scope = { dirty, ctx };
-      mainlayout.$set(mainlayout_changes);
-    },
-    i(local) {
-      if (current)
-        return;
-      $$7b66f1cf.transition_in(mainlayout.$$.fragment, local);
-      current = true;
-    },
-    o(local) {
-      $$7b66f1cf.transition_out(mainlayout.$$.fragment, local);
-      current = false;
-    },
-    d(detaching) {
-      $$7b66f1cf.destroy_component(mainlayout, detaching);
-    }
-  };
-}
-function create_default_slot(ctx) {
   let div;
   return {
     c() {
@@ -191,10 +161,9 @@ function create_default_slot(ctx) {
     }
   };
 }
-function create_fragment(ctx) {
+function create_default_slot(ctx) {
   let await_block_anchor;
   let promise;
-  let current;
   let info = {
     ctx,
     current: null,
@@ -203,8 +172,7 @@ function create_fragment(ctx) {
     pending: create_pending_block,
     then: create_then_block,
     catch: create_catch_block,
-    value: 1,
-    blocks: [, , ,]
+    value: 1
   };
   $$7b66f1cf.handle_promise(promise = ctx[0](), info);
   return {
@@ -221,24 +189,10 @@ function create_fragment(ctx) {
       info.block.m(target, info.anchor = anchor);
       info.mount = () => await_block_anchor.parentNode;
       info.anchor = await_block_anchor;
-      current = true;
     },
-    p(new_ctx, [dirty]) {
+    p(new_ctx, dirty) {
       ctx = new_ctx;
       $$7b66f1cf.update_await_block_branch(info, ctx, dirty);
-    },
-    i(local) {
-      if (current)
-        return;
-      $$7b66f1cf.transition_in(info.block);
-      current = true;
-    },
-    o(local) {
-      for (let i = 0;i < 3; i += 1) {
-        const block = info.blocks[i];
-        $$7b66f1cf.transition_out(block);
-      }
-      current = false;
     },
     d(detaching) {
       if (detaching)
@@ -246,6 +200,47 @@ function create_fragment(ctx) {
       info.block.d(detaching);
       info.token = null;
       info = null;
+    }
+  };
+}
+function create_fragment(ctx) {
+  let layout;
+  let current;
+  layout = new Layout({
+    props: {
+      $$slots: { default: [create_default_slot] },
+      $$scope: { ctx }
+    }
+  });
+  return {
+    c() {
+      $$7b66f1cf.create_component(layout.$$.fragment);
+    },
+    l(nodes) {
+      $$7b66f1cf.claim_component(layout.$$.fragment, nodes);
+    },
+    m(target, anchor) {
+      $$7b66f1cf.mount_component(layout, target, anchor);
+      current = true;
+    },
+    p(ctx, [dirty]) {
+      const layout_changes = {};
+      if (dirty & 4)
+        layout_changes.$$scope = { dirty, ctx };
+      layout.$set(layout_changes);
+    },
+    i(local) {
+      if (current)
+        return;
+      $$7b66f1cf.transition_in(layout.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      $$7b66f1cf.transition_out(layout.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      $$7b66f1cf.destroy_component(layout, detaching);
     }
   };
 }

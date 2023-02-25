@@ -38,12 +38,11 @@
     
     <img class="lg:hidden white-svg" src="/icons/bars.svg" alt="" width="32" height="32">
     </nav>
-        <div class="flex flex-row w-[95%] md:w-[85%] m-auto mt-16 text-white bg-black backdrop-blur-md bg-opacity-30 drop-shadow-lg rounded-md p-5 docs-page mb-5 svelte-pob63f"><div class="mr-8 w-full lg:w-[20%] lg:border-r-2 lg:block font-bold hidden"><h2 class="mb-5 mr-5"><a href="/docs/">Get started</a></h2>
-    
-    <div class="flex flex-col overscroll-auto overflow-auto mr-5"><a class="text-xl" href="/docs/Buchta/">Buchta</a><a class="text-xl" href="/docs/Bundler/">Bundler</a><a class="text-xl" href="/docs/Request/">Request</a><a class="text-xl" href="/docs/Response/">Response</a></div></div>
-        <div class="overflow-x-auto code-part w-full">
-<div></div>
-</div></div></div>
+        <main class="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-5 w-[95%] md:w-[85%] m-auto mt-16">
+        
+<div class="flex flex-col text-center bg-black backdrop-blur-md bg-opacity-30 drop-shadow-md hover:scale-105 transition-transform p-5 gap-2.5 rounded-lg cursor-pointer"><img src="/covers/buchta.webp" alt="Website Cover" class="object-scale-down">
+    <h2 class="text-white font-bold">Buchta</h2>
+    <h3 class="text-white">Powerful Full-Stack Framework Powered By Bun</h3></div></main></div>
     <footer class="flex flex-row md:pl-36 md:pr-36 gap-5 h-24 items-center w-screen text-md p-2 svelte-ucuuyk">
     <h3 class="svelte-ucuuyk">Built with Buchta v0.5-rc3 and Bun v0.5.7</h3>
 </footer>
@@ -53,11 +52,12 @@
 </body>
 
 <script type="module">
-import Layout from "./:page/layout.js"
+import Project from "../components/Project.js"
+import Layout from "../layout.js"
 
 globalThis.buchtaRoute = () => {
   let params = new Map;
-  const path = "/docs/index.svelte";
+  const path = "/showroom/index.svelte";
   let currentPath = "";
   if (typeof window != "undefined")
     currentPath = window.location.href;
@@ -98,108 +98,124 @@ let getDocsTree = [
   "docs/Response",
   "docs/[page]"
 ];
-import { $7b66f1cf, $b13d3c26} from "./../bundle.js";
+import { $7b66f1cf} from "./../bundle.js";
 var $$7b66f1cf = $7b66f1cf();
-var $$b13d3c26 = $b13d3c26();
-function create_catch_block(ctx) {
-  return {
-    c: $$7b66f1cf.noop,
-    l: $$7b66f1cf.noop,
-    m: $$7b66f1cf.noop,
-    p: $$7b66f1cf.noop,
-    d: $$7b66f1cf.noop
-  };
+function get_each_context(ctx, list, i) {
+  const child_ctx = ctx.slice();
+  child_ctx[0] = list[i];
+  return child_ctx;
 }
-function create_then_block(ctx) {
-  let html_tag;
-  let raw_value = ctx[1] + "";
-  let html_anchor;
-  return {
-    c() {
-      html_tag = new $$7b66f1cf.HtmlTagHydration(false);
-      html_anchor = $$7b66f1cf.empty();
-      this.h();
-    },
-    l(nodes) {
-      html_tag = $$7b66f1cf.claim_html_tag(nodes, false);
-      html_anchor = $$7b66f1cf.empty();
-      this.h();
-    },
-    h() {
-      html_tag.a = html_anchor;
-    },
-    m(target, anchor) {
-      html_tag.m(raw_value, target, anchor);
-      $$7b66f1cf.insert_hydration(target, html_anchor, anchor);
-    },
-    p: $$7b66f1cf.noop,
-    d(detaching) {
-      if (detaching)
-        $$7b66f1cf.detach(html_anchor);
-      if (detaching)
-        html_tag.d();
+function create_each_block(ctx) {
+  let project;
+  let current;
+  project = new Project({
+    props: {
+      name: ctx[0].name,
+      description: ctx[0].description,
+      cover: ctx[0].cover,
+      url: ctx[0].url
     }
-  };
-}
-function create_pending_block(ctx) {
-  let div;
+  });
   return {
     c() {
-      div = $$7b66f1cf.element("div");
+      $$7b66f1cf.create_component(project.$$.fragment);
     },
     l(nodes) {
-      div = $$7b66f1cf.claim_element(nodes, "DIV", {});
-      $$7b66f1cf.children(div).forEach($$7b66f1cf.detach);
+      $$7b66f1cf.claim_component(project.$$.fragment, nodes);
     },
     m(target, anchor) {
-      $$7b66f1cf.insert_hydration(target, div, anchor);
+      $$7b66f1cf.mount_component(project, target, anchor);
+      current = true;
     },
     p: $$7b66f1cf.noop,
+    i(local) {
+      if (current)
+        return;
+      $$7b66f1cf.transition_in(project.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      $$7b66f1cf.transition_out(project.$$.fragment, local);
+      current = false;
+    },
     d(detaching) {
-      if (detaching)
-        $$7b66f1cf.detach(div);
+      $$7b66f1cf.destroy_component(project, detaching);
     }
   };
 }
 function create_default_slot(ctx) {
-  let await_block_anchor;
-  let promise;
-  let info = {
-    ctx,
-    current: null,
-    token: null,
-    hasCatch: false,
-    pending: create_pending_block,
-    then: create_then_block,
-    catch: create_catch_block,
-    value: 1
-  };
-  $$7b66f1cf.handle_promise(promise = ctx[0](), info);
+  let main;
+  let current;
+  let each_value = projects;
+  let each_blocks = [];
+  for (let i = 0;i < each_value.length; i += 1)
+    each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
+  const out = (i) => $$7b66f1cf.transition_out(each_blocks[i], 1, 1, () => {
+    each_blocks[i] = null;
+  });
   return {
     c() {
-      await_block_anchor = $$7b66f1cf.empty();
-      info.block.c();
+      main = $$7b66f1cf.element("main");
+      for (let i = 0;i < each_blocks.length; i += 1)
+        each_blocks[i].c();
+      this.h();
     },
     l(nodes) {
-      await_block_anchor = $$7b66f1cf.empty();
-      info.block.l(nodes);
+      main = $$7b66f1cf.claim_element(nodes, "MAIN", { class: true });
+      var main_nodes = $$7b66f1cf.children(main);
+      for (let i = 0;i < each_blocks.length; i += 1)
+        each_blocks[i].l(main_nodes);
+      main_nodes.forEach($$7b66f1cf.detach);
+      this.h();
+    },
+    h() {
+      $$7b66f1cf.attr(main, "class", "grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-5 w-[95%] md:w-[85%] m-auto mt-16");
     },
     m(target, anchor) {
-      $$7b66f1cf.insert_hydration(target, await_block_anchor, anchor);
-      info.block.m(target, info.anchor = anchor);
-      info.mount = () => await_block_anchor.parentNode;
-      info.anchor = await_block_anchor;
+      $$7b66f1cf.insert_hydration(target, main, anchor);
+      for (let i = 0;i < each_blocks.length; i += 1)
+        each_blocks[i].m(main, null);
+      current = true;
     },
-    p(new_ctx, dirty) {
-      ctx = new_ctx;
-      $$7b66f1cf.update_await_block_branch(info, ctx, dirty);
+    p(ctx, dirty) {
+      if (dirty & 0) {
+        each_value = projects;
+        let i;
+        for (i = 0;i < each_value.length; i += 1) {
+          const child_ctx = get_each_context(ctx, each_value, i);
+          if (each_blocks[i]) {
+            each_blocks[i].p(child_ctx, dirty);
+            $$7b66f1cf.transition_in(each_blocks[i], 1);
+          } else {
+            each_blocks[i] = create_each_block(child_ctx);
+            each_blocks[i].c();
+            $$7b66f1cf.transition_in(each_blocks[i], 1);
+            each_blocks[i].m(main, null);
+          }
+        }
+        $$7b66f1cf.group_outros();
+        for (i = each_value.length;i < each_blocks.length; i += 1)
+          out(i);
+        $$7b66f1cf.check_outros();
+      }
+    },
+    i(local) {
+      if (current)
+        return;
+      for (let i = 0;i < each_value.length; i += 1)
+        $$7b66f1cf.transition_in(each_blocks[i]);
+      current = true;
+    },
+    o(local) {
+      each_blocks = each_blocks.filter(Boolean);
+      for (let i = 0;i < each_blocks.length; i += 1)
+        $$7b66f1cf.transition_out(each_blocks[i]);
+      current = false;
     },
     d(detaching) {
       if (detaching)
-        $$7b66f1cf.detach(await_block_anchor);
-      info.block.d(detaching);
-      info.token = null;
-      info = null;
+        $$7b66f1cf.detach(main);
+      $$7b66f1cf.destroy_each(each_blocks, detaching);
     }
   };
 }
@@ -225,7 +241,7 @@ function create_fragment(ctx) {
     },
     p(ctx, [dirty]) {
       const layout_changes = {};
-      if (dirty & 4)
+      if (dirty & 8)
         layout_changes.$$scope = { dirty, ctx };
       layout.$set(layout_changes);
     },
@@ -244,18 +260,11 @@ function create_fragment(ctx) {
     }
   };
 }
-function instance($$self) {
-  const getMk = async () => {
-    const req = await fetch("./page.md");
-    return Promise.resolve($$b13d3c26.parse(await req.text()));
-  };
-  return [getMk];
-}
 
 class Component extends $$7b66f1cf.SvelteComponent {
   constructor(options) {
     super();
-    $$7b66f1cf.init(this, options, instance, create_fragment, $$7b66f1cf.safe_not_equal, {});
+    $$7b66f1cf.init(this, options, null, create_fragment, $$7b66f1cf.safe_not_equal, {});
   }
 }
 export default Component;

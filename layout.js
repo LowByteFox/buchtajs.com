@@ -33,13 +33,22 @@ globalThis.buchtaRoute = () => {
     params
   };
 };
+let projects = [
+  {
+    name: "Buchta",
+    description: "Powerful Full-Stack Framework Powered By Bun",
+    cover: "/covers/buchta.webp",
+    url: "https://buchtajs.com"
+  }
+];
 let bunVersion = "0.5.7";
 let buchtaVersion = "0.5-rc3";
 let getDocsTree = [
-  "docs/[page]",
-  "docs/buchta",
-  "docs/request",
-  "docs/response"
+  "docs/Buchta",
+  "docs/Bundler",
+  "docs/Request",
+  "docs/Response",
+  "docs/[page]"
 ];
 var $$7b66f1cf = $7b66f1cf();
 var $$f6e9706 = $f6e9706();

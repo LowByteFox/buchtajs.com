@@ -1,3 +1,8 @@
+import {
+__require as require
+} from "./../bundle.js";
+import { $7b66f1cf, $f6e9706, $d7217306} from "./../bundle.js";
+var common_4d20_0 = $d7217306();
 globalThis.buchtaRoute = () => {
   let params = new Map;
   const path = "/components/DocsPage.svelte";
@@ -24,20 +29,28 @@ globalThis.buchtaRoute = () => {
     params
   };
 };
+let projects = [
+  {
+    name: "Buchta",
+    description: "Powerful Full-Stack Framework Powered By Bun",
+    cover: "/covers/buchta.webp",
+    url: "https://buchtajs.com"
+  }
+];
 let bunVersion = "0.5.7";
 let buchtaVersion = "0.5-rc3";
 let getDocsTree = [
-  "docs/[page]",
-  "docs/buchta",
-  "docs/request",
-  "docs/response"
+  "docs/Buchta",
+  "docs/Bundler",
+  "docs/Request",
+  "docs/Response",
+  "docs/[page]"
 ];
-import { $7b66f1cf, $f6e9706} from "./../bundle.js";
 var $$7b66f1cf = $7b66f1cf();
 var $$f6e9706 = $f6e9706();
 function get_each_context(ctx, list, i) {
   const child_ctx = ctx.slice();
-  child_ctx[3] = list[i];
+  child_ctx[4] = list[i];
   return child_ctx;
 }
 function create_else_block(ctx) {
@@ -156,7 +169,7 @@ function create_if_block(ctx) {
 function create_each_block(ctx) {
   let li;
   let a;
-  let t_value = ctx[3].innerText + "";
+  let t_value = ctx[4].innerText + "";
   let t;
   let a_href_value;
   return {
@@ -177,7 +190,7 @@ function create_each_block(ctx) {
       this.h();
     },
     h() {
-      $$7b66f1cf.attr(a, "href", a_href_value = "#" + ctx[3].innerText.toLowerCase().replaceAll(" ", "-"));
+      $$7b66f1cf.attr(a, "href", a_href_value = "#" + ctx[4].innerText.toLowerCase().replaceAll(" ", "-"));
       $$7b66f1cf.attr(li, "class", "ml-5 list-disc font-bold");
     },
     m(target, anchor) {
@@ -235,15 +248,34 @@ function create_fragment(ctx) {
     }
   };
 }
+function waitForElm(selector) {
+  return new Promise((resolve) => {
+    if (document.querySelector(selector))
+      return resolve(document.querySelector(selector));
+    const observer = new MutationObserver((mutations) => {
+      if (document.querySelector(selector)) {
+        resolve(document.querySelector(selector));
+        observer.disconnect();
+      }
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+  });
+}
 function instance($$self, $$props, $$invalidate) {
+  const hljs = require(common_4d20_0);
   let { name } = $$props;
   let { route } = $$props;
   let parseHeaders = false;
   $$f6e9706.onMount(() => {
-    if (route && route.params) {
-      if (route.params.get("page") == name)
-        $$invalidate(1, parseHeaders = true);
-    }
+    waitForElm(".code-part > *:not(div)").then(() => {
+      document.querySelectorAll("pre code").forEach((el) => {
+        hljs.highlightElement(el);
+      });
+      if (route && route.params) {
+        if (route.params.get("page") == name)
+          $$invalidate(1, parseHeaders = true);
+      }
+    });
   });
   $$self.$$set = ($$props) => {
     if ("name" in $$props)
