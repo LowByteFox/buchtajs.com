@@ -57,16 +57,12 @@ function create_default_slot(ctx) {
   let div0;
   let current;
   sidebar = new Sidebar({});
-  const default_slot_template = ctx[0].default;
-  const default_slot = $$7b66f1cf.create_slot(default_slot_template, ctx, ctx[1], null);
   return {
     c() {
       div1 = $$7b66f1cf.element("div");
       $$7b66f1cf.create_component(sidebar.$$.fragment);
       t = $$7b66f1cf.space();
       div0 = $$7b66f1cf.element("div");
-      if (default_slot)
-        default_slot.c();
       this.h();
     },
     l(nodes) {
@@ -76,8 +72,6 @@ function create_default_slot(ctx) {
       t = $$7b66f1cf.claim_space(div1_nodes);
       div0 = $$7b66f1cf.claim_element(div1_nodes, "DIV", { class: true });
       var div0_nodes = $$7b66f1cf.children(div0);
-      if (default_slot)
-        default_slot.l(div0_nodes);
       div0_nodes.forEach($$7b66f1cf.detach);
       div1_nodes.forEach($$7b66f1cf.detach);
       this.h();
@@ -91,34 +85,27 @@ function create_default_slot(ctx) {
       $$7b66f1cf.mount_component(sidebar, div1, null);
       $$7b66f1cf.append_hydration(div1, t);
       $$7b66f1cf.append_hydration(div1, div0);
-      if (default_slot)
-        default_slot.m(div0, null);
+      div0.innerHTML = ctx[0];
       current = true;
     },
     p(ctx, dirty) {
-      if (default_slot) {
-        if (default_slot.p && (!current || dirty & 2))
-          $$7b66f1cf.update_slot_base(default_slot, default_slot_template, ctx, ctx[1], !current ? $$7b66f1cf.get_all_dirty_from_scope(ctx[1]) : $$7b66f1cf.get_slot_changes(default_slot_template, ctx[1], dirty, null), null);
-      }
+      if (!current || dirty & 1)
+        div0.innerHTML = ctx[0];
     },
     i(local) {
       if (current)
         return;
       $$7b66f1cf.transition_in(sidebar.$$.fragment, local);
-      $$7b66f1cf.transition_in(default_slot, local);
       current = true;
     },
     o(local) {
       $$7b66f1cf.transition_out(sidebar.$$.fragment, local);
-      $$7b66f1cf.transition_out(default_slot, local);
       current = false;
     },
     d(detaching) {
       if (detaching)
         $$7b66f1cf.detach(div1);
       $$7b66f1cf.destroy_component(sidebar);
-      if (default_slot)
-        default_slot.d(detaching);
     }
   };
 }
@@ -144,7 +131,7 @@ function create_fragment(ctx) {
     },
     p(ctx, [dirty]) {
       const layout_changes = {};
-      if (dirty & 2)
+      if (dirty & 3)
         layout_changes.$$scope = { dirty, ctx };
       layout.$set(layout_changes);
     },
@@ -164,7 +151,7 @@ function create_fragment(ctx) {
   };
 }
 function instance($$self, $$props, $$invalidate) {
-  let { $$slots: slots = {}, $$scope } = $$props;
+  let { html } = $$props;
   $$f6e9706.onMount(() => {
     document.querySelectorAll(".docs-notebook").forEach((notebook) => {
       const tabs = notebook.querySelectorAll(".notebook-top > *");
@@ -183,16 +170,16 @@ function instance($$self, $$props, $$invalidate) {
     });
   });
   $$self.$$set = ($$props) => {
-    if ("$$scope" in $$props)
-      $$invalidate(1, $$scope = $$props.$$scope);
+    if ("html" in $$props)
+      $$invalidate(0, html = $$props.html);
   };
-  return [slots, $$scope];
+  return [html];
 }
 
 class Component extends $$7b66f1cf.SvelteComponent {
   constructor(options) {
     super();
-    $$7b66f1cf.init(this, options, instance, create_fragment, $$7b66f1cf.safe_not_equal, {}, add_css);
+    $$7b66f1cf.init(this, options, instance, create_fragment, $$7b66f1cf.safe_not_equal, { html: 0 }, add_css);
   }
 }
 export default Component;

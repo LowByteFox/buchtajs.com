@@ -1,8 +1,3 @@
-import {
-__require as require
-} from "./../bundle.js";
-import { $7b66f1cf, $f6e9706, $d7217306} from "./../bundle.js";
-var common_4d20_0 = $d7217306();
 globalThis.buchtaRoute = () => {
   let params = new Map;
   const path = "/components/DocsPage.svelte";
@@ -46,11 +41,12 @@ let getDocsTree = [
   "docs/Response",
   "docs/[page]"
 ];
+import { $7b66f1cf, $f6e9706} from "./../bundle.js";
 var $$7b66f1cf = $7b66f1cf();
 var $$f6e9706 = $f6e9706();
 function get_each_context(ctx, list, i) {
   const child_ctx = ctx.slice();
-  child_ctx[4] = list[i];
+  child_ctx[3] = list[i];
   return child_ctx;
 }
 function create_else_block(ctx) {
@@ -169,14 +165,16 @@ function create_if_block(ctx) {
 function create_each_block(ctx) {
   let li;
   let a;
-  let t_value = ctx[4].innerText + "";
-  let t;
+  let t0_value = ctx[3].innerText + "";
+  let t0;
   let a_href_value;
+  let t1;
   return {
     c() {
       li = $$7b66f1cf.element("li");
       a = $$7b66f1cf.element("a");
-      t = $$7b66f1cf.text(t_value);
+      t0 = $$7b66f1cf.text(t0_value);
+      t1 = $$7b66f1cf.space();
       this.h();
     },
     l(nodes) {
@@ -184,19 +182,21 @@ function create_each_block(ctx) {
       var li_nodes = $$7b66f1cf.children(li);
       a = $$7b66f1cf.claim_element(li_nodes, "A", { href: true });
       var a_nodes = $$7b66f1cf.children(a);
-      t = $$7b66f1cf.claim_text(a_nodes, t_value);
+      t0 = $$7b66f1cf.claim_text(a_nodes, t0_value);
       a_nodes.forEach($$7b66f1cf.detach);
+      t1 = $$7b66f1cf.claim_space(li_nodes);
       li_nodes.forEach($$7b66f1cf.detach);
       this.h();
     },
     h() {
-      $$7b66f1cf.attr(a, "href", a_href_value = "#" + ctx[4].innerText.toLowerCase().replaceAll(" ", "-"));
+      $$7b66f1cf.attr(a, "href", a_href_value = "#" + ctx[3].innerText.toLowerCase().replaceAll(" ", "-"));
       $$7b66f1cf.attr(li, "class", "ml-5 list-disc font-bold");
     },
     m(target, anchor) {
       $$7b66f1cf.insert_hydration(target, li, anchor);
       $$7b66f1cf.append_hydration(li, a);
-      $$7b66f1cf.append_hydration(a, t);
+      $$7b66f1cf.append_hydration(a, t0);
+      $$7b66f1cf.append_hydration(li, t1);
     },
     p: $$7b66f1cf.noop,
     d(detaching) {
@@ -248,34 +248,15 @@ function create_fragment(ctx) {
     }
   };
 }
-function waitForElm(selector) {
-  return new Promise((resolve) => {
-    if (document.querySelector(selector))
-      return resolve(document.querySelector(selector));
-    const observer = new MutationObserver((mutations) => {
-      if (document.querySelector(selector)) {
-        resolve(document.querySelector(selector));
-        observer.disconnect();
-      }
-    });
-    observer.observe(document.body, { childList: true, subtree: true });
-  });
-}
 function instance($$self, $$props, $$invalidate) {
-  const hljs = require(common_4d20_0);
   let { name } = $$props;
   let { route } = $$props;
   let parseHeaders = false;
   $$f6e9706.onMount(() => {
-    waitForElm(".code-part > *:not(div)").then(() => {
-      document.querySelectorAll("pre code").forEach((el) => {
-        hljs.highlightElement(el);
-      });
-      if (route && route.params) {
-        if (route.params.get("page") == name)
-          $$invalidate(1, parseHeaders = true);
-      }
-    });
+    if (route && route.params) {
+      if (route.params.get("page") == name)
+        $$invalidate(1, parseHeaders = true);
+    }
   });
   $$self.$$set = ($$props) => {
     if ("name" in $$props)
