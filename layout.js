@@ -1,6 +1,7 @@
 import Confetti from "./components/Confetti.js"
 import Navbar from "./components/Navbar.js"
 import Footer from "./components/Footer.js"
+import Foob from "./components/Foob.js"
 
 import {
 __require as require
@@ -41,11 +42,12 @@ let projects = [
     url: "https://buchtajs.com"
   }
 ];
-let bunVersion = "0.5.8";
-let buchtaVersion = "0.5-rc3";
+let bunVersion = "0.5.7";
+let buchtaVersion = "0.5-rc4";
 let getDocsTree = [
   "docs/Buchta",
   "docs/Bundler",
+  "docs/Cli",
   "docs/Request",
   "docs/Response",
   "docs/Subrouter",
@@ -54,7 +56,7 @@ let getDocsTree = [
 var $$7b66f1cf = $7b66f1cf();
 var $$f6e9706 = $f6e9706();
 function add_css(target) {
-  $$7b66f1cf.append_styles(target, "svelte-j6ak6c", "main.svelte-j6ak6c:not(#confetti){display:flex;flex-direction:column}div.svelte-j6ak6c:not(#confetti){min-height:calc(100vh - 96px);width:100vw}");
+  $$7b66f1cf.append_styles(target, "svelte-6l21ds", "main.svelte-6l21ds:not(#confetti):not(#foob){display:flex;flex-direction:column}div.svelte-6l21ds:not(#confetti):not(#foob){min-height:calc(100vh - 96px);width:100vw}");
 }
 function create_fragment(ctx) {
   let main;
@@ -65,11 +67,15 @@ function create_fragment(ctx) {
   let footer;
   let t2;
   let div1;
+  let t3;
+  let div2;
+  let foob;
   let current;
   navbar = new Navbar({});
   const default_slot_template = ctx[1].default;
   const default_slot = $$7b66f1cf.create_slot(default_slot_template, ctx, ctx[0], null);
   footer = new Footer({});
+  foob = new Foob({});
   return {
     c() {
       main = $$7b66f1cf.element("main");
@@ -82,6 +88,9 @@ function create_fragment(ctx) {
       $$7b66f1cf.create_component(footer.$$.fragment);
       t2 = $$7b66f1cf.space();
       div1 = $$7b66f1cf.element("div");
+      t3 = $$7b66f1cf.space();
+      div2 = $$7b66f1cf.element("div");
+      $$7b66f1cf.create_component(foob.$$.fragment);
       this.h();
     },
     l(nodes) {
@@ -100,14 +109,21 @@ function create_fragment(ctx) {
       div1 = $$7b66f1cf.claim_element(main_nodes, "DIV", { class: true, id: true });
       var div1_nodes = $$7b66f1cf.children(div1);
       div1_nodes.forEach($$7b66f1cf.detach);
+      t3 = $$7b66f1cf.claim_space(main_nodes);
+      div2 = $$7b66f1cf.claim_element(main_nodes, "DIV", { id: true, class: true });
+      var div2_nodes = $$7b66f1cf.children(div2);
+      $$7b66f1cf.claim_component(foob.$$.fragment, div2_nodes);
+      div2_nodes.forEach($$7b66f1cf.detach);
       main_nodes.forEach($$7b66f1cf.detach);
       this.h();
     },
     h() {
-      $$7b66f1cf.attr(div0, "class", "svelte-j6ak6c");
-      $$7b66f1cf.attr(div1, "class", "top-0 fixed left-0 Z-50 svelte-j6ak6c");
+      $$7b66f1cf.attr(div0, "class", "svelte-6l21ds");
+      $$7b66f1cf.attr(div1, "class", "top-0 fixed left-0 z-50 svelte-6l21ds");
       $$7b66f1cf.attr(div1, "id", "confetti");
-      $$7b66f1cf.attr(main, "class", "svelte-j6ak6c");
+      $$7b66f1cf.attr(div2, "id", "foob");
+      $$7b66f1cf.attr(div2, "class", "svelte-6l21ds");
+      $$7b66f1cf.attr(main, "class", "svelte-6l21ds");
     },
     m(target, anchor) {
       $$7b66f1cf.insert_hydration(target, main, anchor);
@@ -120,6 +136,9 @@ function create_fragment(ctx) {
       $$7b66f1cf.mount_component(footer, main, null);
       $$7b66f1cf.append_hydration(main, t2);
       $$7b66f1cf.append_hydration(main, div1);
+      $$7b66f1cf.append_hydration(main, t3);
+      $$7b66f1cf.append_hydration(main, div2);
+      $$7b66f1cf.mount_component(foob, div2, null);
       current = true;
     },
     p(ctx, [dirty]) {
@@ -134,12 +153,14 @@ function create_fragment(ctx) {
       $$7b66f1cf.transition_in(navbar.$$.fragment, local);
       $$7b66f1cf.transition_in(default_slot, local);
       $$7b66f1cf.transition_in(footer.$$.fragment, local);
+      $$7b66f1cf.transition_in(foob.$$.fragment, local);
       current = true;
     },
     o(local) {
       $$7b66f1cf.transition_out(navbar.$$.fragment, local);
       $$7b66f1cf.transition_out(default_slot, local);
       $$7b66f1cf.transition_out(footer.$$.fragment, local);
+      $$7b66f1cf.transition_out(foob.$$.fragment, local);
       current = false;
     },
     d(detaching) {
@@ -149,6 +170,7 @@ function create_fragment(ctx) {
       if (default_slot)
         default_slot.d(detaching);
       $$7b66f1cf.destroy_component(footer);
+      $$7b66f1cf.destroy_component(foob);
     }
   };
 }
