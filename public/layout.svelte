@@ -2,6 +2,8 @@
     import Confetti from "./components/Confetti.svelte";
     import Navbar from "./components/Navbar.svelte";
     import Footer from "./components/Footer.svelte";
+    import Foob from "./components/Foob.svelte";
+
     import { onMount } from "svelte";
 
     const hljs = require("highlight.js/lib/common");
@@ -19,18 +21,21 @@
         <slot />
     </div>
     <Footer />
-    <div class="top-0 fixed left-0 Z-50" id="confetti" >
+    <div class="top-0 fixed left-0 z-50" id="confetti" >
         <!-- <Confetti x={[0, 10]} y={[0, 0.1]} delay={[0, 5000]} duration=5000 amount=250 fallDistance="100vh" /> -->
+    </div>
+    <div id="foob">
+        <Foob />
     </div>
 </main>
 
 <style>
-    main:not(#confetti) {
+    main:not(#confetti):not(#foob) {
         display: flex;
         flex-direction: column;
     }
 
-    div:not(#confetti) {
+    div:not(#confetti):not(#foob) {
         min-height: calc(100vh - 96px);
         width: 100vw;
     }

@@ -1,6 +1,10 @@
 @tailwind base;
 
 @layer base {
+    * {
+        font-family: 'Overpass', sans-serif;
+    }
+
     h1 {
       @apply text-3xl;
     }

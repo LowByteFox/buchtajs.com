@@ -35,11 +35,12 @@ let projects = [
     url: "https://buchtajs.com"
   }
 ];
-let bunVersion = "0.5.8";
-let buchtaVersion = "0.5-rc3";
+let bunVersion = "0.5.7";
+let buchtaVersion = "0.5-rc4";
 let getDocsTree = [
   "docs/Buchta",
   "docs/Bundler",
+  "docs/Cli",
   "docs/Request",
   "docs/Response",
   "docs/Subrouter",

@@ -1,5 +1,4 @@
 <script>
-    import { onMount } from "svelte";
     import Banner from "./components/Banner.svelte";
     import Carousel from "./components/Carousel.svelte";
     import CarouselPage from "./components/CarouselPage.svelte";
