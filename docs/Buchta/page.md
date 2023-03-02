@@ -24,16 +24,16 @@ Buchta.delete(...);</code></pre>
         <div class="docs-list-base p-2.5">Type</div>
     </div>
     <div class="flex flex-row border-black items-center border">
-        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">path</div>
-        <div class="p-2.5 bg-cblack-hover w-[50%]">String</div>
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-primary-hover">path</div>
+        <div class="p-2.5 bg-primary-hover w-[50%]">String</div>
     </div>
     <div class="flex flex-row border items-center border-black">
-        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">handler</div>
-        <div class="p-2.5 bg-cblack-hover w-[50%]">Function - (req: BuchtaRequest, res: BuchtaResponse) => void</div>
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-primary-hover">handler</div>
+        <div class="p-2.5 bg-primary-hover w-[50%]">Function - (req: BuchtaRequest, res: BuchtaResponse) => void</div>
     </div>
     <div class="flex flex-row border items-center border-black">
-        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">data</div>
-        <div class="p-2.5 bg-cblack-hover w-[50%]">Any</div>
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-primary-hover">data</div>
+        <div class="p-2.5 bg-primary-hover w-[50%]">Any</div>
     </div>
 </div>
 
@@ -59,12 +59,12 @@ Buchta.use(...);
         <div class="docs-list-base p-2.5">Type</div>
     </div>
     <div class="flex flex-row border-black items-center border">
-        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">path</div>
-        <div class="p-2.5 bg-cblack-hover w-[50%]">String</div>
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-primary-hover">path</div>
+        <div class="p-2.5 bg-primary-hover w-[50%]">String</div>
     </div>
     <div class="flex flex-row border items-center border-black">
-        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">router</div>
-        <div class="p-2.5 bg-cblack-hover w-[50%]">BuchtaSubrouter</div>
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-primary-hover">router</div>
+        <div class="p-2.5 bg-primary-hover w-[50%]">BuchtaSubrouter</div>
     </div>
 </div>
 
@@ -93,20 +93,20 @@ Buchta.addAfter(...);</code></pre>
         <div class="p-2.5 docs-list-base">Type</div>
     </div>
     <div class="flex flex-row border items-center border-black">
-        <div class="font-bold p-2.5 w-[50%] border-r border-black  bg-cblack-hover">route</div>
-        <div class="p-2.5 bg-cblack-hover w-[50%]">String</div>
+        <div class="font-bold p-2.5 w-[50%] border-r border-black  bg-primary-hover">route</div>
+        <div class="p-2.5 bg-primary-hover w-[50%]">String</div>
     </div>
     <div class="flex flex-row border items-center border-black">
-        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">method</div>
-        <div class="p-2.5 bg-cblack-hover w-[50%]">String</div>
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-primary-hover">method</div>
+        <div class="p-2.5 bg-primary-hover w-[50%]">String</div>
     </div>
     <div class="flex flex-row border items-center border-black">
-        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">callback</div>
-        <div class="p-2.5 bg-cblack-hover w-[50%]">Function - (req: BuchtaRequest, res: BuchtaResponse) => void</div>
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-primary-hover">callback</div>
+        <div class="p-2.5 bg-primary-hover w-[50%]">Function - (req: BuchtaRequest, res: BuchtaResponse) => void</div>
     </div>
     <div class="flex flex-row border items-center border-black">
-        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">force</div>
-        <div class="p-2.5 bg-cblack-hover w-[50%]">Boolean</div>
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-primary-hover">force</div>
+        <div class="p-2.5 bg-primary-hover w-[50%]">Boolean</div>
     </div>
 </div>
 
@@ -133,8 +133,8 @@ Buchta.assignAfterRouting(...);</code></pre>
         <div class="p-2.5 docs-list-base w-[50%]">Type</div>
     </div>
     <div class="flex flex-row border items-center border-black">
-        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">callback</div>
-        <div class="p-2.5 bg-cblack-hover w-[50%]">Function</div>
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-primary-hover">callback</div>
+        <div class="p-2.5 bg-primary-hover w-[50%]">Function</div>
     </div>
 </div>
 
@@ -161,12 +161,12 @@ Buchta.assignExtHandler(...);</code></pre>
         <div class="p-2.5 docs-list-base w-[50%]">Type</div>
     </div>
     <div class="flex flex-row border items-center border-black">
-        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">ext</div>
-        <div class="p-2.5 border-black  bg-cblack-hover w-[50%]">String</div>
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-primary-hover">ext</div>
+        <div class="p-2.5 border-black  bg-primary-hover w-[50%]">String</div>
     </div>
     <div class="flex flex-row border items-center border-black">
-        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">callback</div>
-        <div class="p-2.5 bg-cblack-hover w-[50%]">Function</div>
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-primary-hover">callback</div>
+        <div class="p-2.5 bg-primary-hover w-[50%]">Function</div>
     </div>
 </div>
 
@@ -193,8 +193,8 @@ Buchta.getTemplate(...);</code></pre>
         <div class="p-2.5 docs-list-base w-[50%]">Type</div>
     </div>
     <div class="flex flex-row border items-center border-black">
-        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">name</div>
-        <div class="p-2.5 bg-cblack-hover w-[50%]">String</div>
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-primary-hover">name</div>
+        <div class="p-2.5 bg-primary-hover w-[50%]">String</div>
     </div>
 </div>
 
@@ -248,8 +248,8 @@ Buchta.mixInto(...);</code></pre>
         <div class="p-2.5 docs-list-base w-[50%]">Type</div>
     </div>
     <div class="flex flex-row border items-center border-black">
-        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">plugin</div>
-        <div class="p-2.5 bg-cblack-hover w-[50%]">Function</div>
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-primary-hover">plugin</div>
+        <div class="p-2.5 bg-primary-hover w-[50%]">Function</div>
     </div>
 </div>
 
@@ -276,8 +276,8 @@ Buchta.wsOnOpen(...);</code></pre>
         <div class="p-2.5 docs-list-base w-[50%]">Type</div>
     </div>
     <div class="flex flex-row border items-center border-black">
-        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">func</div>
-        <div class="p-2.5 bg-cblack-hover w-[50%]">Function - (ws: WebSocket) => void</div>
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-primary-hover">func</div>
+        <div class="p-2.5 bg-primary-hover w-[50%]">Function - (ws: WebSocket) => void</div>
     </div>
 </div>
 
@@ -302,8 +302,8 @@ Buchta.wsOnMessage(...);</code></pre>
         <div class="p-2.5 docs-list-base w-[50%]">Type</div>
     </div>
     <div class="flex flex-row border items-center border-black">
-        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">func</div>
-        <div class="p-2.5 bg-cblack-hover w-[50%]">Function - (ws: WebSocket, msg: string) => void</div>
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-primary-hover">func</div>
+        <div class="p-2.5 bg-primary-hover w-[50%]">Function - (ws: WebSocket, msg: string) => void</div>
     </div>
 </div>
 
@@ -328,8 +328,8 @@ Buchta.wsOnClose(...);</code></pre>
         <div class="p-2.5 docs-list-base w-[50%]">Type</div>
     </div>
     <div class="flex flex-row border items-center border-black">
-        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">func</div>
-        <div class="p-2.5 bg-cblack-hover w-[50%]">Function - (ws: WebSocket) => void</div>
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-primary-hover">func</div>
+        <div class="p-2.5 bg-primary-hover w-[50%]">Function - (ws: WebSocket) => void</div>
     </div>
 </div>
 
@@ -356,12 +356,12 @@ Buchta.run(...);</code></pre>
         <div class="p-2.5 docs-list-base w-[50%]">Type</div>
     </div>
     <div class="flex flex-row border items-center border-black">
-        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">serverPort</div>
-        <div class="p-2.5 bg-cblack-hover w-[50%]">Number - 3000 is default</div>
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-primary-hover">serverPort</div>
+        <div class="p-2.5 bg-primary-hover w-[50%]">Number - 3000 is default</div>
     </div>
     <div class="flex flex-row border items-center border-black">
-        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">func</div>
-        <div class="p-2.5 bg-cblack-hover w-[50%]">Function - optional</div>
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-primary-hover">func</div>
+        <div class="p-2.5 bg-primary-hover w-[50%]">Function - optional</div>
     </div>
 </div>
 

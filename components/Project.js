@@ -32,15 +32,18 @@ let projects = [
     url: "https://buchtajs.com"
   }
 ];
-let bunVersion = "0.5.7";
-let buchtaVersion = "0.5-rc4";
+let bunVersion = "0.5.8";
+let buchtaVersion = "0.5-rc5";
 let getDocsTree = [
   "docs/Buchta",
   "docs/Bundler",
   "docs/Cli",
+  "docs/Config",
+  "docs/Plugins",
   "docs/Request",
   "docs/Response",
   "docs/Subrouter",
+  "docs/Writing_Custom_Plugin",
   "docs/[page]"
 ];
 import { $7b66f1cf} from "./../bundle.js";

@@ -23,7 +23,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-<h1 class="text-cblack">Please wait...</h1>
+<h1 class="text-primary">Please wait...</h1>
 
 
 </body>
@@ -65,15 +65,18 @@ let projects = [
     url: "https://buchtajs.com"
   }
 ];
-let bunVersion = "0.5.7";
-let buchtaVersion = "0.5-rc4";
+let bunVersion = "0.5.8";
+let buchtaVersion = "0.5-rc5";
 let getDocsTree = [
   "docs/Buchta",
   "docs/Bundler",
   "docs/Cli",
+  "docs/Config",
+  "docs/Plugins",
   "docs/Request",
   "docs/Response",
   "docs/Subrouter",
+  "docs/Writing_Custom_Plugin",
   "docs/[page]"
 ];
 import { $7b66f1cf, $b13d3c26} from "./../../bundle.js";
@@ -138,7 +141,7 @@ function create_pending_block(ctx) {
       this.h();
     },
     h() {
-      $$7b66f1cf.attr(h1, "class", "text-cblack");
+      $$7b66f1cf.attr(h1, "class", "text-primary");
     },
     m(target, anchor) {
       $$7b66f1cf.insert_hydration(target, h1, anchor);

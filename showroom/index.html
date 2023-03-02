@@ -23,20 +23,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-<main class="svelte-6l21ds"><div class="svelte-6l21ds"><nav class="flex flex-row md:pl-36 md:pr-36 gap-5 h-12 items-center bg-black backdrop-blur-md bg-opacity-30 drop-shadow-lg fixed w-screen text-md p-2 z-10 text-white">
+<main class=" svelte-687ydg"><div class="svelte-687ydg"><nav class="flex flex-row md:pl-36 md:pr-36 gap-5 h-12 items-center bg-black backdrop-blur-md bg-opacity-30 drop-shadow-lg fixed w-screen text-md p-2 z-10 text-white">
     <img class="cursor-pointer" src="/buchta.webp" alt="Icon" width="32" height="32">
     
-    <div class="font-bold cursor-pointer">Buchta</div>
+    <div class="font-bold cursor-pointer hover:text-secondary">Buchta</div>
 
     <div class="flex-grow"></div>
 
-    <div class="flex-row gap-5 font-bold hidden lg:flex"><a href="/" class="hover:text-cblue cursor-pointer">Home</a>
-        <a href="/#getStarted" class="hover:text-cblue cursor-pointer">Get Started</a>
+    <div class="flex-row gap-5 font-bold hidden lg:flex"><a href="/" class="hover:text-secondary cursor-pointer">Home</a>
+        <a href="/#getStarted" class="hover:text-secondary cursor-pointer">Get Started</a>
         
-        <a class="hover:text-cblue" href="/docs/">Docs</a>
-        <a class="hover:text-cblue" href="/showroom/">Showroom</a>
+        <a class="hover:text-secondary" href="/docs/">Docs</a>
+        <a class="hover:text-secondary" href="/showroom/">Showroom</a>
         <div class="border border-white"></div>
-        <a class="hover:text-cblue" href="https://github.com/Fire-The-Fox/buchta">Github</a>
+        <a class="hover:text-secondary" href="https://github.com/Fire-The-Fox/buchta">Github</a>
         </div>
     
     <img class="lg:hidden white-svg" src="/icons/bars.svg" alt="" width="32" height="32">
@@ -47,11 +47,12 @@
 <div class="flex flex-col text-center bg-black backdrop-blur-md bg-opacity-30 drop-shadow-md hover:scale-105 transition-transform p-5 gap-2.5 rounded-lg cursor-pointer"><img src="/covers/buchta.webp" alt="Website Cover" class="object-scale-down">
     <h2 class="text-white font-bold">Buchta</h2>
     <h3 class="text-white">Powerful Full-Stack Framework Powered By Bun</h3></div></div></main></div>
-    <footer class="flex flex-row md:pl-36 md:pr-36 gap-5 h-24 items-center w-screen text-md p-2 svelte-ucuuyk">
-    <h3 class="svelte-ucuuyk">Built with Buchta v0.5-rc4 and Bun v0.5.7</h3>
+    <footer class="flex flex-col justify-center h-24 items-center w-screen text-md p-2 svelte-ucuuyk">
+    <h3 class="svelte-ucuuyk">Built with Buchta v0.5-rc5 and Bun v0.5.8</h3>
+    
 </footer>
-    <div class="top-0 fixed left-0 z-50 svelte-6l21ds" id="confetti"></div>
-    <div id="foob" class="svelte-6l21ds"></div>
+    <div class="top-0 fixed left-0 z-50 svelte-687ydg" id="confetti"></div>
+    <div id="foob" class="svelte-687ydg"></div>
 </main>
 
 </body>
@@ -94,15 +95,18 @@ let projects = [
     url: "https://buchtajs.com"
   }
 ];
-let bunVersion = "0.5.7";
-let buchtaVersion = "0.5-rc4";
+let bunVersion = "0.5.8";
+let buchtaVersion = "0.5-rc5";
 let getDocsTree = [
   "docs/Buchta",
   "docs/Bundler",
   "docs/Cli",
+  "docs/Config",
+  "docs/Plugins",
   "docs/Request",
   "docs/Response",
   "docs/Subrouter",
+  "docs/Writing_Custom_Plugin",
   "docs/[page]"
 ];
 import { $7b66f1cf} from "./../bundle.js";

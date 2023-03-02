@@ -35,22 +35,25 @@ let projects = [
     url: "https://buchtajs.com"
   }
 ];
-let bunVersion = "0.5.7";
-let buchtaVersion = "0.5-rc4";
+let bunVersion = "0.5.8";
+let buchtaVersion = "0.5-rc5";
 let getDocsTree = [
   "docs/Buchta",
   "docs/Bundler",
   "docs/Cli",
+  "docs/Config",
+  "docs/Plugins",
   "docs/Request",
   "docs/Response",
   "docs/Subrouter",
+  "docs/Writing_Custom_Plugin",
   "docs/[page]"
 ];
 import { $7b66f1cf, $f6e9706} from "./../../bundle.js";
 var $$7b66f1cf = $7b66f1cf();
 var $$f6e9706 = $f6e9706();
 function add_css(target) {
-  $$7b66f1cf.append_styles(target, "svelte-pob63f", ".docs-page.svelte-pob63f{min-height:calc(100vh - 96px * 2)}h1{font-weight:bold}");
+  $$7b66f1cf.append_styles(target, "svelte-yemzca", ".docs-page.svelte-yemzca{min-height:calc(100vh - 96px * 2)}");
 }
 function create_default_slot(ctx) {
   let div1;
@@ -79,8 +82,8 @@ function create_default_slot(ctx) {
       this.h();
     },
     h() {
-      $$7b66f1cf.attr(div0, "class", "overflow-x-auto code-part w-full");
-      $$7b66f1cf.attr(div1, "class", "flex flex-row w-[95%] md:w-[85%] m-auto mt-16 text-white bg-black backdrop-blur-md bg-opacity-30 drop-shadow-lg rounded-md p-5 docs-page mb-5 svelte-pob63f");
+      $$7b66f1cf.attr(div0, "class", "overflow-x-auto code-part w-full ");
+      $$7b66f1cf.attr(div1, "class", "flex flex-row w-[95%] md:w-[85%] m-auto mt-16 text-white bg-black backdrop-blur-md bg-opacity-30 drop-shadow-lg rounded-md p-5 docs-page mb-5 svelte-yemzca");
     },
     m(target, anchor) {
       $$7b66f1cf.insert_hydration(target, div1, anchor);
@@ -155,6 +158,27 @@ function create_fragment(ctx) {
 function instance($$self, $$props, $$invalidate) {
   let { html } = $$props;
   $$f6e9706.onMount(async () => {
+    document.querySelectorAll("pre > code.hljs").forEach((el) => {
+      const btn = document.createElement("img");
+      btn.classList.add("white-svg");
+      btn.setAttribute("style", "position: absolute; top: 10px; right: 10px;");
+      btn.setAttribute("src", "/icons/copy.svg");
+      btn.setAttribute("height", "18");
+      btn.setAttribute("width", "18");
+      btn.addEventListener("click", () => {
+        btn.classList.remove("white-svg");
+        btn.classList.add("green-svg");
+        btn.setAttribute("src", "/icons/check.svg");
+        navigator.clipboard.writeText(el.innerText);
+        setTimeout(() => {
+          btn.classList.remove("green-svg");
+          btn.classList.add("white-svg");
+          btn.setAttribute("src", "/icons/copy.svg");
+        }, 1000);
+      });
+      el.setAttribute("style", "position: relative;");
+      el.appendChild(btn);
+    });
     document.querySelectorAll(".docs-notebook").forEach((notebook) => {
       const tabs = notebook.querySelectorAll(".notebook-top > *");
       const parts = notebook.querySelectorAll(".notebook-parts > *");

@@ -34,15 +34,18 @@ let projects = [
     url: "https://buchtajs.com"
   }
 ];
-let bunVersion = "0.5.7";
-let buchtaVersion = "0.5-rc4";
+let bunVersion = "0.5.8";
+let buchtaVersion = "0.5-rc5";
 let getDocsTree = [
   "docs/Buchta",
   "docs/Bundler",
   "docs/Cli",
+  "docs/Config",
+  "docs/Plugins",
   "docs/Request",
   "docs/Response",
   "docs/Subrouter",
+  "docs/Writing_Custom_Plugin",
   "docs/[page]"
 ];
 import { $7b66f1cf} from "./../bundle.js";
@@ -181,7 +184,7 @@ function create_fragment(ctx) {
     },
     h() {
       $$7b66f1cf.attr(a, "href", "/docs/");
-      $$7b66f1cf.attr(h2, "class", "mb-5 mr-5");
+      $$7b66f1cf.attr(h2, "class", "mb-5 mr-5 hover:text-secondary");
       $$7b66f1cf.attr(div0, "class", "flex flex-col overscroll-auto overflow-auto mr-5");
       $$7b66f1cf.attr(div1, "class", div1_class_value = "mr-8 w-full lg:w-[20%] lg:border-r-2 lg:block font-bold " + (ctx[0] ? "hidden" : ""));
     },
