@@ -5,9 +5,11 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                "cblack": "#1b1c1f",
-                "cblack-hover": "#262a31",
-                "cblue": "#1e5cf4"
+                // mio-black
+                "primary": "#12111A",
+                "primary-hover": "#272632",
+                // mio-tie-red
+                "secondary": "#D9132B"
             }
         },
     },

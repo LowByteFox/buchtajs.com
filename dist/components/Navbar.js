@@ -34,15 +34,18 @@ let projects = [
     url: "https://buchtajs.com"
   }
 ];
-let bunVersion = "0.5.7";
-let buchtaVersion = "0.5-rc4";
+let bunVersion = "0.5.8";
+let buchtaVersion = "0.5-rc5";
 let getDocsTree = [
   "docs/Buchta",
   "docs/Bundler",
   "docs/Cli",
+  "docs/Config",
+  "docs/Plugins",
   "docs/Request",
   "docs/Response",
   "docs/Subrouter",
+  "docs/Writing_Custom_Plugin",
   "docs/[page]"
 ];
 import { $7b66f1cf, $ca8cb9be} from "./../bundle.js";
@@ -140,15 +143,15 @@ function create_if_block(ctx) {
     },
     h() {
       $$7b66f1cf.attr(a0, "href", "/");
-      $$7b66f1cf.attr(a0, "class", "hover:text-cblue cursor-pointer");
+      $$7b66f1cf.attr(a0, "class", "hover:text-secondary cursor-pointer");
       $$7b66f1cf.attr(a1, "href", "/#getStarted");
-      $$7b66f1cf.attr(a1, "class", "hover:text-cblue cursor-pointer");
-      $$7b66f1cf.attr(a2, "class", "hover:text-cblue");
+      $$7b66f1cf.attr(a1, "class", "hover:text-secondary cursor-pointer");
+      $$7b66f1cf.attr(a2, "class", "hover:text-secondary");
       $$7b66f1cf.attr(a2, "href", "/docs/");
-      $$7b66f1cf.attr(a3, "class", "hover:text-cblue");
+      $$7b66f1cf.attr(a3, "class", "hover:text-secondary");
       $$7b66f1cf.attr(a3, "href", "/showroom/");
       $$7b66f1cf.attr(div0, "class", "border border-white w-[50%] m-auto");
-      $$7b66f1cf.attr(a4, "class", "hover:text-cblue");
+      $$7b66f1cf.attr(a4, "class", "hover:text-secondary");
       $$7b66f1cf.attr(a4, "href", "https://github.com/Fire-The-Fox/buchta");
       $$7b66f1cf.attr(div1, "class", "flex flex-col text-center mb-5 font-bold");
       $$7b66f1cf.attr(div2, "class", "fixed top-0 left-0 w-screen h-screen bg-black backdrop-blur-md bg-opacity-70 p-5 overscroll-auto overflow-auto");
@@ -400,18 +403,18 @@ function create_fragment(ctx) {
       $$7b66f1cf.attr(img0, "alt", "Icon");
       $$7b66f1cf.attr(img0, "width", "32");
       $$7b66f1cf.attr(img0, "height", "32");
-      $$7b66f1cf.attr(div0, "class", "font-bold cursor-pointer");
+      $$7b66f1cf.attr(div0, "class", "font-bold cursor-pointer hover:text-secondary");
       $$7b66f1cf.attr(div1, "class", "flex-grow");
       $$7b66f1cf.attr(a0, "href", "/");
-      $$7b66f1cf.attr(a0, "class", "hover:text-cblue cursor-pointer");
+      $$7b66f1cf.attr(a0, "class", "hover:text-secondary cursor-pointer");
       $$7b66f1cf.attr(a1, "href", "/#getStarted");
-      $$7b66f1cf.attr(a1, "class", "hover:text-cblue cursor-pointer");
-      $$7b66f1cf.attr(a2, "class", "hover:text-cblue");
+      $$7b66f1cf.attr(a1, "class", "hover:text-secondary cursor-pointer");
+      $$7b66f1cf.attr(a2, "class", "hover:text-secondary");
       $$7b66f1cf.attr(a2, "href", "/docs/");
-      $$7b66f1cf.attr(a3, "class", "hover:text-cblue");
+      $$7b66f1cf.attr(a3, "class", "hover:text-secondary");
       $$7b66f1cf.attr(a3, "href", "/showroom/");
       $$7b66f1cf.attr(div2, "class", "border border-white");
-      $$7b66f1cf.attr(a4, "class", "hover:text-cblue");
+      $$7b66f1cf.attr(a4, "class", "hover:text-secondary");
       $$7b66f1cf.attr(a4, "href", "https://github.com/Fire-The-Fox/buchta");
       $$7b66f1cf.attr(div3, "class", "flex-row gap-5 font-bold hidden lg:flex");
       $$7b66f1cf.attr(img1, "class", "lg:hidden white-svg");

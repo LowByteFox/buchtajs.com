@@ -18,8 +18,8 @@ BuchtaBundler.addFile(...);</code></pre>
         <div class="p-2.5 docs-list-base w-[50%]">Type</div>
     </div>
     <div class="flex flex-row border items-center border-black">
-        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">path</div>
-        <div class="p-2.5 bg-cblack-hover w-[50%]">String</div>
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-primary-hover">path</div>
+        <div class="p-2.5 bg-primary-hover w-[50%]">String</div>
     </div>
 </div>
 
@@ -44,16 +44,16 @@ BuchtaBundler.addCustomFile(...);</code></pre>
         <div class="p-2.5 docs-list-base w-[50%]">Type</div>
     </div>
     <div class="flex flex-row border items-center border-black">
-        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">route</div>
-        <div class="p-2.5 bg-cblack-hover w-[50%]">String</div>
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-primary-hover">route</div>
+        <div class="p-2.5 bg-primary-hover w-[50%]">String</div>
     </div>
     <div class="flex flex-row border items-center border-black">
-        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">path</div>
-        <div class="p-2.5 bg-cblack-hover w-[50%]">String</div>
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-primary-hover">path</div>
+        <div class="p-2.5 bg-primary-hover w-[50%]">String</div>
     </div>
     <div class="flex flex-row border items-center border-black">
-        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">content</div>
-        <div class="p-2.5 bg-cblack-hover w-[50%]">String</div>
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-primary-hover">content</div>
+        <div class="p-2.5 bg-primary-hover w-[50%]">String</div>
     </div>
 </div>
 
@@ -80,12 +80,12 @@ BuchtaBundler.addPatch(...);</code></pre>
         <div class="p-2.5 docs-list-base w-[50%]">Type</div>
     </div>
     <div class="flex flex-row border items-center border-black">
-        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">route</div>
-        <div class="p-2.5 bg-cblack-hover w-[50%]">String</div>
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-primary-hover">route</div>
+        <div class="p-2.5 bg-primary-hover w-[50%]">String</div>
     </div>
     <div class="flex flex-row border items-center border-black">
-        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">patch</div>
-        <div class="p-2.5 bg-cblack-hover w-[50%]">Function - (route: string, content: string) => void</div>
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-primary-hover">patch</div>
+        <div class="p-2.5 bg-primary-hover w-[50%]">Function - (route: string, content: string) => void</div>
     </div>
 </div>
 
@@ -160,12 +160,12 @@ BuchtaBundler.build(...);</code></pre>
         <div class="p-2.5 docs-list-base w-[50%]">Type</div>
     </div>
     <div class="flex flex-row border items-center border-black">
-        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">server</div>
-        <div class="p-2.5 bg-cblack-hover w-[50%]">Buchta</div>
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-primary-hover">server</div>
+        <div class="p-2.5 bg-primary-hover w-[50%]">Buchta</div>
     </div>
     <div class="flex flex-row border items-center border-black">
-        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">quiet</div>
-        <div class="p-2.5 bg-cblack-hover w-[50%]">Boolean</div>
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-primary-hover">quiet</div>
+        <div class="p-2.5 bg-primary-hover w-[50%]">Boolean</div>
     </div>
 </div>
 

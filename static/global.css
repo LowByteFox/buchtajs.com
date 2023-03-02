@@ -1,6 +1,11 @@
 .white-svg { 
     filter: invert(100%) sepia(0%) saturate(7499%) hue-rotate(314deg) brightness(101%) contrast(103%);
 }
+
+.green-svg {
+    filter: invert(74%) sepia(14%) saturate(2553%) hue-rotate(66deg) brightness(93%) contrast(98%);
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -11,5 +16,5 @@ body {
     min-height: calc(100vh - 96px);
     width: 100vw;
 
-    background-color: #1b1c1f;
+    background-color: #12111A;
 }

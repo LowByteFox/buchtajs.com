@@ -37,14 +37,15 @@ And you're done! Now you can work on your application
     <div class="notebook-parts">
         <div>
             <pre class="javascript bg-black rounded-md mt-5 bg-opacity-40"><code>import { Buchta, BuchtaRequest, BuchtaResponse } from "buchta";
-<br>
+
 const app = new Buchta();
-<br>
+
 app.get("/api/hello/", (req: BuchtaRequest, res: BuchtaResponse) => {
     res.send("Hello, World!");
 })
-<br>
-app.run();</code></pre>
+
+app.run();
+</code></pre>
         </div>
     </div>
 </div>
@@ -61,5 +62,19 @@ Nice 👏 you have created own buchta server with custom route at /api/hello/
 </div>
 
 <div class="info-badge mt-3 mb-3">
-For more examples and API reference, please look at <a class="underline" href="/docs/buchta/">Buchta</a>
+For more examples and API reference, please look at <a class="underline" href="/docs/Buchta/">Buchta</a>
 </div>
+
+<!-- bun x buchta init {project-name} -->
+<!-- cd {project-name} -->
+<!-- bun install && bun run buchta serve -->
+<!-- import { Buchta, BuchtaRequest, BuchtaResponse } from "buchta";
+
+const app = new Buchta();
+
+app.get("/api/hello/", (req: BuchtaRequest, res: BuchtaResponse) => {
+    res.send("Hello, World!");
+})
+
+app.run(); -->
+<!-- bun index.ts -->

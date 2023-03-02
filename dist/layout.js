@@ -42,21 +42,54 @@ let projects = [
     url: "https://buchtajs.com"
   }
 ];
-let bunVersion = "0.5.7";
-let buchtaVersion = "0.5-rc4";
+let bunVersion = "0.5.8";
+let buchtaVersion = "0.5-rc5";
 let getDocsTree = [
   "docs/Buchta",
   "docs/Bundler",
   "docs/Cli",
+  "docs/Config",
+  "docs/Plugins",
   "docs/Request",
   "docs/Response",
   "docs/Subrouter",
+  "docs/Writing_Custom_Plugin",
   "docs/[page]"
 ];
 var $$7b66f1cf = $7b66f1cf();
 var $$f6e9706 = $f6e9706();
 function add_css(target) {
-  $$7b66f1cf.append_styles(target, "svelte-6l21ds", "main.svelte-6l21ds:not(#confetti):not(#foob){display:flex;flex-direction:column}div.svelte-6l21ds:not(#confetti):not(#foob){min-height:calc(100vh - 96px);width:100vw}");
+  $$7b66f1cf.append_styles(target, "svelte-687ydg", "main.svelte-687ydg:not(#confetti):not(#foob){display:flex;flex-direction:column}div.svelte-687ydg:not(#confetti):not(#foob){min-height:calc(100vh - 96px);width:100vw}");
+}
+function create_if_block(ctx) {
+  let foob;
+  let current;
+  foob = new Foob({});
+  return {
+    c() {
+      $$7b66f1cf.create_component(foob.$$.fragment);
+    },
+    l(nodes) {
+      $$7b66f1cf.claim_component(foob.$$.fragment, nodes);
+    },
+    m(target, anchor) {
+      $$7b66f1cf.mount_component(foob, target, anchor);
+      current = true;
+    },
+    i(local) {
+      if (current)
+        return;
+      $$7b66f1cf.transition_in(foob.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      $$7b66f1cf.transition_out(foob.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      $$7b66f1cf.destroy_component(foob, detaching);
+    }
+  };
 }
 function create_fragment(ctx) {
   let main;
@@ -69,13 +102,13 @@ function create_fragment(ctx) {
   let div1;
   let t3;
   let div2;
-  let foob;
+  let main_class_value;
   let current;
   navbar = new Navbar({});
-  const default_slot_template = ctx[1].default;
-  const default_slot = $$7b66f1cf.create_slot(default_slot_template, ctx, ctx[0], null);
-  footer = new Footer({});
-  foob = new Foob({});
+  const default_slot_template = ctx[3].default;
+  const default_slot = $$7b66f1cf.create_slot(default_slot_template, ctx, ctx[2], null);
+  footer = new Footer({ props: { ookami: ctx[1] } });
+  let if_block = ctx[0] && create_if_block(ctx);
   return {
     c() {
       main = $$7b66f1cf.element("main");
@@ -90,7 +123,8 @@ function create_fragment(ctx) {
       div1 = $$7b66f1cf.element("div");
       t3 = $$7b66f1cf.space();
       div2 = $$7b66f1cf.element("div");
-      $$7b66f1cf.create_component(foob.$$.fragment);
+      if (if_block)
+        if_block.c();
       this.h();
     },
     l(nodes) {
@@ -112,18 +146,19 @@ function create_fragment(ctx) {
       t3 = $$7b66f1cf.claim_space(main_nodes);
       div2 = $$7b66f1cf.claim_element(main_nodes, "DIV", { id: true, class: true });
       var div2_nodes = $$7b66f1cf.children(div2);
-      $$7b66f1cf.claim_component(foob.$$.fragment, div2_nodes);
+      if (if_block)
+        if_block.l(div2_nodes);
       div2_nodes.forEach($$7b66f1cf.detach);
       main_nodes.forEach($$7b66f1cf.detach);
       this.h();
     },
     h() {
-      $$7b66f1cf.attr(div0, "class", "svelte-6l21ds");
-      $$7b66f1cf.attr(div1, "class", "top-0 fixed left-0 z-50 svelte-6l21ds");
+      $$7b66f1cf.attr(div0, "class", "svelte-687ydg");
+      $$7b66f1cf.attr(div1, "class", "top-0 fixed left-0 z-50 svelte-687ydg");
       $$7b66f1cf.attr(div1, "id", "confetti");
       $$7b66f1cf.attr(div2, "id", "foob");
-      $$7b66f1cf.attr(div2, "class", "svelte-6l21ds");
-      $$7b66f1cf.attr(main, "class", "svelte-6l21ds");
+      $$7b66f1cf.attr(div2, "class", "svelte-687ydg");
+      $$7b66f1cf.attr(main, "class", main_class_value = "" + ($$7b66f1cf.null_to_empty("" + (ctx[1] == true ? "bg-[url(/ookami_mio.png)] bg-no-repeat bg-fixed bg-opacity-25" : "")) + " svelte-687ydg"));
     },
     m(target, anchor) {
       $$7b66f1cf.insert_hydration(target, main, anchor);
@@ -138,14 +173,38 @@ function create_fragment(ctx) {
       $$7b66f1cf.append_hydration(main, div1);
       $$7b66f1cf.append_hydration(main, t3);
       $$7b66f1cf.append_hydration(main, div2);
-      $$7b66f1cf.mount_component(foob, div2, null);
+      if (if_block)
+        if_block.m(div2, null);
       current = true;
     },
     p(ctx, [dirty]) {
       if (default_slot) {
-        if (default_slot.p && (!current || dirty & 1))
-          $$7b66f1cf.update_slot_base(default_slot, default_slot_template, ctx, ctx[0], !current ? $$7b66f1cf.get_all_dirty_from_scope(ctx[0]) : $$7b66f1cf.get_slot_changes(default_slot_template, ctx[0], dirty, null), null);
+        if (default_slot.p && (!current || dirty & 4))
+          $$7b66f1cf.update_slot_base(default_slot, default_slot_template, ctx, ctx[2], !current ? $$7b66f1cf.get_all_dirty_from_scope(ctx[2]) : $$7b66f1cf.get_slot_changes(default_slot_template, ctx[2], dirty, null), null);
       }
+      const footer_changes = {};
+      if (dirty & 2)
+        footer_changes.ookami = ctx[1];
+      footer.$set(footer_changes);
+      if (ctx[0])
+        if (if_block) {
+          if (dirty & 1)
+            $$7b66f1cf.transition_in(if_block, 1);
+        } else {
+          if_block = create_if_block(ctx);
+          if_block.c();
+          $$7b66f1cf.transition_in(if_block, 1);
+          if_block.m(div2, null);
+        }
+      else if (if_block) {
+        $$7b66f1cf.group_outros();
+        $$7b66f1cf.transition_out(if_block, 1, 1, () => {
+          if_block = null;
+        });
+        $$7b66f1cf.check_outros();
+      }
+      if (!current || dirty & 2 && main_class_value !== (main_class_value = "" + ($$7b66f1cf.null_to_empty("" + (ctx[1] == true ? "bg-[url(/ookami_mio.png)] bg-no-repeat bg-fixed bg-opacity-25" : "")) + " svelte-687ydg")))
+        $$7b66f1cf.attr(main, "class", main_class_value);
     },
     i(local) {
       if (current)
@@ -153,14 +212,14 @@ function create_fragment(ctx) {
       $$7b66f1cf.transition_in(navbar.$$.fragment, local);
       $$7b66f1cf.transition_in(default_slot, local);
       $$7b66f1cf.transition_in(footer.$$.fragment, local);
-      $$7b66f1cf.transition_in(foob.$$.fragment, local);
+      $$7b66f1cf.transition_in(if_block);
       current = true;
     },
     o(local) {
       $$7b66f1cf.transition_out(navbar.$$.fragment, local);
       $$7b66f1cf.transition_out(default_slot, local);
       $$7b66f1cf.transition_out(footer.$$.fragment, local);
-      $$7b66f1cf.transition_out(foob.$$.fragment, local);
+      $$7b66f1cf.transition_out(if_block);
       current = false;
     },
     d(detaching) {
@@ -170,23 +229,51 @@ function create_fragment(ctx) {
       if (default_slot)
         default_slot.d(detaching);
       $$7b66f1cf.destroy_component(footer);
-      $$7b66f1cf.destroy_component(foob);
+      if (if_block)
+        if_block.d();
     }
   };
 }
 function instance($$self, $$props, $$invalidate) {
   let { $$slots: slots = {}, $$scope } = $$props;
   const hljs = require(common_4d20_0);
+  let fubuki = false;
+  let ookami = false;
   $$f6e9706.onMount(() => {
     document.querySelectorAll("pre code").forEach((el) => {
       hljs.highlightElement(el);
     });
+    const query = buchtaRoute().query;
+    if (query.has("enable"))
+      try {
+        const data = JSON.parse(query.get("enable"));
+        if (data instanceof Array)
+          for (const emoji of data)
+            switch (emoji) {
+              case "\uD83C\uDF32":
+                $$invalidate(1, ookami = true);
+                break;
+              case "\uD83C\uDF3D":
+                $$invalidate(0, fubuki = true);
+                break;
+            }
+        else if (typeof data == "string")
+          switch (data) {
+            case "\uD83C\uDF32":
+              $$invalidate(1, ookami = true);
+              break;
+            case "\uD83C\uDF3D":
+              $$invalidate(0, fubuki = true);
+              break;
+          }
+      } catch (e) {
+      }
   });
   $$self.$$set = ($$props) => {
     if ("$$scope" in $$props)
-      $$invalidate(0, $$scope = $$props.$$scope);
+      $$invalidate(2, $$scope = $$props.$$scope);
   };
-  return [$$scope, slots];
+  return [fubuki, ookami, $$scope, slots];
 }
 
 class Component extends $$7b66f1cf.SvelteComponent {

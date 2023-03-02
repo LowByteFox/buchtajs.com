@@ -14,7 +14,7 @@
 <div class="pt-24 w-[85%] m-auto justify-between items-center">
     <div class="flex-grow">
         <h1 class="text-[500%] mt-12 font-bold text-white">Buchta</h1>
-        <h2 class="mt-4 ml-1 font-bold text-3xl text-cblue">Full-Stack Framework Powered By Bun</h2>
+        <h2 class="mt-4 ml-1 font-bold text-3xl text-secondary">Full-Stack Framework Powered By Bun</h2>
         <div class="flex flex-row, justify-between">
             <div class="mt-12">
                 {#each features as feature}

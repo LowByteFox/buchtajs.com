@@ -30,12 +30,12 @@ BuchtaResponse.setHeader(...);</code></pre>
         <div class="p-2.5 docs-list-base w-[50%]">Type</div>
     </div>
     <div class="flex flex-row border items-center border-black">
-        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">name</div>
-        <div class="p-2.5 bg-cblack-hover w-[50%]">String</div>
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-primary-hover">name</div>
+        <div class="p-2.5 bg-primary-hover w-[50%]">String</div>
     </div>
     <div class="flex flex-row border items-center border-black">
-        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">value</div>
-        <div class="p-2.5 bg-cblack-hover w-[50%]">String</div>
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-primary-hover">value</div>
+        <div class="p-2.5 bg-primary-hover w-[50%]">String</div>
     </div>
 </div>
 
@@ -62,8 +62,8 @@ BuchtaResponse.send(...);</code></pre>
         <div class="p-2.5 docs-list-base w-[50%]">Type</div>
     </div>
     <div class="flex flex-row border items-center border-black">
-        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">body</div>
-        <div class="p-2.5 bg-cblack-hover w-[50%]">String</div>
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-primary-hover">body</div>
+        <div class="p-2.5 bg-primary-hover w-[50%]">String</div>
     </div>
 </div>
 
@@ -88,8 +88,8 @@ BuchtaResponse.sendJson(...);</code></pre>
         <div class="p-2.5 docs-list-base w-[50%]">Type</div>
     </div>
     <div class="flex flex-row border items-center border-black">
-        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">json</div>
-        <div class="p-2.5 bg-cblack-hover w-[50%]">Any</div>
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-primary-hover">json</div>
+        <div class="p-2.5 bg-primary-hover w-[50%]">Any</div>
     </div>
 </div>
 
@@ -122,8 +122,8 @@ BuchtaResponse.sendFile(...);</code></pre>
         <div class="p-2.5 docs-list-base w-[50%]">Type</div>
     </div>
     <div class="flex flex-row border items-center border-black">
-        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">filePath</div>
-        <div class="p-2.5 bg-cblack-hover w-[50%]">String</div>
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-primary-hover">filePath</div>
+        <div class="p-2.5 bg-primary-hover w-[50%]">String</div>
     </div>
 </div>
 
@@ -150,8 +150,8 @@ BuchtaResponse.redirectTo(...);</code></pre>
         <div class="p-2.5 docs-list-base w-[50%]">Type</div>
     </div>
     <div class="flex flex-row border items-center border-black">
-        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">path</div>
-        <div class="p-2.5 bg-cblack-hover w-[50%]">String</div>
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-primary-hover">path</div>
+        <div class="p-2.5 bg-primary-hover w-[50%]">String</div>
     </div>
 </div>
 
@@ -200,8 +200,8 @@ BuchtaResponse.setStatus(...);</code></pre>
         <div class="p-2.5 docs-list-base w-[50%]">Type</div>
     </div>
     <div class="flex flex-row border items-center border-black">
-        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">statusCode</div>
-        <div class="p-2.5 bg-cblack-hover w-[50%]">Number</div>
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-primary-hover">statusCode</div>
+        <div class="p-2.5 bg-primary-hover w-[50%]">Number</div>
     </div>
 </div>
 
@@ -226,8 +226,8 @@ BuchtaResponse.setStatusText(...);</code></pre>
         <div class="p-2.5 docs-list-base w-[50%]">Type</div>
     </div>
     <div class="flex flex-row border items-center border-black">
-        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">setStatusText</div>
-        <div class="p-2.5 bg-cblack-hover w-[50%]">String</div>
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-primary-hover">setStatusText</div>
+        <div class="p-2.5 bg-primary-hover w-[50%]">String</div>
     </div>
 </div>
 

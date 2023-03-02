@@ -43,15 +43,24 @@
     }
 
     .docs-notebook > .notebook-top > div {
-        @apply font-bold border rounded-md p-2.5;
+        @apply font-bold border rounded-md p-2.5 cursor-pointer;
     }
 
     .docs-notebook > .notebook-top > div:is(.notebook-top-active) {
-        @apply font-bold border border-cblack-hover rounded-md p-2.5 bg-cblue text-white;
+        @apply font-bold border border-primary-hover rounded-md p-2.5 bg-secondary text-white cursor-default;
     }
 
     .docs-list-base {
-        @apply bg-cblue bg-opacity-70 text-white font-bold p-2.5 w-[50%] border-r border-black;
+        @apply bg-secondary bg-opacity-70 text-white font-bold p-2.5 w-[50%] border-r border-black;
+    }
+
+    .docs-page h1 {
+        font-weight: bold;
+        @apply w-fit;
+    }
+    
+    .docs-page h1:hover {
+        @apply text-secondary;
     }
 }
 

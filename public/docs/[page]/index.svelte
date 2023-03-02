@@ -10,7 +10,7 @@
 
 <!-- svelte-ignore missing-declaration -->
 {#await getMk()}
-<h1 class="text-cblack">Please wait...</h1>
+<h1 class="text-primary">Please wait...</h1>
 {:then code}
 <Layout html={code}>
 </Layout>

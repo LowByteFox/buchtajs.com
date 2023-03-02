@@ -16,12 +16,12 @@
 </script>
 
 {#if !parseHeaders}
-    <a class="text-xl" href={"/docs/" + name + "/"}>{name}</a>
+    <a class="text-xl hover:text-secondary" href={"/docs/" + name + "/"}>{name.replaceAll("_", " ")}</a>
 {:else}
-    <div class="text-xl">{name}</div>
+    <div class="text-xl hover:text-secondary">{name.replaceAll("_", " ")}</div>
     <ul class="text-xl overflow-visible overscroll-auto">
         {#each document.querySelectorAll(".code-part h1") as tag}
-            <li class="ml-5 list-disc font-bold">
+            <li class="ml-5 list-disc font-bold hover:text-secondary">
                 <a href={"#" + tag.innerText.toLowerCase().replaceAll(" ", "-")}
                     >{tag.innerText}</a
                 >

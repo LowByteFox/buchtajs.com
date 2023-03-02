@@ -57,12 +57,12 @@ BuchtaSubrouter.delete(...);</code></pre>
         <div class="docs-list-base p-2.5">Type</div>
     </div>
     <div class="flex flex-row border-black items-center border">
-        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">path</div>
-        <div class="p-2.5 bg-cblack-hover w-[50%]">String</div>
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-primary-hover">path</div>
+        <div class="p-2.5 bg-primary-hover w-[50%]">String</div>
     </div>
     <div class="flex flex-row border items-center border-black">
-        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">handler</div>
-        <div class="p-2.5 bg-cblack-hover w-[50%]">Function - (req: BuchtaRequest, res: BuchtaResponse) => void</div>
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-primary-hover">handler</div>
+        <div class="p-2.5 bg-primary-hover w-[50%]">Function - (req: BuchtaRequest, res: BuchtaResponse) => void</div>
     </div>
 </div>
 
@@ -90,12 +90,12 @@ BuchtaSubrouter.putInto(...);
         <div class="docs-list-base p-2.5">Type</div>
     </div>
     <div class="flex flex-row border-black items-center border">
-        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">app</div>
-        <div class="p-2.5 bg-cblack-hover w-[50%]">Buchta</div>
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-primary-hover">app</div>
+        <div class="p-2.5 bg-primary-hover w-[50%]">Buchta</div>
     </div>
     <div class="flex flex-row border items-center border-black">
-        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-cblack-hover">path</div>
-        <div class="p-2.5 bg-cblack-hover w-[50%]">String</div>
+        <div class="font-bold p-2.5 w-[50%] border-r border-black bg-primary-hover">path</div>
+        <div class="p-2.5 bg-primary-hover w-[50%]">String</div>
     </div>
 </div>
 

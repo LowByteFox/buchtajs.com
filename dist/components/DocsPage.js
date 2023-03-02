@@ -32,15 +32,18 @@ let projects = [
     url: "https://buchtajs.com"
   }
 ];
-let bunVersion = "0.5.7";
-let buchtaVersion = "0.5-rc4";
+let bunVersion = "0.5.8";
+let buchtaVersion = "0.5-rc5";
 let getDocsTree = [
   "docs/Buchta",
   "docs/Bundler",
   "docs/Cli",
+  "docs/Config",
+  "docs/Plugins",
   "docs/Request",
   "docs/Response",
   "docs/Subrouter",
+  "docs/Writing_Custom_Plugin",
   "docs/[page]"
 ];
 import { $7b66f1cf, $f6e9706} from "./../bundle.js";
@@ -53,6 +56,7 @@ function get_each_context(ctx, list, i) {
 }
 function create_else_block(ctx) {
   let div;
+  let t0_value = ctx[0].replaceAll("_", " ") + "";
   let t0;
   let t1;
   let ul;
@@ -63,7 +67,7 @@ function create_else_block(ctx) {
   return {
     c() {
       div = $$7b66f1cf.element("div");
-      t0 = $$7b66f1cf.text(ctx[0]);
+      t0 = $$7b66f1cf.text(t0_value);
       t1 = $$7b66f1cf.space();
       ul = $$7b66f1cf.element("ul");
       for (let i = 0;i < each_blocks.length; i += 1)
@@ -73,7 +77,7 @@ function create_else_block(ctx) {
     l(nodes) {
       div = $$7b66f1cf.claim_element(nodes, "DIV", { class: true });
       var div_nodes = $$7b66f1cf.children(div);
-      t0 = $$7b66f1cf.claim_text(div_nodes, ctx[0]);
+      t0 = $$7b66f1cf.claim_text(div_nodes, t0_value);
       div_nodes.forEach($$7b66f1cf.detach);
       t1 = $$7b66f1cf.claim_space(nodes);
       ul = $$7b66f1cf.claim_element(nodes, "UL", { class: true });
@@ -84,7 +88,7 @@ function create_else_block(ctx) {
       this.h();
     },
     h() {
-      $$7b66f1cf.attr(div, "class", "text-xl");
+      $$7b66f1cf.attr(div, "class", "text-xl hover:text-secondary");
       $$7b66f1cf.attr(ul, "class", "text-xl overflow-visible overscroll-auto");
     },
     m(target, anchor) {
@@ -96,8 +100,8 @@ function create_else_block(ctx) {
         each_blocks[i].m(ul, null);
     },
     p(ctx, dirty) {
-      if (dirty & 1)
-        $$7b66f1cf.set_data(t0, ctx[0]);
+      if (dirty & 1 && t0_value !== (t0_value = ctx[0].replaceAll("_", " ") + ""))
+        $$7b66f1cf.set_data(t0, t0_value);
       if (dirty & 0) {
         each_value = document.querySelectorAll(".code-part h1");
         let i;
@@ -129,23 +133,24 @@ function create_else_block(ctx) {
 }
 function create_if_block(ctx) {
   let a;
+  let t_value = ctx[0].replaceAll("_", " ") + "";
   let t;
   let a_href_value;
   return {
     c() {
       a = $$7b66f1cf.element("a");
-      t = $$7b66f1cf.text(ctx[0]);
+      t = $$7b66f1cf.text(t_value);
       this.h();
     },
     l(nodes) {
       a = $$7b66f1cf.claim_element(nodes, "A", { class: true, href: true });
       var a_nodes = $$7b66f1cf.children(a);
-      t = $$7b66f1cf.claim_text(a_nodes, ctx[0]);
+      t = $$7b66f1cf.claim_text(a_nodes, t_value);
       a_nodes.forEach($$7b66f1cf.detach);
       this.h();
     },
     h() {
-      $$7b66f1cf.attr(a, "class", "text-xl");
+      $$7b66f1cf.attr(a, "class", "text-xl hover:text-secondary");
       $$7b66f1cf.attr(a, "href", a_href_value = "/docs/" + ctx[0] + "/");
     },
     m(target, anchor) {
@@ -153,8 +158,8 @@ function create_if_block(ctx) {
       $$7b66f1cf.append_hydration(a, t);
     },
     p(ctx, dirty) {
-      if (dirty & 1)
-        $$7b66f1cf.set_data(t, ctx[0]);
+      if (dirty & 1 && t_value !== (t_value = ctx[0].replaceAll("_", " ") + ""))
+        $$7b66f1cf.set_data(t, t_value);
       if (dirty & 1 && a_href_value !== (a_href_value = "/docs/" + ctx[0] + "/"))
         $$7b66f1cf.attr(a, "href", a_href_value);
     },
@@ -192,7 +197,7 @@ function create_each_block(ctx) {
     },
     h() {
       $$7b66f1cf.attr(a, "href", a_href_value = "#" + ctx[3].innerText.toLowerCase().replaceAll(" ", "-"));
-      $$7b66f1cf.attr(li, "class", "ml-5 list-disc font-bold");
+      $$7b66f1cf.attr(li, "class", "ml-5 list-disc font-bold hover:text-secondary");
     },
     m(target, anchor) {
       $$7b66f1cf.insert_hydration(target, li, anchor);

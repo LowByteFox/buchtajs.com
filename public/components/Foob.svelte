@@ -1,17 +1,6 @@
 <script>
     import { onMount } from "svelte";
 
-    let render = true;
-
-    if (buchtaRoute().query.has("foob")) {
-        if (buchtaRoute().query.get("foob") == "konkonkon") {
-            render = true;
-        } else {
-            render = false;
-        }
-    } else {
-        render = false;
-    }
     let self;
     let playing = false;
 
@@ -57,9 +46,7 @@
     })
 </script>
 
-{#if render}
 <div class="absolute hidden transition-all duration-300" bind:this={self}>
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <img height="48" width="48" src="/foob.svg" alt="Shirakami Fubuki's tail" />
 </div>
-{/if}
