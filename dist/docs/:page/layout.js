@@ -3,7 +3,7 @@ import Layout from "../../layout.js"
 
 globalThis.buchtaRoute = () => {
   let params = new Map;
-  const path = "/docs/:page/layout.svelte";
+  const path = "/docs/:page/layout.js";
   let currentPath = "";
   if (typeof window != "undefined")
     currentPath = window.location.href;
@@ -40,11 +40,14 @@ let buchtaVersion = "0.5-rc5";
 let getDocsTree = [
   "docs/Buchta",
   "docs/Bundler",
-  "docs/Cli",
+  "docs/CLI",
+  "docs/CLI_Usage",
   "docs/Config",
+  "docs/Directories",
   "docs/Plugins",
   "docs/Request",
   "docs/Response",
+  "docs/Routing_Through_FS",
   "docs/Subrouter",
   "docs/Writing_Custom_Plugin",
   "docs/[page]"
@@ -163,17 +166,20 @@ function instance($$self, $$props, $$invalidate) {
       btn.classList.add("white-svg");
       btn.setAttribute("style", "position: absolute; top: 10px; right: 10px;");
       btn.setAttribute("src", "/icons/copy.svg");
+      btn.setAttribute("alt", "Copy");
       btn.setAttribute("height", "18");
       btn.setAttribute("width", "18");
       btn.addEventListener("click", () => {
         btn.classList.remove("white-svg");
         btn.classList.add("green-svg");
         btn.setAttribute("src", "/icons/check.svg");
+        btn.setAttribute("alt", "Copied");
         navigator.clipboard.writeText(el.innerText);
         setTimeout(() => {
           btn.classList.remove("green-svg");
           btn.classList.add("white-svg");
           btn.setAttribute("src", "/icons/copy.svg");
+          btn.setAttribute("alt", "Copy");
         }, 1000);
       });
       el.setAttribute("style", "position: relative;");

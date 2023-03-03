@@ -2,7 +2,7 @@ import Sidebar from "./Sidebar.js"
 
 globalThis.buchtaRoute = () => {
   let params = new Map;
-  const path = "/components/Navbar.svelte";
+  const path = "/components/Navbar.js";
   let currentPath = "";
   if (typeof window != "undefined")
     currentPath = window.location.href;
@@ -39,11 +39,14 @@ let buchtaVersion = "0.5-rc5";
 let getDocsTree = [
   "docs/Buchta",
   "docs/Bundler",
-  "docs/Cli",
+  "docs/CLI",
+  "docs/CLI_Usage",
   "docs/Config",
+  "docs/Directories",
   "docs/Plugins",
   "docs/Request",
   "docs/Response",
+  "docs/Routing_Through_FS",
   "docs/Subrouter",
   "docs/Writing_Custom_Plugin",
   "docs/[page]"

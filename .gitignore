@@ -170,3 +170,4 @@ out
 .buchta/
 node_modules/
 bun.lockb
+.dccache

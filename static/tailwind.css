@@ -639,6 +639,10 @@ h4 {
   --tw-backdrop-sepia:  ;
 }
 
+.static {
+  position: static;
+}
+
 .fixed {
   position: fixed;
 }
@@ -809,6 +813,10 @@ h4 {
 
 .w-\[50\%\] {
   width: 50%;
+}
+
+.w-\[100\%\] {
+  width: 100%;
 }
 
 .flex-grow {

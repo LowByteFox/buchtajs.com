@@ -12,6 +12,7 @@
 
             btn.setAttribute("style", "position: absolute; top: 10px; right: 10px;")
             btn.setAttribute("src", "/icons/copy.svg");
+            btn.setAttribute("alt", "Copy");
             btn.setAttribute("height", "18");
             btn.setAttribute("width", "18");
 
@@ -19,6 +20,7 @@
                 btn.classList.remove("white-svg");
                 btn.classList.add("green-svg");
                 btn.setAttribute("src", "/icons/check.svg");
+                btn.setAttribute("alt", "Copied");
 
                 navigator.clipboard.writeText(el.innerText);
 
@@ -26,6 +28,7 @@
                     btn.classList.remove("green-svg");
                     btn.classList.add("white-svg");
                     btn.setAttribute("src", "/icons/copy.svg");
+                    btn.setAttribute("alt", "Copy");
                 }, 1000);
             })
             

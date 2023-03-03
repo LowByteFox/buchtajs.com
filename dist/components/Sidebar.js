@@ -2,7 +2,7 @@ import DocsPage from "./DocsPage.js"
 
 globalThis.buchtaRoute = () => {
   let params = new Map;
-  const path = "/components/Sidebar.svelte";
+  const path = "/components/Sidebar.js";
   let currentPath = "";
   if (typeof window != "undefined")
     currentPath = window.location.href;
@@ -39,11 +39,14 @@ let buchtaVersion = "0.5-rc5";
 let getDocsTree = [
   "docs/Buchta",
   "docs/Bundler",
-  "docs/Cli",
+  "docs/CLI",
+  "docs/CLI_Usage",
   "docs/Config",
+  "docs/Directories",
   "docs/Plugins",
   "docs/Request",
   "docs/Response",
+  "docs/Routing_Through_FS",
   "docs/Subrouter",
   "docs/Writing_Custom_Plugin",
   "docs/[page]"
@@ -185,7 +188,7 @@ function create_fragment(ctx) {
     h() {
       $$7b66f1cf.attr(a, "href", "/docs/");
       $$7b66f1cf.attr(h2, "class", "mb-5 mr-5 hover:text-secondary");
-      $$7b66f1cf.attr(div0, "class", "flex flex-col overscroll-auto overflow-auto mr-5");
+      $$7b66f1cf.attr(div0, "class", "flex flex-col overscroll-auto overflow-auto mr-5 gap-2");
       $$7b66f1cf.attr(div1, "class", div1_class_value = "mr-8 w-full lg:w-[20%] lg:border-r-2 lg:block font-bold " + (ctx[0] ? "hidden" : ""));
     },
     m(target, anchor) {
