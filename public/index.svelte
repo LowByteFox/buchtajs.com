@@ -8,22 +8,22 @@
 
 <Layout>
     <Banner />
-    <main class="w-[95%] md:w-[85%] m-auto mt-64 mb-12 text-white">
+    <main class="text-center w-[95%] md:w-[85%] m-auto mt-64 mb-12 text-white">
         <h2 class="font-bold mb-4" id="getStarted">&nbsp;</h2>
         <h2 class="font-bold mb-4 text-3xl">Getting Started</h2>
         <h2>Create simple project</h2>
         <pre
-            class="language-shell bg-black rounded-md backdrop-blur-md bg-opacity-30 mt-5"><code
+            class="language-shell bg-black rounded-md backdrop-blur-md bg-opacity-30 mt-5 text-left"><code
                 >{`$ bun x buchta init <project-name>`}</code
             ></pre>
         <h2 class="pt-2">Change into project directory</h2>
         <pre
-            class="language-shell bg-black rounded-md backdrop-blur-md bg-opacity-30 mt-5"><code
+            class="language-shell bg-black rounded-md backdrop-blur-md bg-opacity-30 mt-5 text-left"><code
                 >{`$ cd <project-name>`}</code
             ></pre>
         <h2 class="pt-2">Install dependencies and start buchta</h2>
         <pre
-            class="language-shell bg-black rounded-md backdrop-blur-md bg-opacity-30 mt-5"><code
+            class="language-shell bg-black rounded-md backdrop-blur-md bg-opacity-30 mt-5 text-left"><code
                 >{`$ bun install && bun run buchta serve`}</code
             ></pre>
         <h2 class="pt-2 font-bold">That's it!</h2>
@@ -33,26 +33,26 @@
         <Carousel>
             <CarouselPage iconName="speed.svg" title="Fast">
                 <div class="flex flex-col items-center">
-                    <h2 class="mt-4 font-bold">Buchta focuses on performance and reliability</h2>
-                    <h2>Most of it is being achieved using bun</h2>
+                    <h2 class="mt-4 font-bold text-center">Buchta focuses on performance and reliability</h2>
+                    <h2 class="text-center">Most of it is being achieved using bun</h2>
                 </div>
             </CarouselPage>
             <CarouselPage iconName="server.svg" title="SSR Support">
                 <div class="flex flex-col items-center">
-                    <h2 class="mt-4 font-bold">Buchta supports SSR</h2>
-                    <h2>Current plugins that support SSR are markdown, svelte and preact</h2>
+                    <h2 class="mt-4 font-bold text-center">Buchta supports SSR</h2>
+                    <h2 class="text-center">Current plugins that support SSR are markdown, svelte and preact</h2>
                 </div>
             </CarouselPage>
             <CarouselPage iconName="archive.svg" title="Custom Bundler">
                 <div class="flex flex-col items-center">
-                    <h2 class="mt-4 font-bold">Buchta doesn't use module bundlers like Vite, Webpack, Rollup.</h2>
-                    <h2>Instead, Buchta uses bundler shipped with bun! This decreases dependencies and improves speed</h2>
+                    <h2 class="mt-4 font-bold text-center">Buchta doesn't use module bundlers like Vite, Webpack, Rollup.</h2>
+                    <h2 class="text-center">Instead, Buchta uses bundler shipped with bun! This decreases dependencies and improves speed</h2>
                 </div>
             </CarouselPage>
             <CarouselPage iconName="plug.svg" title="Extendable">
                 <div class="flex flex-col items-center">
-                    <h2 class="mt-4 font-bold">You can write your own plugins</h2>
-                    <h2>Buchta supports custom plugins to extend its functionality</h2>
+                    <h2 class="mt-4 font-bold text-center">You can write your own plugins</h2>
+                    <h2 class="text-center">Buchta supports custom plugins to extend its functionality</h2>
                 </div>
             </CarouselPage>
         </Carousel>

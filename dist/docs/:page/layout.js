@@ -36,14 +36,16 @@ let projects = [
   }
 ];
 let bunVersion = "0.5.8";
-let buchtaVersion = "0.5-rc5";
+let buchtaVersion = "0.5";
 let getDocsTree = [
   "docs/Buchta",
   "docs/Bundler",
   "docs/CLI",
   "docs/CLI_Usage",
+  "docs/Composables",
   "docs/Config",
   "docs/Directories",
+  "docs/Middleware",
   "docs/Plugins",
   "docs/Request",
   "docs/Response",

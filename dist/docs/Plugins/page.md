@@ -95,6 +95,10 @@
 
 <br>
 
+### Every preact `index.jsx|tsx` page, **must** have `index` function or class
+
+<br>
+
 # Preact Website Template
 
 ### Do not rewrite the comments, you'll break the plugin!

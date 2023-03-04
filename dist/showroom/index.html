@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="/global.css">
     <link rel="stylesheet" href="/tailwind.css">
     <link rel="stylesheet" href="/hljs.css">
-
 </head>
 <body>
 <main class=" svelte-687ydg"><div class="svelte-687ydg"><nav class="flex flex-row md:pl-36 md:pr-36 gap-5 h-12 items-center bg-black backdrop-blur-md bg-opacity-30 drop-shadow-lg fixed w-screen text-md p-2 z-10 text-white">
@@ -46,10 +45,10 @@
     <h2 class="text-white font-bold">Buchta</h2>
     <h3 class="text-white">Powerful Full-Stack Framework Powered By Bun</h3></div></div></main></div>
     <footer class="flex flex-col justify-center h-24 items-center w-screen text-md p-2 svelte-ucuuyk">
-    <h3 class="svelte-ucuuyk">Built with Buchta v0.5-rc5 and Bun v0.5.8</h3>
+    <h3 class="svelte-ucuuyk">Built with Buchta v0.5 and Bun v0.5.8</h3>
     
 </footer>
-    <div class="top-0 fixed left-0 z-50 svelte-687ydg" id="confetti"></div>
+    <div class="top-0 fixed left-0 z-50 -translate-y-4 svelte-687ydg" id="confetti"></div>
     <div id="foob" class="svelte-687ydg"></div>
 </main>
 
@@ -94,14 +93,16 @@ let projects = [
   }
 ];
 let bunVersion = "0.5.8";
-let buchtaVersion = "0.5-rc5";
+let buchtaVersion = "0.5";
 let getDocsTree = [
   "docs/Buchta",
   "docs/Bundler",
   "docs/CLI",
   "docs/CLI_Usage",
+  "docs/Composables",
   "docs/Config",
   "docs/Directories",
+  "docs/Middleware",
   "docs/Plugins",
   "docs/Request",
   "docs/Response",

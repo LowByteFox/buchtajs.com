@@ -10,6 +10,7 @@
 
     let fubuki = false;
     let ookami = false;
+    let confetti = false;
 
     onMount(() => {
         document.querySelectorAll("pre code").forEach((el) => {
@@ -44,6 +45,7 @@
                 }
             } catch (e) {}
         }
+        confetti = true;
     })
 </script>
 
@@ -53,8 +55,10 @@
         <slot />
     </div>
     <Footer ookami={ookami} />
-    <div class="top-0 fixed left-0 z-50" id="confetti" >
-        <!-- <Confetti x={[0, 10]} y={[0, 0.1]} delay={[0, 5000]} duration=5000 amount=250 fallDistance="100vh" /> -->
+    <div class="top-0 fixed left-0 z-50 -translate-y-4" id="confetti" >
+        {#if confetti}
+            <Confetti x={[0, 12]} y={[0, 0.1]} delay={[0, 10000]} duration=5000 amount=250 fallDistance="100vh" />
+        {/if}
     </div>
     <div id="foob">
         {#if fubuki}
