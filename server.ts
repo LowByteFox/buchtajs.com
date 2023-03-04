@@ -10,12 +10,14 @@ server.get("/docs/Bundler/page.md", (r: any, s: any) => { s.sendFile(import.meta
 server.get("/docs/Request/page.md", (r: any, s: any) => { s.sendFile(import.meta.dir + "/" + "./docs/Request/page.md"); s.setHeader("Content-Type", "text/markdown"); })
 server.get("/docs/CLI_Usage/page.md", (r: any, s: any) => { s.sendFile(import.meta.dir + "/" + "./docs/CLI_Usage/page.md"); s.setHeader("Content-Type", "text/markdown"); })
 server.get("/docs/Subrouter/page.md", (r: any, s: any) => { s.sendFile(import.meta.dir + "/" + "./docs/Subrouter/page.md"); s.setHeader("Content-Type", "text/markdown"); })
+server.get("/docs/Composables/page.md", (r: any, s: any) => { s.sendFile(import.meta.dir + "/" + "./docs/Composables/page.md"); s.setHeader("Content-Type", "text/markdown"); })
 server.get("/docs/Config/page.md", (r: any, s: any) => { s.sendFile(import.meta.dir + "/" + "./docs/Config/page.md"); s.setHeader("Content-Type", "text/markdown"); })
 server.get("/docs/:page", (r: any, s: any) => { s.sendFile(import.meta.dir + "/" + "./docs/:page/index.html"); s.setHeader("Content-Type", "text/html"); })
 server.get("/docs/:page/layout.js", (r: any, s: any) => { s.sendFile(import.meta.dir + "/" + "./docs/:page/layout.js"); s.setHeader("Content-Type", "application/javascript"); })
 server.get("/docs/Response/page.md", (r: any, s: any) => { s.sendFile(import.meta.dir + "/" + "./docs/Response/page.md"); s.setHeader("Content-Type", "text/markdown"); })
 server.get("/docs/CLI/page.md", (r: any, s: any) => { s.sendFile(import.meta.dir + "/" + "./docs/CLI/page.md"); s.setHeader("Content-Type", "text/markdown"); })
 server.get("/docs/Plugins/page.md", (r: any, s: any) => { s.sendFile(import.meta.dir + "/" + "./docs/Plugins/page.md"); s.setHeader("Content-Type", "text/markdown"); })
+server.get("/docs/Middleware/page.md", (r: any, s: any) => { s.sendFile(import.meta.dir + "/" + "./docs/Middleware/page.md"); s.setHeader("Content-Type", "text/markdown"); })
 server.get("/docs/Routing_Through_FS/page.md", (r: any, s: any) => { s.sendFile(import.meta.dir + "/" + "./docs/Routing_Through_FS/page.md"); s.setHeader("Content-Type", "text/markdown"); })
 server.get("/docs/page.md", (r: any, s: any) => { s.sendFile(import.meta.dir + "/" + "./docs/page.md"); s.setHeader("Content-Type", "text/markdown"); })
 server.get("/showroom", (r: any, s: any) => { s.sendFile(import.meta.dir + "/" + "./showroom/index.html"); s.setHeader("Content-Type", "text/html"); })
@@ -69,8 +71,4 @@ server.get("/CNAME", (r: any, s: any) => { s.sendFile(import.meta.dir + "/" + ".
 server.get("/ookami_mio.png", (r: any, s: any) => { s.sendFile(import.meta.dir + "/" + "./ookami_mio.png"); s.setHeader("Content-Type", "image/png"); })
 server.get("/foob.svg", (r: any, s: any) => { s.sendFile(import.meta.dir + "/" + "./foob.svg"); s.setHeader("Content-Type", "image/svg+xml"); })
 server.get("/bundle.js", (r: any, s: any) => { s.sendFile(import.meta.dir + "/" + "./bundle.js"); s.setHeader("Content-Type", "application/javascript"); })
-
-server.get("/api/hello_world", function(req, res) {
-  res.send("Hello, World\n");
-})
 server.run(3000)

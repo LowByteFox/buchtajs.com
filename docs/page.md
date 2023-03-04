@@ -5,11 +5,11 @@
 ### Then, create project using buchta's CLI
 
 <pre class="language-shell bg-black rounded mt-5 bg-opacity-40">
-<code>$ bun x buchta init {project-name}</code></pre>
+<code>$ bun x buchta init &lt;project-name&gt;</code></pre>
 <h3 class="pt-2">Change into project directory</h3>
 
 <pre class="language-shell bg-black rounded-md mt-5 bg-opacity-40">
-<code>$ cd {project-name}</code></pre>
+<code>$ cd &lt;project-name&gt;</code></pre>
 <h3 class="pt-2">Install dependencies and start buchta server</h3>
 
 <pre class="language-shell bg-black rounded-md mt-5 bg-opacity-40">
