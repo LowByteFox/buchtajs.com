@@ -1,4 +1,3 @@
-import Confetti from "./components/Confetti.js"
 import Navbar from "./components/Navbar.js"
 import Footer from "./components/Footer.js"
 import Foob from "./components/Foob.js"
@@ -64,46 +63,7 @@ let getDocsTree = [
 var $$7b66f1cf = $7b66f1cf();
 var $$f6e9706 = $f6e9706();
 function add_css(target) {
-  $$7b66f1cf.append_styles(target, "svelte-687ydg", "main.svelte-687ydg:not(#confetti):not(#foob){display:flex;flex-direction:column}div.svelte-687ydg:not(#confetti):not(#foob){min-height:calc(100vh - 96px);width:100vw}");
-}
-function create_if_block_1(ctx) {
-  let confetti_1;
-  let current;
-  confetti_1 = new Confetti({
-    props: {
-      x: [0, 12],
-      y: [0, 0.1],
-      delay: [0, 1e4],
-      duration: "5000",
-      amount: "250",
-      fallDistance: "100vh"
-    }
-  });
-  return {
-    c() {
-      $$7b66f1cf.create_component(confetti_1.$$.fragment);
-    },
-    l(nodes) {
-      $$7b66f1cf.claim_component(confetti_1.$$.fragment, nodes);
-    },
-    m(target, anchor) {
-      $$7b66f1cf.mount_component(confetti_1, target, anchor);
-      current = true;
-    },
-    i(local) {
-      if (current)
-        return;
-      $$7b66f1cf.transition_in(confetti_1.$$.fragment, local);
-      current = true;
-    },
-    o(local) {
-      $$7b66f1cf.transition_out(confetti_1.$$.fragment, local);
-      current = false;
-    },
-    d(detaching) {
-      $$7b66f1cf.destroy_component(confetti_1, detaching);
-    }
-  };
+  $$7b66f1cf.append_styles(target, "svelte-15gatv8", "main.svelte-15gatv8:not(#foob){display:flex;flex-direction:column}div.svelte-15gatv8:not(#foob){min-height:calc(100vh - 96px);width:100vw}");
 }
 function create_if_block(ctx) {
   let foob;
@@ -144,16 +104,13 @@ function create_fragment(ctx) {
   let footer;
   let t2;
   let div1;
-  let t3;
-  let div2;
   let main_class_value;
   let current;
   navbar = new Navbar({});
-  const default_slot_template = ctx[4].default;
-  const default_slot = $$7b66f1cf.create_slot(default_slot_template, ctx, ctx[3], null);
+  const default_slot_template = ctx[3].default;
+  const default_slot = $$7b66f1cf.create_slot(default_slot_template, ctx, ctx[2], null);
   footer = new Footer({ props: { ookami: ctx[1] } });
-  let if_block0 = ctx[2] && create_if_block_1(ctx);
-  let if_block1 = ctx[0] && create_if_block(ctx);
+  let if_block = ctx[0] && create_if_block(ctx);
   return {
     c() {
       main = $$7b66f1cf.element("main");
@@ -166,12 +123,8 @@ function create_fragment(ctx) {
       $$7b66f1cf.create_component(footer.$$.fragment);
       t2 = $$7b66f1cf.space();
       div1 = $$7b66f1cf.element("div");
-      if (if_block0)
-        if_block0.c();
-      t3 = $$7b66f1cf.space();
-      div2 = $$7b66f1cf.element("div");
-      if (if_block1)
-        if_block1.c();
+      if (if_block)
+        if_block.c();
       this.h();
     },
     l(nodes) {
@@ -187,27 +140,19 @@ function create_fragment(ctx) {
       t1 = $$7b66f1cf.claim_space(main_nodes);
       $$7b66f1cf.claim_component(footer.$$.fragment, main_nodes);
       t2 = $$7b66f1cf.claim_space(main_nodes);
-      div1 = $$7b66f1cf.claim_element(main_nodes, "DIV", { class: true, id: true });
+      div1 = $$7b66f1cf.claim_element(main_nodes, "DIV", { id: true, class: true });
       var div1_nodes = $$7b66f1cf.children(div1);
-      if (if_block0)
-        if_block0.l(div1_nodes);
+      if (if_block)
+        if_block.l(div1_nodes);
       div1_nodes.forEach($$7b66f1cf.detach);
-      t3 = $$7b66f1cf.claim_space(main_nodes);
-      div2 = $$7b66f1cf.claim_element(main_nodes, "DIV", { id: true, class: true });
-      var div2_nodes = $$7b66f1cf.children(div2);
-      if (if_block1)
-        if_block1.l(div2_nodes);
-      div2_nodes.forEach($$7b66f1cf.detach);
       main_nodes.forEach($$7b66f1cf.detach);
       this.h();
     },
     h() {
-      $$7b66f1cf.attr(div0, "class", "svelte-687ydg");
-      $$7b66f1cf.attr(div1, "class", "top-0 fixed left-0 z-50 -translate-y-4 svelte-687ydg");
-      $$7b66f1cf.attr(div1, "id", "confetti");
-      $$7b66f1cf.attr(div2, "id", "foob");
-      $$7b66f1cf.attr(div2, "class", "svelte-687ydg");
-      $$7b66f1cf.attr(main, "class", main_class_value = "" + ($$7b66f1cf.null_to_empty("" + (ctx[1] == true ? "bg-[url(/ookami_mio.png)] bg-no-repeat bg-fixed bg-opacity-25" : "")) + " svelte-687ydg"));
+      $$7b66f1cf.attr(div0, "class", "svelte-15gatv8");
+      $$7b66f1cf.attr(div1, "id", "foob");
+      $$7b66f1cf.attr(div1, "class", "svelte-15gatv8");
+      $$7b66f1cf.attr(main, "class", main_class_value = "" + ($$7b66f1cf.null_to_empty("" + (ctx[1] == true ? "bg-[url(/ookami_mio.png)] bg-no-repeat bg-fixed bg-opacity-25" : "")) + " svelte-15gatv8"));
     },
     m(target, anchor) {
       $$7b66f1cf.insert_hydration(target, main, anchor);
@@ -220,58 +165,37 @@ function create_fragment(ctx) {
       $$7b66f1cf.mount_component(footer, main, null);
       $$7b66f1cf.append_hydration(main, t2);
       $$7b66f1cf.append_hydration(main, div1);
-      if (if_block0)
-        if_block0.m(div1, null);
-      $$7b66f1cf.append_hydration(main, t3);
-      $$7b66f1cf.append_hydration(main, div2);
-      if (if_block1)
-        if_block1.m(div2, null);
+      if (if_block)
+        if_block.m(div1, null);
       current = true;
     },
     p(ctx, [dirty]) {
       if (default_slot) {
-        if (default_slot.p && (!current || dirty & 8))
-          $$7b66f1cf.update_slot_base(default_slot, default_slot_template, ctx, ctx[3], !current ? $$7b66f1cf.get_all_dirty_from_scope(ctx[3]) : $$7b66f1cf.get_slot_changes(default_slot_template, ctx[3], dirty, null), null);
+        if (default_slot.p && (!current || dirty & 4))
+          $$7b66f1cf.update_slot_base(default_slot, default_slot_template, ctx, ctx[2], !current ? $$7b66f1cf.get_all_dirty_from_scope(ctx[2]) : $$7b66f1cf.get_slot_changes(default_slot_template, ctx[2], dirty, null), null);
       }
       const footer_changes = {};
       if (dirty & 2)
         footer_changes.ookami = ctx[1];
       footer.$set(footer_changes);
-      if (ctx[2])
-        if (if_block0) {
-          if (dirty & 4)
-            $$7b66f1cf.transition_in(if_block0, 1);
-        } else {
-          if_block0 = create_if_block_1(ctx);
-          if_block0.c();
-          $$7b66f1cf.transition_in(if_block0, 1);
-          if_block0.m(div1, null);
-        }
-      else if (if_block0) {
-        $$7b66f1cf.group_outros();
-        $$7b66f1cf.transition_out(if_block0, 1, 1, () => {
-          if_block0 = null;
-        });
-        $$7b66f1cf.check_outros();
-      }
       if (ctx[0])
-        if (if_block1) {
+        if (if_block) {
           if (dirty & 1)
-            $$7b66f1cf.transition_in(if_block1, 1);
+            $$7b66f1cf.transition_in(if_block, 1);
         } else {
-          if_block1 = create_if_block(ctx);
-          if_block1.c();
-          $$7b66f1cf.transition_in(if_block1, 1);
-          if_block1.m(div2, null);
+          if_block = create_if_block(ctx);
+          if_block.c();
+          $$7b66f1cf.transition_in(if_block, 1);
+          if_block.m(div1, null);
         }
-      else if (if_block1) {
+      else if (if_block) {
         $$7b66f1cf.group_outros();
-        $$7b66f1cf.transition_out(if_block1, 1, 1, () => {
-          if_block1 = null;
+        $$7b66f1cf.transition_out(if_block, 1, 1, () => {
+          if_block = null;
         });
         $$7b66f1cf.check_outros();
       }
-      if (!current || dirty & 2 && main_class_value !== (main_class_value = "" + ($$7b66f1cf.null_to_empty("" + (ctx[1] == true ? "bg-[url(/ookami_mio.png)] bg-no-repeat bg-fixed bg-opacity-25" : "")) + " svelte-687ydg")))
+      if (!current || dirty & 2 && main_class_value !== (main_class_value = "" + ($$7b66f1cf.null_to_empty("" + (ctx[1] == true ? "bg-[url(/ookami_mio.png)] bg-no-repeat bg-fixed bg-opacity-25" : "")) + " svelte-15gatv8")))
         $$7b66f1cf.attr(main, "class", main_class_value);
     },
     i(local) {
@@ -280,16 +204,14 @@ function create_fragment(ctx) {
       $$7b66f1cf.transition_in(navbar.$$.fragment, local);
       $$7b66f1cf.transition_in(default_slot, local);
       $$7b66f1cf.transition_in(footer.$$.fragment, local);
-      $$7b66f1cf.transition_in(if_block0);
-      $$7b66f1cf.transition_in(if_block1);
+      $$7b66f1cf.transition_in(if_block);
       current = true;
     },
     o(local) {
       $$7b66f1cf.transition_out(navbar.$$.fragment, local);
       $$7b66f1cf.transition_out(default_slot, local);
       $$7b66f1cf.transition_out(footer.$$.fragment, local);
-      $$7b66f1cf.transition_out(if_block0);
-      $$7b66f1cf.transition_out(if_block1);
+      $$7b66f1cf.transition_out(if_block);
       current = false;
     },
     d(detaching) {
@@ -299,10 +221,8 @@ function create_fragment(ctx) {
       if (default_slot)
         default_slot.d(detaching);
       $$7b66f1cf.destroy_component(footer);
-      if (if_block0)
-        if_block0.d();
-      if (if_block1)
-        if_block1.d();
+      if (if_block)
+        if_block.d();
     }
   };
 }
@@ -311,7 +231,6 @@ function instance($$self, $$props, $$invalidate) {
   const hljs = require(common_4d20_0);
   let fubuki = false;
   let ookami = false;
-  let confetti = false;
   $$f6e9706.onMount(() => {
     document.querySelectorAll("pre code").forEach((el) => {
       hljs.highlightElement(el);
@@ -341,13 +260,12 @@ function instance($$self, $$props, $$invalidate) {
           }
       } catch (e) {
       }
-    $$invalidate(2, confetti = true);
   });
   $$self.$$set = ($$props) => {
     if ("$$scope" in $$props)
-      $$invalidate(3, $$scope = $$props.$$scope);
+      $$invalidate(2, $$scope = $$props.$$scope);
   };
-  return [fubuki, ookami, confetti, $$scope, slots];
+  return [fubuki, ookami, $$scope, slots];
 }
 
 class Component extends $$7b66f1cf.SvelteComponent {

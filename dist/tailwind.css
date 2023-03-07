@@ -423,6 +423,10 @@ video {
   font-family: 'Overpass', sans-serif;
 }
 
+code > * {
+  font-family: monospace, sans-serif;
+}
+
 h1 {
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -745,10 +749,6 @@ h4 {
   left: 0px;
 }
 
-.z-50 {
-  z-index: 50;
-}
-
 .z-10 {
   z-index: 10;
 }
@@ -903,11 +903,6 @@ h4 {
 
 .flex-grow {
   flex-grow: 1;
-}
-
-.-translate-y-4 {
-  --tw-translate-y: -1rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .transform {

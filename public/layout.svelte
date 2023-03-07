@@ -1,5 +1,4 @@
 <script>
-    import Confetti from "./components/Confetti.svelte";
     import Navbar from "./components/Navbar.svelte";
     import Footer from "./components/Footer.svelte";
     import Foob from "./components/Foob.svelte";
@@ -10,7 +9,6 @@
 
     let fubuki = false;
     let ookami = false;
-    let confetti = false;
 
     onMount(() => {
         document.querySelectorAll("pre code").forEach((el) => {
@@ -45,7 +43,6 @@
                 }
             } catch (e) {}
         }
-        confetti = true;
     })
 </script>
 
@@ -55,11 +52,6 @@
         <slot />
     </div>
     <Footer ookami={ookami} />
-    <div class="top-0 fixed left-0 z-50 -translate-y-4" id="confetti" >
-        {#if confetti}
-            <Confetti x={[0, 12]} y={[0, 0.1]} delay={[0, 10000]} duration=5000 amount=250 fallDistance="100vh" />
-        {/if}
-    </div>
     <div id="foob">
         {#if fubuki}
             <Foob />
@@ -68,12 +60,12 @@
 </main>
 
 <style>
-    main:not(#confetti):not(#foob) {
+    main:not(#foob) {
         display: flex;
         flex-direction: column;
     }
 
-    div:not(#confetti):not(#foob) {
+    div:not(#foob) {
         min-height: calc(100vh - 96px);
         width: 100vw;
     }

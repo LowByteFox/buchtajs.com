@@ -4,6 +4,9 @@
     * {
         font-family: 'Overpass', sans-serif;
     }
+    code > * {
+        font-family: monospace, sans-serif;
+    }
 
     h1 {
         @apply text-xl;
