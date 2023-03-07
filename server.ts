@@ -27,7 +27,6 @@ server.get("/components/Project.js", (r: any, s: any) => { s.sendFile(import.met
 server.get("/components/Sidebar.js", (r: any, s: any) => { s.sendFile(import.meta.dir + "/" + "./components/Sidebar.js"); s.setHeader("Content-Type", "application/javascript"); })
 server.get("/components/CarouselPage.js", (r: any, s: any) => { s.sendFile(import.meta.dir + "/" + "./components/CarouselPage.js"); s.setHeader("Content-Type", "application/javascript"); })
 server.get("/components/Navbar.js", (r: any, s: any) => { s.sendFile(import.meta.dir + "/" + "./components/Navbar.js"); s.setHeader("Content-Type", "application/javascript"); })
-server.get("/components/Confetti.js", (r: any, s: any) => { s.sendFile(import.meta.dir + "/" + "./components/Confetti.js"); s.setHeader("Content-Type", "application/javascript"); })
 server.get("/components/Foob.js", (r: any, s: any) => { s.sendFile(import.meta.dir + "/" + "./components/Foob.js"); s.setHeader("Content-Type", "application/javascript"); })
 server.get("/components/Carousel.js", (r: any, s: any) => { s.sendFile(import.meta.dir + "/" + "./components/Carousel.js"); s.setHeader("Content-Type", "application/javascript"); })
 server.get("/components/DocsPage.js", (r: any, s: any) => { s.sendFile(import.meta.dir + "/" + "./components/DocsPage.js"); s.setHeader("Content-Type", "application/javascript"); })
