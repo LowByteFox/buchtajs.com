@@ -8,7 +8,7 @@
 
 <Layout>
     <Banner />
-    <main class="text-center w-[95%] md:w-[85%] m-auto mt-64 mb-12 text-white">
+    <main class="lg:text-left text-center w-[95%] md:w-[85%] m-auto mt-64 mb-12 text-white">
         <h2 class="font-bold mb-4" id="getStarted">&nbsp;</h2>
         <h2 class="font-bold mb-4 text-3xl">Getting Started</h2>
         <h2>Create simple project</h2>

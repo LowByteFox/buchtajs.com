@@ -60,7 +60,7 @@
                 <button class="p-5 bg-black rounded-md text-white font-bold backdrop-blur-md bg-opacity-30 drop-shadow-lg w-auto"><h3 class="m-0 p-0">Lets get started!</h3></button></div>
 
             <img class="object-scale-down hidden lg:block" src="/buchta.webp" alt="Logo" height="580" width="580"></div></div></div>
-    <main class="text-center w-[95%] md:w-[85%] m-auto mt-64 mb-12 text-white"><h2 class="font-bold mb-4" id="getStarted"> </h2>
+    <main class="lg:text-left text-center w-[95%] md:w-[85%] m-auto mt-64 mb-12 text-white"><h2 class="font-bold mb-4" id="getStarted"> </h2>
         <h2 class="font-bold mb-4 text-3xl">Getting Started</h2>
         <h2>Create simple project</h2>
         <pre class="language-shell bg-black rounded-md backdrop-blur-md bg-opacity-30 mt-5 text-left"><code>$ bun x buchta init &lt;project-name></code></pre>
@@ -149,8 +149,8 @@ let projects = [
     url: "https://buchtajs.com"
   }
 ];
-let bunVersion = "0.5.8";
 let buchtaVersion = "0.5";
+let bunVersion = "0.5.8";
 let getDocsTree = [
   "docs/Buchta",
   "docs/Bundler",
@@ -166,7 +166,8 @@ let getDocsTree = [
   "docs/Routing_Through_FS",
   "docs/Subrouter",
   "docs/Writing_Custom_Plugin",
-  "docs/[page]"
+  "docs/[page]",
+  "docs/layout"
 ];
 import { $7b66f1cf} from "./bundle.js";
 var $$7b66f1cf = $7b66f1cf();
@@ -684,7 +685,7 @@ function create_default_slot(ctx) {
       $$7b66f1cf.attr(h25, "class", "pt-2 font-bold");
       $$7b66f1cf.attr(h26, "class", "mt-24 font-bold text-3xl");
       $$7b66f1cf.attr(h27, "class", "mt-2 pb-12");
-      $$7b66f1cf.attr(main, "class", "text-center w-[95%] md:w-[85%] m-auto mt-64 mb-12 text-white");
+      $$7b66f1cf.attr(main, "class", "lg:text-left text-center w-[95%] md:w-[85%] m-auto mt-64 mb-12 text-white");
     },
     m(target, anchor) {
       $$7b66f1cf.mount_component(banner, target, anchor);
