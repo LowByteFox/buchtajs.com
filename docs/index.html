@@ -14,7 +14,7 @@
     <meta property="og:image:height" content="1080">
     <meta property="twitter:card" content="summary_large_image">
     <meta content="#00bf72" data-react-helmet="true" name="theme-color" />
-    <title>Buchta</title>
+    <title>Buchta | Docs</title>
     <link rel="stylesheet" href="/global.css">
     <link rel="stylesheet" href="/tailwind.css">
     <link rel="stylesheet" href="/hljs.css">
@@ -26,7 +26,7 @@
 </body>
 
 <script type="module">
-import Layout from "./:page/layout.js"
+import Layout from "./layout/layout.js"
 
 globalThis.buchtaRoute = () => {
   let params = new Map;
@@ -62,8 +62,8 @@ let projects = [
     url: "https://buchtajs.com"
   }
 ];
-let bunVersion = "0.5.8";
 let buchtaVersion = "0.5";
+let bunVersion = "0.5.8";
 let getDocsTree = [
   "docs/Buchta",
   "docs/Bundler",
@@ -79,7 +79,8 @@ let getDocsTree = [
   "docs/Routing_Through_FS",
   "docs/Subrouter",
   "docs/Writing_Custom_Plugin",
-  "docs/[page]"
+  "docs/[page]",
+  "docs/layout"
 ];
 import { $7b66f1cf, $b13d3c26} from "./../bundle.js";
 var $$7b66f1cf = $7b66f1cf();

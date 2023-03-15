@@ -32,8 +32,8 @@ let projects = [
     url: "https://buchtajs.com"
   }
 ];
-let bunVersion = "0.5.8";
 let buchtaVersion = "0.5";
+let bunVersion = "0.5.8";
 let getDocsTree = [
   "docs/Buchta",
   "docs/Bundler",
@@ -49,7 +49,8 @@ let getDocsTree = [
   "docs/Routing_Through_FS",
   "docs/Subrouter",
   "docs/Writing_Custom_Plugin",
-  "docs/[page]"
+  "docs/[page]",
+  "docs/layout"
 ];
 import { $7b66f1cf} from "./../bundle.js";
 var $$7b66f1cf = $7b66f1cf();
